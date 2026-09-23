@@ -1,0 +1,211 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      jour:
+        description: "Date de parution BODACC a traiter (AAAA-MM-JJ)"
+        required: false
+        default: ""
+
+# Droits minimaux : ce workflow ne fait que lire le depot et deposer un artefact.
+permissions:
+  contents: read
+
+env:
+  # Parution de reference des chiffres publies. Le BODACC parait du mardi au
+  # samedi ; cette date est un mardi, et les archives d'un jour passe ne bougent
+  # plus, ce qui rend le run reproductible.
+  JOUR_DEFAUT: "2026-09-22"
+
+jobs:
+  qualite-code:
+    name: style et tests unitaires
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run ruff check src tests dags scripts
+      - name: pytest (sans Airflow : les tests du graphe sont sautes ici)
+        run: |
+          mkdir -p results
+          uv run pytest -q 2>&1 | tee results/pytest.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tests-unitaires
+          path: results/pytest.txt
+
+  terraform:
+    name: infrastructure decrite en code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+      - name: format et validation (sans compte AWS, donc sans apply)
+        working-directory: infra/terraform
+        run: |
+          mkdir -p ../../results
+          terraform fmt -check -recursive | tee ../../results/terraform_fmt.txt
+          terraform init -backend=false
+          terraform validate -no-color | tee ../../results/terraform_validate.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: terraform
+          path: results/terraform_*.txt
+
+  graphe:
+    name: execution reelle du graphe Airflow
+    # Le poste de developpement n'a pas de moteur Docker utilisable (Docker
+    # Desktop plante sur un socket perime). L'execution de reference a donc lieu
+    # ici, sur un runner qui fournit Docker et Docker Compose.
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Memoire desserree : le runner en a plus que le poste de 8 Go.
+      AIRFLOW_MEM_LIMIT: 2500m
+      POSTGRES_MEM_LIMIT: 1g
+      LOCALSTACK_MEM_LIMIT: 1500m
+      AIRFLOW_ADMIN_PASSWORD: mot-de-passe-ci
+      POSTGRES_PASSWORD: postgres-ci
+      # Cible S3 : LocalStack. Ces identifiants ne valent que pour l'emulateur.
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      AWS_REGION: eu-west-3
+      AWS_DEFAULT_REGION: eu-west-3
+      RADAR_BUCKET: radar-entreprises-herault
+      RADAR_PREFIXE: radar
+      RADAR_DEPARTEMENT: "34"
+      RADAR_MOTEUR: duckdb
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Choisir la date de parution traitee
+        id: date
+        run: |
+          jour="${{ github.event.inputs.jour }}"
+          [ -z "$jour" ] && jour="${JOUR_DEFAUT}"
+          echo "jour=$jour" >> "$GITHUB_OUTPUT"
+          echo "Parution traitee : $jour"
+
+      - name: Monter la pile (Airflow, PostgreSQL, LocalStack)
+        run: docker compose up -d --build
+
+      - name: Attendre que la pile soit prete
+        run: |
+          set -e
+          for _ in $(seq 1 60); do
+            etat=$(docker compose ps --format '{{.Service}} {{.State}} {{.Health}}')
+            echo "$etat"
+            if echo "$etat" | grep -q 'localstack running healthy' \
+               && echo "$etat" | grep -q 'postgres running healthy' \
+               && echo "$etat" | grep -q 'airflow-webserver running healthy'; then
+              break
+            fi
+            sleep 10
+          done
+          # airflow-init est un service a execution unique : on exige son code 0.
+          code=$(docker inspect -f '{{.State.ExitCode}}' "$(docker compose ps -aq airflow-init)")
+          docker compose logs airflow-init | tail -30
+          test "$code" = "0"
+
+      - name: Le graphe se charge sans erreur d'import
+        run: |
+          mkdir -p results
+          docker compose run --rm airflow-cli airflow dags list 2>&1 | tee results/airflow_dags_list.txt
+          docker compose run --rm airflow-cli airflow dags list-import-errors 2>&1 | tee results/airflow_import_errors.txt
+          ! grep -qi "radar_entreprises_herault" results/airflow_import_errors.txt
+
+      - name: Structure du graphe
+        run: docker compose run --rm airflow-cli airflow tasks list radar_entreprises_herault --tree 2>&1 | tee results/airflow_tasks_tree.txt
+
+      - name: Tests du graphe, la ou Airflow existe reellement
+        run: |
+          docker compose run --rm airflow-cli \
+            python -m pytest /opt/airflow/tests/test_sql_et_dag.py -q 2>&1 | tee results/pytest_airflow.txt
+
+      - name: Execution reelle du graphe sur une date donnee
+        run: |
+          set -o pipefail
+          debut=$(date +%s)
+          docker compose run --rm airflow-cli \
+            airflow dags test radar_entreprises_herault ${{ steps.date.outputs.jour }} 2>&1 \
+            | tee results/airflow_dags_test.txt
+          fin=$(date +%s)
+          echo "{\"jour\": \"${{ steps.date.outputs.jour }}\", \"duree_graphe_s\": $((fin - debut))}" \
+            > results/duree_graphe.json
+          cat results/duree_graphe.json
+
+      - name: Le graphe echoue bien quand un controle de qualite echoue
+        # Preuve que les controles sont reellement bloquants : on force une
+        # volumetrie impossible et on exige que la tache echoue.
+        run: |
+          set +e
+          docker compose run --rm -e RADAR_DEPARTEMENT=34 airflow-cli \
+            python -c "
+          import sys
+          sys.path.insert(0, '/opt/airflow/src')
+          from radar.quality import controle_volumetrie, exiger, QualiteError
+          resultats = [controle_volumetrie(0, [80, 90, 85, 88, 92, 87])]
+          try:
+              exiger(resultats, 'preuve de blocage')
+          except QualiteError as err:
+              print('BLOCAGE CONFIRME :', err)
+              sys.exit(42)
+          sys.exit(0)
+          " 2>&1 | tee results/preuve_blocage.txt
+          code=${PIPESTATUS[0]}
+          set -e
+          grep -q "BLOCAGE CONFIRME" results/preuve_blocage.txt
+
+      - name: Deuxieme execution, pour prouver le rejeu idempotent
+        run: |
+          set -o pipefail
+          docker compose run --rm airflow-cli \
+            airflow dags test radar_entreprises_herault ${{ steps.date.outputs.jour }} 2>&1 \
+            | tee results/airflow_dags_test_rejeu.txt
+
+      - name: Contenu du seau S3 emule
+        run: |
+          docker compose exec -T localstack \
+            awslocal s3 ls "s3://${RADAR_BUCKET}/${RADAR_PREFIXE}/" --recursive --summarize \
+            2>&1 | tee results/s3_contenu.txt
+
+      - name: Exporter les chiffres publies et tracer les figures
+        env:
+          AWS_ENDPOINT_URL: http://localhost:4566
+        run: |
+          uv sync --frozen
+          uv run python scripts/export_results.py --jour ${{ steps.date.outputs.jour }}
+          uv run python scripts/figures.py --jour ${{ steps.date.outputs.jour }}
+
+      - name: Etat des conteneurs
+        run: docker compose ps | tee results/docker_compose_ps.txt
+
+      - name: Chiffres cles du run
+        run: |
+          echo "=== volumetrie.json"       && cat results/volumetrie.json
+          echo "=== synthese.json"         && cat results/synthese.json
+          echo "=== requetes_entrepot.json" && cat results/requetes_entrepot.json
+          echo "=== controles de qualite"  && column -s, -t < results/controles_qualite.csv
+
+      - name: Journaux en cas d'echec
+        if: failure()
+        run: docker compose logs --tail 150
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resultats-radar
+          path: results/
+
+      - name: Arret propre
+        if: always()
+        run: docker compose down -v

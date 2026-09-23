@@ -47,6 +47,8 @@ x-airflow-commun: &airflow-commun
     - ./dags:/opt/airflow/dags:ro
     - ./src:/opt/airflow/src:ro
     - ./sql:/opt/airflow/sql:ro
+    - ./tests:/opt/airflow/tests:ro
+    - ./scripts:/opt/airflow/scripts:ro
     - ./results:/opt/airflow/results
     - airflow-logs:/opt/airflow/logs
   depends_on:

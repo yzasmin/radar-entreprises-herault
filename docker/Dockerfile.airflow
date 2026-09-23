@@ -5,13 +5,16 @@ FROM apache/airflow:2.10.5-python3.12
 
 USER airflow
 
+# pytest est installe ici pour pouvoir jouer les tests du graphe la ou Airflow
+# existe reellement : le poste de developpement n'a pas Airflow.
 # --no-cache-dir : l'image reste petite, ce qui compte sur un poste de 8 Go.
 # Les bornes hautes evitent qu'une version majeure entre sans etre testee.
 RUN pip install --no-cache-dir \
       "boto3>=1.35,<2" \
       "pyarrow>=17,<22" \
       "requests>=2.32,<3" \
-      "duckdb>=1.1,<2"
+      "duckdb>=1.1,<2" \
+      "pytest>=8,<9"
 
 ENV PYTHONPATH=/opt/airflow/src \
     RADAR_SQL_DIR=/opt/airflow/sql \
