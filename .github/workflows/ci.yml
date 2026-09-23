@@ -29,7 +29,7 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uv sync --frozen
       - run: uv run ruff check src tests dags scripts
-      - name: pytest (sans Airflow : les tests du graphe sont sautes ici)
+      - name: "pytest, sans Airflow : les tests du graphe sont sautes ici"
         run: |
           mkdir -p results
           uv run pytest -q 2>&1 | tee results/pytest.txt
@@ -144,26 +144,11 @@ jobs:
           cat results/duree_graphe.json
 
       - name: Le graphe echoue bien quand un controle de qualite echoue
-        # Preuve que les controles sont reellement bloquants : on force une
-        # volumetrie impossible et on exige que la tache echoue.
+        # Preuve que les controles sont reellement bloquants : quatre situations
+        # anormales forcees, chacune doit lever et arreter le graphe.
         run: |
-          set +e
-          docker compose run --rm -e RADAR_DEPARTEMENT=34 airflow-cli \
-            python -c "
-          import sys
-          sys.path.insert(0, '/opt/airflow/src')
-          from radar.quality import controle_volumetrie, exiger, QualiteError
-          resultats = [controle_volumetrie(0, [80, 90, 85, 88, 92, 87])]
-          try:
-              exiger(resultats, 'preuve de blocage')
-          except QualiteError as err:
-              print('BLOCAGE CONFIRME :', err)
-              sys.exit(42)
-          sys.exit(0)
-          " 2>&1 | tee results/preuve_blocage.txt
-          code=${PIPESTATUS[0]}
-          set -e
-          grep -q "BLOCAGE CONFIRME" results/preuve_blocage.txt
+          set -o pipefail
+          docker compose run --rm airflow-cli             python /opt/airflow/scripts/preuve_blocage.py 2>&1 | tee results/preuve_blocage.txt
 
       - name: Deuxieme execution, pour prouver le rejeu idempotent
         run: |
