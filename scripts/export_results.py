@@ -17,10 +17,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from radar.config import charger_config  # noqa: E402
-from radar.pipeline import lire_evenements, lire_indicateurs  # noqa: E402
-from radar.storage import lire_json, lister  # noqa: E402
-from radar.warehouse import charger_requetes, interroger  # noqa: E402
+from radar.config import charger_config
+from radar.pipeline import lire_evenements, lire_indicateurs
+from radar.storage import lire_json, lister
+from radar.warehouse import charger_requetes, interroger
 
 RACINE = Path(__file__).resolve().parents[1]
 SORTIE = RACINE / "results"

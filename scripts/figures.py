@@ -15,7 +15,7 @@ from pathlib import Path
 import matplotlib
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.pyplot as plt
 
 RACINE = Path(__file__).resolve().parents[1]
 RESULTATS = RACINE / "results"
@@ -162,7 +162,13 @@ def figure_controles(chemin: Path):
         ]
         for ligne in lignes
     ]
-    table = axe.table(cellText=corps, colLabels=entetes, loc="center", cellLoc="left", colWidths=[0.08, 0.26, 0.09, 0.09, 0.48])
+    table = axe.table(
+        cellText=corps,
+        colLabels=entetes,
+        loc="center",
+        cellLoc="left",
+        colWidths=[0.08, 0.26, 0.09, 0.09, 0.48],
+    )
     table.auto_set_font_size(False)
     table.set_fontsize(9.5)
     table.scale(1, 1.55)
