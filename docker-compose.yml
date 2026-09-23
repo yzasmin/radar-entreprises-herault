@@ -1,0 +1,157 @@
+# Pile complete du radar : Airflow (LocalExecutor + PostgreSQL) et LocalStack.
+#
+# `docker compose up -d` suffit sur une machine dont le moteur Docker
+# fonctionne. Les limites de memoire sont calibrees pour un poste de 8 Go et
+# desserrees en integration continue par des variables d'environnement.
+#
+# LocalStack emule S3. Pour basculer sur le vrai AWS, il n'y a rien a changer
+# ici : on retire AWS_ENDPOINT_URL et on fournit des identifiants (voir la
+# section « Bascule vers le vrai compte AWS » du README).
+
+x-airflow-commun: &airflow-commun
+  build:
+    context: .
+    dockerfile: docker/Dockerfile.airflow
+  image: radar-airflow:2.10.5
+  environment: &airflow-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-airflow}:${POSTGRES_PASSWORD:-airflow}@postgres:5432/${POSTGRES_DB:-airflow}
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Europe/Paris
+    AIRFLOW__CORE__PARALLELISM: "4"
+    AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: "2"
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "false"
+    AIRFLOW__LOGGING__LOGGING_LEVEL: INFO
+    PYTHONPATH: /opt/airflow/src
+    RADAR_SQL_DIR: /opt/airflow/sql
+    # --- Cible S3 -----------------------------------------------------------
+    # Emulation LocalStack tant que le compte AWS n'est pas ouvert.
+    # Les identifiants ci-dessous ne valent que pour LocalStack : ce ne sont pas
+    # des secrets, LocalStack accepte n'importe quelle paire.
+    AWS_ENDPOINT_URL: ${AWS_ENDPOINT_URL-http://localstack:4566}
+    AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-test}
+    AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-test}
+    AWS_REGION: ${AWS_REGION:-eu-west-3}
+    AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
+    # --- Parametres du radar ------------------------------------------------
+    RADAR_BUCKET: ${RADAR_BUCKET:-radar-entreprises-herault}
+    RADAR_PREFIXE: ${RADAR_PREFIXE:-radar}
+    RADAR_DEPARTEMENT: ${RADAR_DEPARTEMENT:-34}
+    RADAR_MOTEUR: ${RADAR_MOTEUR:-duckdb}
+    RADAR_GLUE_DB: ${RADAR_GLUE_DB:-radar_entreprises}
+    RADAR_ENRICHISSEMENT: ${RADAR_ENRICHISSEMENT:-1}
+    RADAR_MAX_SIRENS: ${RADAR_MAX_SIRENS:-400}
+    RADAR_RPS: ${RADAR_RPS:-5}
+  volumes:
+    - ./dags:/opt/airflow/dags:ro
+    - ./src:/opt/airflow/src:ro
+    - ./sql:/opt/airflow/sql:ro
+    - ./results:/opt/airflow/results
+    - airflow-logs:/opt/airflow/logs
+  depends_on:
+    postgres:
+      condition: service_healthy
+    localstack:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-airflow}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-airflow}
+      POSTGRES_DB: ${POSTGRES_DB:-airflow}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-airflow}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    mem_limit: ${POSTGRES_MEM_LIMIT:-512m}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  localstack:
+    # Edition communautaire : S3 est emule, Athena et Glue ne le sont pas.
+    # C'est assumé, la lecture de secours se fait avec DuckDB sur les memes Parquet.
+    image: localstack/localstack:3.8
+    environment:
+      SERVICES: s3
+      DEBUG: "0"
+      PERSISTENCE: "0"
+      AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
+    ports:
+      - "${LOCALSTACK_PORT:-4566}:4566"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:4566/_localstack/health | grep -q '\"s3\"'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    mem_limit: ${LOCALSTACK_MEM_LIMIT:-768m}
+
+  airflow-init:
+    <<: *airflow-commun
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        set -e
+        airflow db migrate
+        airflow users create --username "${AIRFLOW_ADMIN_USER:-admin}" \
+          --password "${AIRFLOW_ADMIN_PASSWORD:-change-moi}" \
+          --firstname Yasmina --lastname Saoud --role Admin --email admin@example.invalid || true
+        airflow dags reserialize || true
+    restart: "no"
+
+  airflow-scheduler:
+    <<: *airflow-commun
+    command: scheduler
+    restart: unless-stopped
+    mem_limit: ${AIRFLOW_MEM_LIMIT:-1500m}
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+
+  airflow-webserver:
+    <<: *airflow-commun
+    command: webserver
+    ports:
+      - "${AIRFLOW_PORT:-8080}:8080"
+    restart: unless-stopped
+    mem_limit: ${AIRFLOW_MEM_LIMIT:-1500m}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 45s
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+
+  # Service a la demande : `docker compose run --rm airflow-cli <commande>`.
+  # C'est lui qui execute `airflow dags test` en integration continue.
+  airflow-cli:
+    <<: *airflow-commun
+    profiles: ["cli"]
+    entrypoint: ["/usr/bin/dumb-init", "--", "/entrypoint"]
+    command: ["airflow", "version"]
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  airflow-logs:
