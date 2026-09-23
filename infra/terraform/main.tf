@@ -25,7 +25,7 @@ data "aws_caller_identity" "courant" {}
 locals {
   compte = data.aws_caller_identity.courant.account_id
   # Un seau S3 est global : on suffixe par le compte pour eviter la collision de nom.
-  seau   = "${var.nom_seau}-${local.compte}"
+  seau = "${var.nom_seau}-${local.compte}"
 }
 
 # ---------------------------------------------------------------------------

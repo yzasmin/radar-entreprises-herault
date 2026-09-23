@@ -50,8 +50,11 @@ jobs:
       - name: format et validation (sans compte AWS, donc sans apply)
         working-directory: infra/terraform
         run: |
+          set -o pipefail
           mkdir -p ../../results
-          terraform fmt -check -recursive | tee ../../results/terraform_fmt.txt
+          # pipefail sinon le code de sortie de terraform fmt est masque par tee
+          # et le controle de format ne bloquerait rien.
+          terraform fmt -check -recursive -diff | tee ../../results/terraform_fmt.txt
           terraform init -backend=false
           terraform validate -no-color | tee ../../results/terraform_validate.txt
       - uses: actions/upload-artifact@v4
