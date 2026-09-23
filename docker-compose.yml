@@ -49,7 +49,6 @@ x-airflow-commun: &airflow-commun
     - ./sql:/opt/airflow/sql:ro
     - ./tests:/opt/airflow/tests:ro
     - ./scripts:/opt/airflow/scripts:ro
-    - ./results:/opt/airflow/results
     - airflow-logs:/opt/airflow/logs
   depends_on:
     postgres:
