@@ -1,0 +1,22 @@
+{
+  "region": "eu-north-1",
+  "tarifs_usd": {
+    "stockage_go_mois": 0.023,
+    "put_1000": 0.005,
+    "get_1000": 0.0004
+  },
+  "tarifs_releves_le": "2026-09-24",
+  "octets_stockes": 17592164,
+  "go_stockes": 0.017592,
+  "nb_objets": 148,
+  "cout_stockage_usd_par_mois": 0.000405,
+  "cout_ecritures_usd_par_mois": 0.00088,
+  "cout_lectures_usd_par_mois": 0.000176,
+  "hypothese": "22 parutions par mois, 8 objets ecrits et 20 objets relus par parution",
+  "parutions_par_mois": 22,
+  "parutions_par_an": 250,
+  "cout_total_usd_par_mois": 0.001461,
+  "octets_par_parution": 1599288,
+  "go_apres_un_an": 0.3998,
+  "cout_stockage_usd_mois_apres_un_an": 0.0092
+}

@@ -55,9 +55,12 @@ IGNORES = {
     "5432",
     "50000",
     "10000",
+    # Constantes documentees, pas des mesures : le SIREN de La Poste, exception
+    # a la cle de Luhn publiee par l'INSEE, et les numeros de version d'API.
+    "356000000",
 }
 
-MOTIF_NOMBRE = re.compile(r"(?<![\w.\-/])(\d[\d\s ]*(?:[.,]\d+)?)(?![\w/])")
+MOTIF_NOMBRE = re.compile(r"(?<![\w.\-])(\d[\d\s\u00a0]*(?:[.,]\d+)?)(?![\w])")
 
 
 def _normaliser(brut: str) -> str:
@@ -88,6 +91,14 @@ def _aplatir(valeur, sortie: set[str]) -> None:
         if isinstance(valeur, float) and 0 < valeur < 1:
             sortie.add(_normaliser(f"{valeur * 100:.2f}"))
             sortie.add(_normaliser(f"{valeur * 100:.1f}"))
+        # Un document arrondit ce qu'un fichier donne au chiffre pres, et convertit
+        # les octets en megaoctets ou en gigaoctets. Ces formes restent tracables.
+        for decimales in (1, 2, 3, 4):
+            sortie.add(_normaliser(f"{float(valeur):.{decimales}f}"))
+        for diviseur in (1_000, 1_000_000, 1_000_000_000):
+            if abs(valeur) >= diviseur:
+                for decimales in (1, 2, 3):
+                    sortie.add(_normaliser(f"{float(valeur) / diviseur:.{decimales}f}"))
     elif valeur is not None:
         sortie |= _nombres(str(valeur))
 

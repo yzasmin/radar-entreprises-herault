@@ -174,6 +174,8 @@ def main() -> int:
         "cout_ecritures_usd_par_mois": round(objets_par_jour * 22 * 0.005 / 1000, 6),
         "cout_lectures_usd_par_mois": round(lectures_par_jour * 22 * 0.0004 / 1000, 6),
         "hypothese": "22 parutions par mois, 8 objets ecrits et 20 objets relus par parution",
+        "parutions_par_mois": 22,
+        "parutions_par_an": 250,
     }
     cout["cout_total_usd_par_mois"] = round(
         cout["cout_stockage_usd_par_mois"] + cout["cout_ecritures_usd_par_mois"] + cout["cout_lectures_usd_par_mois"], 6
@@ -181,16 +183,70 @@ def main() -> int:
     # Projection a un an de collecte, au rythme mesure sur la fenetre traitee.
     octets_par_parution = volumetrie["octets_s3_total"] / max(len(partitions), 1)
     cout["octets_par_parution"] = round(octets_par_parution)
-    cout["go_apres_un_an"] = round(octets_par_parution * 250 / 1_000_000_000, 4)
+    cout["go_apres_un_an"] = round(octets_par_parution * cout["parutions_par_an"] / 1_000_000_000, 4)
     cout["cout_stockage_usd_mois_apres_un_an"] = round(cout["go_apres_un_an"] * 0.023, 4)
     _ecrire_json("cout_s3.json", cout)
 
-    # 6. Evenements du jour, anonymises sur rien : ce sont des annonces legales publiques.
+    # 6. Lectures metier publiees : chaque phrase chiffree du README et de la fiche
+    #    doit pouvoir se retrouver ici, y compris les rapports et les pourcentages.
+    par_commune: dict[str, dict[str, int]] = {}
+    par_secteur: dict[str, dict[str, int]] = {}
+    for ligne in cumul:
+        for index, cle in ((par_commune, ligne.get("nom_commune") or "commune inconnue"),
+                           (par_secteur, ligne.get("libelle_section_naf") or "secteur inconnu")):
+            panier = index.setdefault(cle, {})
+            for colonne, valeur in ligne.items():
+                if colonne.startswith("nb_") or colonne == "solde_net":
+                    panier[colonne] = panier.get(colonne, 0) + int(valeur or 0)
+    _ecrire_csv(
+        "fenetre_par_commune.csv",
+        [{"nom_commune": nom, **valeurs} for nom, valeurs in sorted(
+            par_commune.items(), key=lambda c: -c[1].get("nb_defaillances", 0))],
+    )
+    _ecrire_csv(
+        "fenetre_par_secteur.csv",
+        [{"libelle_section_naf": nom, **valeurs} for nom, valeurs in sorted(
+            par_secteur.items(), key=lambda c: -c[1].get("nb_defaillances", 0))],
+    )
+
+    defaillances_totales = resume.get("nb_defaillances", 0)
+    premiere_commune = max(par_commune.items(), key=lambda c: c[1].get("nb_defaillances", 0))
+    lectures = {
+        "jour_fin": jour,
+        "fenetre_jours": args.jours_fenetre,
+        "commune_la_plus_touchee": premiere_commune[0],
+        "defaillances_commune_la_plus_touchee": premiere_commune[1].get("nb_defaillances", 0),
+        "creations_commune_la_plus_touchee": premiere_commune[1].get("nb_creations", 0),
+        "defaillances_total": defaillances_totales,
+        "part_defaillances_premiere_commune_pct": round(
+            100 * premiere_commune[1].get("nb_defaillances", 0) / defaillances_totales, 1
+        )
+        if defaillances_totales
+        else None,
+        "secteurs_par_defaillances": [
+            {
+                "secteur": nom,
+                "defaillances": valeurs.get("nb_defaillances", 0),
+                "creations": valeurs.get("nb_creations", 0),
+            }
+            for nom, valeurs in sorted(par_secteur.items(), key=lambda c: -c[1].get("nb_defaillances", 0))[:5]
+        ],
+        "transferts_fenetre": resume.get("nb_transferts", 0),
+        "creations_fenetre": resume.get("nb_creations", 0),
+        "immatriculations_fenetre": resume.get("nb_immatriculations", 0),
+        "surestimation_si_famille_brute_pct": round(
+            100 * resume.get("nb_transferts", 0) / resume.get("nb_creations", 1), 1
+        ),
+    }
+    _ecrire_json("lectures_metier.json", lectures)
+
+    # 7. Evenements du jour, anonymises sur rien : ce sont des annonces legales publiques.
     _ecrire_csv("evenements_du_jour.csv", evenements)
 
     print(json.dumps(volumetrie, ensure_ascii=False, indent=2))
     print(json.dumps(resume, ensure_ascii=False, indent=2))
     print(json.dumps(cout, ensure_ascii=False, indent=2))
+    print(json.dumps(lectures, ensure_ascii=False, indent=2))
     print(f"\n{len(list(SORTIE.glob('*')))} fichiers ecrits dans results/")
     return 0
 

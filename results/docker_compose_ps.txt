@@ -1,5 +1,0 @@
-NAME                                            IMAGE                       COMMAND                  SERVICE             CREATED          STATUS                    PORTS
-radar-entreprises-herault-airflow-scheduler-1   radar-airflow:2.10.5        "/usr/bin/dumb-init …"   airflow-scheduler   16 minutes ago   Up 15 minutes             8080/tcp
-radar-entreprises-herault-airflow-webserver-1   radar-airflow:2.10.5        "/usr/bin/dumb-init …"   airflow-webserver   16 minutes ago   Up 15 minutes (healthy)   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
-radar-entreprises-herault-localstack-1          localstack/localstack:3.8   "docker-entrypoint.sh"   localstack          16 minutes ago   Up 16 minutes (healthy)   4510-4559/tcp, 5678/tcp, 0.0.0.0:4566->4566/tcp, [::]:4566->4566/tcp
-radar-entreprises-herault-postgres-1            postgres:16-alpine          "docker-entrypoint.s…"   postgres            16 minutes ago   Up 16 minutes (healthy)   5432/tcp

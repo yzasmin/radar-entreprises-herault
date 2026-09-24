@@ -1,0 +1,35 @@
+ Container radar-entreprises-herault-localstack-1  Running
+ Container radar-entreprises-herault-postgres-1  Running
+
+......F.                                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_l_ordre_des_taches_place_les_controles_avant_la_publication _______
+
+dag = <DAG: radar_entreprises_herault>
+
+    def test_l_ordre_des_taches_place_les_controles_avant_la_publication(dag):
+        attendu = [
+            "preparer",
+            "extraire_bodacc",
+            "enrichir_sirene",
+            "construire_argent",
+            "controles_qualite_argent",
+            "construire_or",
+            "controles_qualite_or",
+            "publier_indicateurs",
+        ]
+>       assert sorted(t.task_id for t in dag.tasks) == sorted(attendu)
+E       AssertionError: assert ['construire_..._bodacc', ...] == ['construire_..._bodacc', ...]
+E         
+E         At index 0 diff: 'construire_gold' != 'construire_argent'
+E         Use -v to get more diff
+
+tests/test_sql_et_dag.py:103: AssertionError
+---------------------------- Captured stdout setup -----------------------------
+[2026-09-24T01:21:44.027+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags
+------------------------------ Captured log setup ------------------------------
+INFO     airflow.models.dagbag.DagBag:dagbag.py:588 Filling up the DagBag from /opt/airflow/dags
+=========================== short test summary info ============================
+FAILED tests/test_sql_et_dag.py::test_l_ordre_des_taches_place_les_controles_avant_la_publication
+1 failed, 7 passed in 2.25s
+

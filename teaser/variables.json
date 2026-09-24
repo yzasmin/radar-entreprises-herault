@@ -1,0 +1,14 @@
+{
+  "projectNumber": "07",
+  "title": "Radar économique de l'Hérault",
+  "category": "Orchestration et cloud",
+  "stack1": "Airflow",
+  "stack2": "Amazon S3",
+  "stack3": "DuckDB",
+  "metricLabel": "Défaillances repérées sur 11 parutions",
+  "metricValue": "93",
+  "metric2Label": "Contrôles de qualité, dont 13 bloquants",
+  "metric2Value": "15",
+  "accent": "#F2B84B",
+  "figureCaption": "Ouvertures et défaillances cumulées par commune, 11 parutions du BODACC"
+}

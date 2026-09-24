@@ -128,7 +128,7 @@
     "alertes": 0,
     "controles": [
       {
-        "nom": "grain_gold_unique",
+        "nom": "grain_or_unique",
         "reussi": true,
         "bloquant": true,
         "attendu": "une seule ligne par (jour, commune, section NAF)",
@@ -139,7 +139,7 @@
         "statut": "OK"
       },
       {
-        "nom": "conservation_silver_vers_gold",
+        "nom": "conservation_argent_vers_or",
         "reussi": true,
         "bloquant": true,
         "attendu": "475 evenements agreges",

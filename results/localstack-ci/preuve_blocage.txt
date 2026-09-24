@@ -1,16 +1,16 @@
- Container radar-entreprises-herault-postgres-1  Running
  Container radar-entreprises-herault-localstack-1  Running
+ Container radar-entreprises-herault-postgres-1  Running
 
 
 Controles de qualite : volumetrie effondree
-+--------+--------------------------+--------------------------------------------------------------+------------+
-| statut | controle                 | attendu                                                      | observe    |
-+--------+--------------------------+--------------------------------------------------------------+------------+
-| ECHEC  | volumetrie_dans_la_norme | entre 22 et 350 annonces (mediane 88 sur 6 jours, facteur 4) | 0 annonces |
-+--------+--------------------------+--------------------------------------------------------------+------------+
++--------+--------------------------+--------------------+---------------------------------------------------+
+| statut | controle                 | attendu            | observe                                           |
++--------+--------------------------+--------------------+---------------------------------------------------+
+| ECHEC  | volumetrie_dans_la_norme | au moins 1 annonce | 0 annonce(s), historique trop court pour calibrer |
++--------+--------------------------+--------------------+---------------------------------------------------+
 1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
 
-BLOCAGE CONFIRME [volumetrie effondree] : 1 controle(s) bloquant(s) en echec a l'etape volumetrie effondree : volumetrie_dans_la_norme (attendu entre 22 et 350 annonces (mediane 88 sur 6 jours, facteur 4), observe 0 annonces)
+BLOCAGE CONFIRME [volumetrie effondree] : 1 controle(s) bloquant(s) en echec a l'etape volumetrie effondree : volumetrie_dans_la_norme (attendu au moins 1 annonce, observe 0 annonce(s), historique trop court pour calibrer)
 
 
 Controles de qualite : source gelee depuis sept semaines

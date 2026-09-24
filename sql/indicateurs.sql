@@ -100,7 +100,7 @@ WHERE date_parution = '{jour}'
   AND type_evenement = 'vente_fonds'
 ORDER BY montant_vente_eur DESC NULLS LAST, denomination ASC;
 
--- nom: controle_croise_argent_or
+-- nom: controle_croise_silver_gold
 SELECT
     (SELECT COUNT(*) FROM evenements WHERE date_parution = '{jour}')             AS lignes_argent,
     (SELECT SUM(nb_evenements) FROM indicateurs WHERE date_parution = '{jour}')  AS evenements_or,

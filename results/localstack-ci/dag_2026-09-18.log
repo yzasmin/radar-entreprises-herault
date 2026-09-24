@@ -1,0 +1,200 @@
+[2026-09-24T01:55:42.255+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=preparer, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015542
+[2026-09-24T01:55:42.266+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=preparer map_index=-1
+[2026-09-24T01:55:42.278+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=extraire_bodacc map_index=-1
+[2026-09-24T01:55:42.279+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.extraire_bodacc manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:55:42,294] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:55:42.294+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:55:42.294+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T01:55:45.548+0000] {extract.py:89} INFO - BODACC 2026-09-18 departement 34 : 324 annonces
+{
+  "jour": "2026-09-18",
+  "nb_annonces": 324,
+  "total_annonce_par_la_source": 324,
+  "octets_bronze": 635157,
+  "cle_bronze": "radar/bronze/bodacc/date_parution=2026-09-18/annonces.json",
+  "derniere_parution_source": "2026-09-23",
+  "extrait_le": "2026-09-24T01:55:46+00:00"
+}
+[2026-09-24 01:55:46,574] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_annonces': 324, 'total_annonce_par_la_source': 324, 'octets_bronze': 635157, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-18/annonces.json', 'derniere_parution_source': '2026-09-23', 'historique_volumetrie': [440, 725, 4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354], 'extrait_le': '2026-09-24T01:55:46+00:00'}
+[2026-09-24T01:55:46.574+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_annonces': 324, 'total_annonce_par_la_source': 324, 'octets_bronze': 635157, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-18/annonces.json', 'derniere_parution_source': '2026-09-23', 'historique_volumetrie': [440, 725, 4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354], 'extrait_le': '2026-09-24T01:55:46+00:00'}
+[2026-09-24T01:55:46.579+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:55:46.579+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=extraire_bodacc, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015546
+[2026-09-24T01:55:46.584+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=extraire_bodacc map_index=-1
+[2026-09-24T01:55:46.594+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=enrichir_sirene map_index=-1
+[2026-09-24T01:55:46.594+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.enrichir_sirene manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:55:46,608] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:55:46.608+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:55:46.608+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T01:55:50.520+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T01:55:51.297+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T01:55:54.796+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T01:55:57.301+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T01:56:10.701+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T01:56:50.920+0000] {extract.py:206} INFO - enrichissement : 321 fiches pour 321 SIREN demandes en 64.3 s (5.0 req/s)
+{
+  "jour": "2026-09-18",
+  "nb_sirens_distincts": 321,
+  "nb_sirens_demandes": 321,
+  "nb_fiches_obtenues": 321,
+  "enrichissement_actif": true,
+  "taux_couverture": 1.0
+}
+[2026-09-24 01:56:50,948] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_sirens_distincts': 321, 'nb_sirens_demandes': 321, 'nb_fiches_obtenues': 321, 'enrichissement_actif': True, 'taux_couverture': 1.0}
+[2026-09-24T01:56:50.948+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_sirens_distincts': 321, 'nb_sirens_demandes': 321, 'nb_fiches_obtenues': 321, 'enrichissement_actif': True, 'taux_couverture': 1.0}
+[2026-09-24T01:56:50.953+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:50.953+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=enrichir_sirene, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015650
+[2026-09-24T01:56:50.958+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=enrichir_sirene map_index=-1
+[2026-09-24T01:56:50.966+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_silver map_index=-1
+[2026-09-24T01:56:50.966+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_silver manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:56:50,979] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:50.979+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:50.979+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T01:56:51.984+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/silver/evenements/date_parution=2026-09-18/evenements.parquet (47154 octets, 324 lignes)
+{
+  "jour": "2026-09-18",
+  "nb_annonces_bronze": 324,
+  "nb_evenements_silver": 324,
+  "nb_doublons_ecartes": 0,
+  "octets_parquet": 47154,
+  "cle_silver": "radar/silver/evenements/date_parution=2026-09-18/evenements.parquet"
+}
+[2026-09-24 01:56:51,986] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_annonces_bronze': 324, 'nb_evenements_silver': 324, 'nb_doublons_ecartes': 0, 'octets_parquet': 47154, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-18/evenements.parquet'}
+[2026-09-24T01:56:51.986+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_annonces_bronze': 324, 'nb_evenements_silver': 324, 'nb_doublons_ecartes': 0, 'octets_parquet': 47154, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-18/evenements.parquet'}
+[2026-09-24T01:56:51.990+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:51.991+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_silver, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015651
+[2026-09-24T01:56:51.995+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_silver map_index=-1
+[2026-09-24T01:56:52.004+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_silver map_index=-1
+[2026-09-24T01:56:52.004+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_silver manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:56:52,017] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.017+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.018+0000] {taskinstance.py:732} INFO - ::endgroup::
+
+Controles de qualite : couche silver
++--------+------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------+
+| statut | controle                           | attendu                                                                              | observe                                           |
++--------+------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------+
+| OK     | completude_extraction              | 324 annonces, soit le total annonce par l'API pour ce jour                           | 324 annonces ecrites en bronze                    |
+| OK     | unicite_id_annonce                 | aucun identifiant d'annonce en double                                                | 0 identifiant(s) en double                        |
+| OK     | cles_non_nulles                    | id_annonce et date_parution toujours renseignes                                      | 0 ligne(s) incompletes                            |
+| OK     | type_evenement_dans_le_vocabulaire | types parmi 14 valeurs connues                                                       | 0 type(s) hors vocabulaire                        |
+| OK     | partition_homogene                 | toutes les lignes portent la date de parution 2026-09-18                             | 0 autre(s) date(s) dans la partition              |
+| OK     | perimetre_departemental            | tous les codes commune commencent par 34                                             | 0 ligne(s) hors perimetre                         |
+| OK     | volumetrie_dans_la_norme           | entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5) | 324 annonces                                      |
+| OK     | fraicheur_source                   | derniere parution a moins de 5 jours de la date traitee                              | -5 jour(s) d'ecart (derniere parution 2026-09-23) |
+| OK     | rapprochement_communes             | au moins 95% des annonces rattachees a une commune du referentiel                    | 99.38% (322/324)                                  |
+| OK     | presence_siren                     | au moins 90% des annonces portent un SIREN valide (cle de Luhn)                      | 99.07% (321/324)                                  |
++--------+------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------+
+10 controles : 10 OK, 0 alerte(s), 0 echec(s) bloquant(s)
+
+[2026-09-24 01:56:52,063] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "324 annonces, soit le total annonce par l'API pour ce jour", 'observe': '324 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-18', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '324 annonces', 'detail': {'mediane': 433.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-5 jour(s) d'ecart (derniere parution 2026-09-23)", 'detail': {'ecart_jours': -5, 'derniere_parution': '2026-09-23'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.38% (322/324)', 'detail': {'taux': 0.9938}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '99.07% (321/324)', 'detail': {'taux': 0.9907}, 'statut': 'OK'}]}
+[2026-09-24T01:56:52.063+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "324 annonces, soit le total annonce par l'API pour ce jour", 'observe': '324 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-18', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '324 annonces', 'detail': {'mediane': 433.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-5 jour(s) d'ecart (derniere parution 2026-09-23)", 'detail': {'ecart_jours': -5, 'derniere_parution': '2026-09-23'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.38% (322/324)', 'detail': {'taux': 0.9938}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '99.07% (321/324)', 'detail': {'taux': 0.9907}, 'statut': 'OK'}]}
+[2026-09-24T01:56:52.068+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:52.068+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_silver, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015652
+[2026-09-24T01:56:52.073+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_silver map_index=-1
+[2026-09-24T01:56:52.081+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_gold map_index=-1
+[2026-09-24T01:56:52.081+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_gold manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:56:52,094] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.094+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.094+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T01:56:52.123+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/gold/indicateurs_commune_secteur/date_parution=2026-09-18/indicateurs.parquet (11710 octets, 187 lignes)
+{
+  "jour": "2026-09-18",
+  "nb_lignes_gold": 187,
+  "nb_signaux": 46,
+  "octets_parquet": 11710
+}
+[2026-09-24 01:56:52,132] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_lignes_gold': 187, 'nb_signaux': 46, 'octets_parquet': 11710}
+[2026-09-24T01:56:52.132+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-18', 'nb_lignes_gold': 187, 'nb_signaux': 46, 'octets_parquet': 11710}
+[2026-09-24T01:56:52.136+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:52.137+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_gold, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015652
+[2026-09-24T01:56:52.141+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_gold map_index=-1
+[2026-09-24T01:56:52.149+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_gold map_index=-1
+[2026-09-24T01:56:52.149+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_gold manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:56:52,162] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.162+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.162+0000] {taskinstance.py:732} INFO - ::endgroup::
+
+Controles de qualite : couche gold
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+| statut | controle                    | attendu                                                              | observe                          |
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+| OK     | grain_or_unique             | une seule ligne par (jour, commune, section NAF)                     | 0 cle(s) en double               |
+| OK     | conservation_argent_vers_or | 324 evenements agreges                                               | 324 evenements dans la couche or |
+| OK     | coherence_solde_net         | solde_net = creations + immatriculations - radiations - liquidations | 0 ligne(s) incoherentes          |
+| OK     | compteurs_positifs          | tous les compteurs nb_* sont positifs ou nuls                        | 0 valeur(s) negatives            |
+| OK     | couverture_naf              | au moins 50% des evenements rattaches a une section NAF              | 96.60% (313/324)                 |
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+5 controles : 5 OK, 0 alerte(s), 0 echec(s) bloquant(s)
+
+[2026-09-24 01:56:52,199] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_or_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_argent_vers_or', 'reussi': True, 'bloquant': True, 'attendu': '324 evenements agreges', 'observe': '324 evenements dans la couche or', 'detail': {'argent': 324, 'or_': 324}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '96.60% (313/324)', 'detail': {'taux': 0.966}, 'statut': 'OK'}]}
+[2026-09-24T01:56:52.199+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_or_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_argent_vers_or', 'reussi': True, 'bloquant': True, 'attendu': '324 evenements agreges', 'observe': '324 evenements dans la couche or', 'detail': {'argent': 324, 'or_': 324}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '96.60% (313/324)', 'detail': {'taux': 0.966}, 'statut': 'OK'}]}
+[2026-09-24T01:56:52.203+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:52.204+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_gold, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015652
+[2026-09-24T01:56:52.208+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_gold map_index=-1
+[2026-09-24T01:56:52.215+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=publier_indicateurs map_index=-1
+[2026-09-24T01:56:52.215+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.publier_indicateurs manual__2026-09-18T00:00:00+02:00 [scheduled]>
+[2026-09-24 01:56:52,228] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.228+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T00:00:00+02:00'
+[2026-09-24T01:56:52.229+0000] {taskinstance.py:732} INFO - ::endgroup::
+{
+  "nb_evenements": 324,
+  "nb_lignes_or": 187,
+  "nb_communes_touchees": 80,
+  "nb_sans_commune": 2,
+  "taux_rapprochement_commune": 0.9938,
+  "nb_avec_siren": 321,
+  "nb_avec_naf": 313,
+  "par_type": {
+    "autre_jugement": 17,
+    "cloture_procedure": 25,
+    "creation": 37,
+    "depot_comptes": 114,
+    "liquidation": 14,
+    "modification": 33,
+    "radiation": 43,
+    "redressement": 15,
+    "transfert": 21,
+    "vente_fonds": 5
+  },
+  "par_section": {
+    "A": 4,
+    "C": 12,
+    "D": 3,
+    "E": 4,
+    "F": 29,
+    "G": 60,
+    "H": 17,
+    "I": 31,
+    "J": 16,
+    "K": 15,
+    "L": 36,
+    "M": 34,
+    "N": 20,
+    "P": 9,
+    "Q": 7,
+    "R": 6,
+    "S": 10,
+    "Z": 11
+  },
+  "nb_defaillances": 29,
+  "nb_ouvertures": 37,
+  "solde_net": -20,
+  "nb_ventes_avec_montant": 5,
+  "montant_total_ventes_eur": 398000.0,
+  "jour": "2026-09-18",
+  "execution_emulee": true,
+  "moteur_requete": "duckdb",
+  "requetes_entrepot": {
+    "top_communes": 80,
+    "par_section": 18,
+    "signaux_du_jour": 46,
+    "solde_net_departement": 1
+  }
+}
+[2026-09-24 01:56:52,730] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 324, 'nb_lignes_or': 187, 'nb_communes_touchees': 80, 'nb_sans_commune': 2, 'taux_rapprochement_commune': 0.9938, 'nb_avec_siren': 321, 'nb_avec_naf': 313, 'par_type': {'autre_jugement': 17, 'cloture_procedure': 25, 'creation': 37, 'depot_comptes': 114, 'liquidation': 14, 'modification': 33, 'radiation': 43, 'redressement': 15, 'transfert': 21, 'vente_fonds': 5}, 'par_section': {'A': 4, 'C': 12, 'D': 3, 'E': 4, 'F': 29, 'G': 60, 'H': 17, 'I': 31, 'J': 16, 'K': 15, 'L': 36, 'M': 34, 'N': 20, 'P': 9, 'Q': 7, 'R': 6, 'S': 10, 'Z': 11}, 'nb_defaillances': 29, 'nb_ouvertures': 37, 'solde_net': -20, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 398000.0, 'jour': '2026-09-18', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 80, 'par_section': 18, 'signaux_du_jour': 46, 'solde_net_departement': 1}}
+[2026-09-24T01:56:52.730+0000] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 324, 'nb_lignes_or': 187, 'nb_communes_touchees': 80, 'nb_sans_commune': 2, 'taux_rapprochement_commune': 0.9938, 'nb_avec_siren': 321, 'nb_avec_naf': 313, 'par_type': {'autre_jugement': 17, 'cloture_procedure': 25, 'creation': 37, 'depot_comptes': 114, 'liquidation': 14, 'modification': 33, 'radiation': 43, 'redressement': 15, 'transfert': 21, 'vente_fonds': 5}, 'par_section': {'A': 4, 'C': 12, 'D': 3, 'E': 4, 'F': 29, 'G': 60, 'H': 17, 'I': 31, 'J': 16, 'K': 15, 'L': 36, 'M': 34, 'N': 20, 'P': 9, 'Q': 7, 'R': 6, 'S': 10, 'Z': 11}, 'nb_defaillances': 29, 'nb_ouvertures': 37, 'solde_net': -20, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 398000.0, 'jour': '2026-09-18', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 80, 'par_section': 18, 'signaux_du_jour': 46, 'solde_net_departement': 1}}
+[2026-09-24T01:56:52.735+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T01:56:52.735+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=publier_indicateurs, run_id=manual__2026-09-18T00:00:00+02:00, execution_date=20260917T220000, start_date=, end_date=20260924T015652
+[2026-09-24T01:56:52.740+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=publier_indicateurs map_index=-1
+[2026-09-24T01:56:52.742+0000] {dagrun.py:854} INFO - Marking run <DagRun radar_entreprises_herault @ 2026-09-17 22:00:00+00:00: manual__2026-09-18T00:00:00+02:00, state:running, queued_at: None. externally triggered: False> successful
+[2026-09-24T01:56:52.743+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=radar_entreprises_herault, execution_date=2026-09-17 22:00:00+00:00, run_id=manual__2026-09-18T00:00:00+02:00, run_start_date=2026-09-17 22:00:00+00:00, run_end_date=2026-09-24 01:56:52.742960+00:00, run_duration=532612.74296, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-09-16 04:00:00+00:00, data_interval_end=2026-09-17 04:00:00+00:00, dag_hash=None

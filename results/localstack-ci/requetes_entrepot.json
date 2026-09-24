@@ -4,31 +4,31 @@
   "requetes": {
     "solde_net_departement": {
       "lignes": 1,
-      "duree_s": 2.222
+      "duree_s": 0.31
     },
     "top_communes": {
       "lignes": 117,
-      "duree_s": 1.328
+      "duree_s": 0.058
     },
     "par_section": {
       "lignes": 19,
-      "duree_s": 1.297
+      "duree_s": 0.059
     },
     "signaux_du_jour": {
       "lignes": 0,
-      "duree_s": 1.111
+      "duree_s": 0.057
     },
     "prospects_creations": {
       "lignes": 121,
-      "duree_s": 1.324
+      "duree_s": 0.06
     },
     "ventes_de_fonds": {
       "lignes": 8,
-      "duree_s": 1.44
+      "duree_s": 0.062
     },
-    "controle_croise_silver_gold": {
+    "controle_croise_argent_or": {
       "lignes": 1,
-      "duree_s": 1.492
+      "duree_s": 0.064
     }
   }
 }

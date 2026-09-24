@@ -41,7 +41,7 @@
   "nb_ventes_avec_montant": 5,
   "montant_total_ventes_eur": 1374086.0,
   "jour": "2026-09-22",
-  "execution_emulee": false,
+  "execution_emulee": true,
   "moteur_requete": "duckdb",
   "requetes_entrepot": {
     "top_communes": 117,

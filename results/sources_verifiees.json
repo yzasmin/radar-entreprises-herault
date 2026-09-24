@@ -1,0 +1,37 @@
+{
+  "releve_le": "2026-09-24",
+  "departement": "34",
+  "bodacc": {
+    "url": "https://bodacc-datadila.opendatasoft.com/api/explore/v2.1/catalog/datasets/annonces-commerciales/records",
+    "licence": "Licence Ouverte (FR-LO), producteur DILA",
+    "annonces_total": 50778718,
+    "annonces_departement": 1086632,
+    "derniere_parution_disponible": "2026-09-24",
+    "plafond_pagination": 10000
+  },
+  "recherche_entreprises": {
+    "url": "https://recherche-entreprises.api.gouv.fr/search",
+    "licence": "donnees SIRENE et RNE sous Licence Ouverte 2.0, code de l'API sous MIT",
+    "cle_requise": false,
+    "requetes_par_seconde": 7,
+    "total_results_pour_le_departement": 10000,
+    "note": "total_results est le plafond de pagination, pas un comptage d'etablissements"
+  },
+  "sirene_stock": {
+    "licence": "lov2",
+    "frequence": "monthly",
+    "derniere_modification": "2026-09-01T12:13:11.748000+00:00",
+    "stock_unite_legale_parquet_octets": 708557254,
+    "stock_etablissement_parquet_octets": 2210114710,
+    "verdict": "ecarte : mensuel, et trop lourd pour un poste de 8 Go"
+  },
+  "sirene_api_insee": {
+    "version": "3.11",
+    "code_http_sans_jeton": 401,
+    "verdict": "ecarte pour l'instant : demande un compte INSEE et une cle"
+  },
+  "geo_api_gouv": {
+    "licence": "Licence Ouverte",
+    "nb_communes_departement": 341
+  }
+}

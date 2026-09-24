@@ -23,7 +23,7 @@ REQUETES_ATTENDUES = {
     "signaux_du_jour",
     "prospects_creations",
     "ventes_de_fonds",
-    "controle_croise_argent_or",
+    "controle_croise_silver_gold",
 }
 
 

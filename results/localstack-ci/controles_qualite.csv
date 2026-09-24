@@ -9,8 +9,8 @@ silver,volumetrie_dans_la_norme,OK,True,"entre 5 et 1501 annonces (centiles 5 et
 silver,fraicheur_source,OK,True,derniere parution a moins de 5 jours de la date traitee,-1 jour(s) d'ecart (derniere parution 2026-09-23)
 silver,rapprochement_communes,OK,True,au moins 95% des annonces rattachees a une commune du referentiel,99.79% (474/475)
 silver,presence_siren,OK,False,au moins 90% des annonces portent un SIREN valide (cle de Luhn),100.00% (475/475)
-gold,grain_gold_unique,OK,True,"une seule ligne par (jour, commune, section NAF)",0 cle(s) en double
-gold,conservation_silver_vers_gold,OK,True,475 evenements agreges,475 evenements dans la couche or
+gold,grain_or_unique,OK,True,"une seule ligne par (jour, commune, section NAF)",0 cle(s) en double
+gold,conservation_argent_vers_or,OK,True,475 evenements agreges,475 evenements dans la couche or
 gold,coherence_solde_net,OK,True,solde_net = creations + immatriculations - radiations - liquidations,0 ligne(s) incoherentes
 gold,compteurs_positifs,OK,True,tous les compteurs nb_* sont positifs ou nuls,0 valeur(s) negatives
 gold,couverture_naf,OK,False,au moins 50% des evenements rattaches a une section NAF,97.47% (463/475)

@@ -1,0 +1,80 @@
+2026-09-24 03:23:24,938 INFO botocore.credentials Found credentials in environment variables.
+2026-09-24 03:23:30,323 INFO radar.extract BODACC 2026-09-16 departement 34 : 1 annonces
+2026-09-24 03:23:35,050 INFO radar.extract enrichissement : 1 fiches pour 1 SIREN demandes en 0.8 s (1.3 req/s)
+2026-09-24 03:23:39,044 INFO radar.storage ecrit s3://amzn-s3-seau/radar/silver/evenements/date_parution=2026-09-16/evenements.parquet (6813 octets, 1 lignes)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\33769\Desktop\Offre d'emploi\Portfolio\projets-data\radar-entreprises\src\radar\cli.py", line 110, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\33769\Desktop\Offre d'emploi\Portfolio\projets-data\radar-entreprises\src\radar\cli.py", line 105, in main
+    ETAPES[nom](args.jour, cfg)
+  File "C:\Users\33769\Desktop\Offre d'emploi\Portfolio\projets-data\radar-entreprises\src\radar\pipeline.py", line 227, in etape_controler_silver
+    rapport = quality.exiger(resultats, "couche silver")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\33769\Desktop\Offre d'emploi\Portfolio\projets-data\radar-entreprises\src\radar\quality.py", line 395, in exiger
+    raise QualiteError(f"{len(echecs)} controle(s) bloquant(s) en echec a l'etape {etape} : {details}")
+radar.quality.QualiteError: 1 controle(s) bloquant(s) en echec a l'etape couche silver : volumetrie_dans_la_norme (attendu entre 6 et 1501 annonces (centiles 5 et 95 de 60 jours : 11 et 1000, marges 2 et 1.5), observe 1 annonces)
+
+===== preparer (2026-09-16) =====
+{
+  "jour": "2026-09-16",
+  "endpoint": "https://s3.eu-north-1.amazonaws.com",
+  "execution_emulee": false,
+  "bucket": "amzn-s3-seau",
+  "seau_cree_par_le_graphe": false,
+  "nb_communes_referentiel": 341,
+  "departement": "34"
+}
+
+===== extraire (2026-09-16) =====
+{
+  "jour": "2026-09-16",
+  "nb_annonces": 1,
+  "total_annonce_par_la_source": 1,
+  "octets_bronze": 1640,
+  "cle_bronze": "radar/bronze/bodacc/date_parution=2026-09-16/annonces.json",
+  "derniere_parution_source": "2026-09-23",
+  "extrait_le": "2026-09-24T01:23:32+00:00"
+}
+
+===== enrichir (2026-09-16) =====
+{
+  "jour": "2026-09-16",
+  "nb_sirens_distincts": 1,
+  "nb_sirens_demandes": 1,
+  "nb_fiches_obtenues": 1,
+  "enrichissement_actif": true,
+  "taux_couverture": 1.0
+}
+
+===== silver (2026-09-16) =====
+{
+  "jour": "2026-09-16",
+  "nb_annonces_bronze": 1,
+  "nb_evenements_silver": 1,
+  "nb_doublons_ecartes": 0,
+  "octets_parquet": 6813,
+  "cle_silver": "radar/silver/evenements/date_parution=2026-09-16/evenements.parquet"
+}
+
+===== controler_silver (2026-09-16) =====
+
+Controles de qualite : couche silver
++--------+------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------+
+| statut | controle                           | attendu                                                                               | observe                                           |
++--------+------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------+
+| OK     | completude_extraction              | 1 annonces, soit le total annonce par l'API pour ce jour                              | 1 annonces ecrites en bronze                      |
+| OK     | unicite_id_annonce                 | aucun identifiant d'annonce en double                                                 | 0 identifiant(s) en double                        |
+| OK     | cles_non_nulles                    | id_annonce et date_parution toujours renseignes                                       | 0 ligne(s) incompletes                            |
+| OK     | type_evenement_dans_le_vocabulaire | types parmi 14 valeurs connues                                                        | 0 type(s) hors vocabulaire                        |
+| OK     | partition_homogene                 | toutes les lignes portent la date de parution 2026-09-16                              | 0 autre(s) date(s) dans la partition              |
+| OK     | perimetre_departemental            | tous les codes commune commencent par 34                                              | 0 ligne(s) hors perimetre                         |
+| ECHEC  | volumetrie_dans_la_norme           | entre 6 et 1501 annonces (centiles 5 et 95 de 60 jours : 11 et 1000, marges 2 et 1.5) | 1 annonces                                        |
+| OK     | fraicheur_source                   | derniere parution a moins de 5 jours de la date traitee                               | -7 jour(s) d'ecart (derniere parution 2026-09-23) |
+| OK     | rapprochement_communes             | au moins 95% des annonces rattachees a une commune du referentiel                     | 100.00% (1/1)                                     |
+| OK     | presence_siren                     | au moins 90% des annonces portent un SIREN valide (cle de Luhn)                       | 100.00% (1/1)                                     |
++--------+------------------------------------+---------------------------------------------------------------------------------------+---------------------------------------------------+
+10 controles : 9 OK, 0 alerte(s), 1 echec(s) bloquant(s)
+

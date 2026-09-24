@@ -1,0 +1,26 @@
+{
+  "jour_fin": "2026-09-22",
+  "fenetre_jours": 30,
+  "nb_partitions": 3,
+  "partitions_retenues": [
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-22"
+  ],
+  "nb_communes": 164,
+  "nb_couples_commune_secteur": 533,
+  "solde_net": 74,
+  "nb_creations": 234,
+  "nb_defaillances": 32,
+  "nb_depots_comptes": 454,
+  "nb_evenements": 1153,
+  "nb_immatriculations": 0,
+  "nb_liquidations": 17,
+  "nb_modifications": 156,
+  "nb_plans_cession": 0,
+  "nb_radiations": 143,
+  "nb_redressements": 15,
+  "nb_sauvegardes": 0,
+  "nb_transferts": 71,
+  "nb_ventes_fonds": 14
+}
