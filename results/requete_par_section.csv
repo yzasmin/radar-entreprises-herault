@@ -1,0 +1,20 @@
+section_naf,libelle_section_naf,creations,radiations,defaillances,evenements,solde_net
+Z,Secteur non renseigne,6,1,0,89,5
+G,"Commerce, reparation d'automobiles",32,16,0,87,16
+L,Activites immobilieres,17,6,0,52,11
+M,"Activites specialisees, scientifiques et techniques",10,2,0,41,8
+H,Transports et entreposage,21,8,0,34,13
+I,Hebergement et restauration,5,5,0,34,0
+F,Construction,1,4,0,28,-3
+J,Information et communication,13,3,0,28,10
+N,Services administratifs et de soutien,8,1,0,19,7
+C,Industrie manufacturiere,2,1,0,16,1
+S,Autres activites de services,1,2,0,14,-1
+K,Activites financieres et d'assurance,1,0,0,11,1
+D,Production et distribution d'energie,1,0,0,5,1
+Q,Sante humaine et action sociale,1,0,0,5,1
+P,Enseignement,1,2,0,4,-1
+A,"Agriculture, sylviculture et peche",0,2,0,3,-2
+E,"Eau, assainissement, dechets",0,0,0,2,0
+R,"Arts, spectacles et activites recreatives",1,0,0,2,1
+B,Industries extractives,0,0,0,1,0

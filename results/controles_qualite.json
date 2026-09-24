@@ -1,0 +1,175 @@
+{
+  "argent": {
+    "etape": "couche argent",
+    "total": 9,
+    "echecs_bloquants": 0,
+    "alertes": 0,
+    "controles": [
+      {
+        "nom": "unicite_id_annonce",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "aucun identifiant d'annonce en double",
+        "observe": "0 identifiant(s) en double",
+        "detail": {
+          "exemples": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "cles_non_nulles",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "id_annonce et date_parution toujours renseignes",
+        "observe": "0 ligne(s) incompletes",
+        "detail": {},
+        "statut": "OK"
+      },
+      {
+        "nom": "type_evenement_dans_le_vocabulaire",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "types parmi 14 valeurs connues",
+        "observe": "0 type(s) hors vocabulaire",
+        "detail": {
+          "inconnus": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "partition_homogene",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "toutes les lignes portent la date de parution 2026-09-22",
+        "observe": "0 autre(s) date(s) dans la partition",
+        "detail": {
+          "dates": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "perimetre_departemental",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "tous les codes commune commencent par 34",
+        "observe": "0 ligne(s) hors perimetre",
+        "detail": {
+          "exemples": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "volumetrie_dans_la_norme",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "entre 106 et 1700 annonces (mediane 425 sur 60 jours, facteur 4)",
+        "observe": "475 annonces",
+        "detail": {
+          "mediane": 425.0,
+          "borne_basse": 106.2,
+          "borne_haute": 1700.0,
+          "jours_historique": 60
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "fraicheur_source",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "derniere parution a moins de 5 jours de la date traitee",
+        "observe": "-1 jour(s) d'ecart (derniere parution 2026-09-23)",
+        "detail": {
+          "ecart_jours": -1,
+          "derniere_parution": "2026-09-23"
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "rapprochement_communes",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "au moins 95% des annonces rattachees a une commune du referentiel",
+        "observe": "99.79% (474/475)",
+        "detail": {
+          "taux": 0.9979
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "presence_siren",
+        "reussi": true,
+        "bloquant": false,
+        "attendu": "au moins 90% des annonces portent un SIREN valide (cle de Luhn)",
+        "observe": "100.00% (475/475)",
+        "detail": {
+          "taux": 1.0
+        },
+        "statut": "OK"
+      }
+    ]
+  },
+  "or": {
+    "etape": "couche or",
+    "total": 5,
+    "echecs_bloquants": 0,
+    "alertes": 0,
+    "controles": [
+      {
+        "nom": "grain_or_unique",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "une seule ligne par (jour, commune, section NAF)",
+        "observe": "0 cle(s) en double",
+        "detail": {
+          "exemples": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "conservation_argent_vers_or",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "475 evenements agreges",
+        "observe": "475 evenements dans la couche or",
+        "detail": {
+          "argent": 475,
+          "or_": 475
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "coherence_solde_net",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "solde_net = creations + immatriculations - radiations - liquidations",
+        "observe": "0 ligne(s) incoherentes",
+        "detail": {
+          "exemples": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "compteurs_positifs",
+        "reussi": true,
+        "bloquant": true,
+        "attendu": "tous les compteurs nb_* sont positifs ou nuls",
+        "observe": "0 valeur(s) negatives",
+        "detail": {
+          "exemples": []
+        },
+        "statut": "OK"
+      },
+      {
+        "nom": "couverture_naf",
+        "reussi": true,
+        "bloquant": false,
+        "attendu": "au moins 50% des evenements rattaches a une section NAF",
+        "observe": "81.26% (386/475)",
+        "detail": {
+          "taux": 0.8126
+        },
+        "statut": "OK"
+      }
+    ]
+  }
+}

@@ -131,8 +131,24 @@ def main() -> int:
     for partition in partitions:
         if partition >= debut_fenetre:
             toutes.extend(lire_indicateurs(cfg, partition))
+    cumul = fenetre_glissante(toutes, jour, args.jours_fenetre)
     _ecrire_csv("indicateurs_commune_secteur.csv", indicateurs)
-    _ecrire_csv("fenetre_glissante.csv", fenetre_glissante(toutes, jour, args.jours_fenetre))
+    _ecrire_csv("fenetre_glissante.csv", cumul)
+
+    # Resume de la fenetre : c'est lui qui porte les chiffres de risque, une
+    # journee seule pouvant ne contenir aucune procedure collective.
+    colonnes = sorted({colonne for ligne in cumul for colonne in ligne if colonne.startswith("nb_")})
+    resume = {
+        "jour_fin": jour,
+        "fenetre_jours": args.jours_fenetre,
+        "nb_partitions": len([p for p in partitions if p >= debut_fenetre]),
+        "partitions_retenues": [p for p in partitions if p >= debut_fenetre],
+        "nb_communes": len({ligne["code_commune"] for ligne in cumul if ligne["code_commune"]}),
+        "nb_couples_commune_secteur": len(cumul),
+        "solde_net": sum(int(ligne.get("solde_net") or 0) for ligne in cumul),
+        **{colonne: sum(int(ligne.get(colonne) or 0) for ligne in cumul) for colonne in colonnes},
+    }
+    _ecrire_json("resume_fenetre.json", resume)
     _ecrire_json(
         "partitions.json",
         {"jour": jour, "partitions_or": partitions, "fenetre_jours": args.jours_fenetre, "debut": debut_fenetre},
@@ -142,6 +158,7 @@ def main() -> int:
     _ecrire_csv("evenements_du_jour.csv", evenements)
 
     print(json.dumps(volumetrie, ensure_ascii=False, indent=2))
+    print(json.dumps(resume, ensure_ascii=False, indent=2))
     print(f"\n{len(list(SORTIE.glob('*')))} fichiers ecrits dans results/")
     return 0
 

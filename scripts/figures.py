@@ -56,6 +56,11 @@ def _lire_csv(nom: str) -> list[dict]:
         return list(csv.DictReader(fichier))
 
 
+def _lire_json(nom: str) -> dict:
+    chemin = RESULTATS / nom
+    return json.loads(chemin.read_text(encoding="utf-8")) if chemin.exists() else {}
+
+
 def _entier(valeur) -> int:
     try:
         return int(float(valeur))
@@ -211,6 +216,54 @@ def figure_signaux(jour: str, chemin: Path, haut: int = 14):
     return chemin
 
 
+def figure_fenetre(jour: str, chemin: Path, haut: int = 14):
+    """Fenetre glissante : defaillances cumulees par commune.
+
+    Une journee seule peut ne contenir aucune procedure collective. C'est la
+    fenetre, pas le jour, qui porte le signal de risque.
+    """
+    lignes = _lire_csv("fenetre_glissante.csv")
+    if not lignes:
+        return None
+    from collections import defaultdict
+
+    par_commune: dict[str, dict[str, int]] = defaultdict(lambda: {"def": 0, "rad": 0, "cre": 0})
+    for ligne in lignes:
+        nom = ligne.get("nom_commune") or "commune inconnue"
+        par_commune[nom]["def"] += _entier(ligne.get("nb_defaillances"))
+        par_commune[nom]["rad"] += _entier(ligne.get("nb_radiations"))
+        par_commune[nom]["cre"] += _entier(ligne.get("nb_creations")) + _entier(ligne.get("nb_immatriculations"))
+    classement = sorted(par_commune.items(), key=lambda couple: -couple[1]["def"])[:haut]
+    classement = [couple for couple in classement if couple[1]["def"] > 0][::-1]
+    if not classement:
+        return None
+
+    _style()
+    figure, axe = plt.subplots(figsize=(16, 9))
+    noms = [nom for nom, _ in classement]
+    defaillances = [valeurs["def"] for _, valeurs in classement]
+    creations = [valeurs["cre"] for _, valeurs in classement]
+    position = range(len(noms))
+    axe.barh([p + 0.19 for p in position], creations, height=0.36, color=VERT, label="Ouvertures")
+    axe.barh([p - 0.19 for p in position], defaillances, height=0.36, color=ROUGE, label="Defaillances")
+    axe.set_yticks(list(position))
+    axe.set_yticklabels(noms)
+    axe.set_xlabel("Annonces cumulees sur la fenetre")
+    fenetre = _lire_json("resume_fenetre.json")
+    parutions = fenetre.get("nb_partitions", "?")
+    titre = f"Herault : ouvertures et defaillances cumulees, {parutions} parutions jusqu'au {jour}"
+    axe.set_title(titre, color=TEXTE, pad=16)
+    axe.grid(axis="x", alpha=0.35)
+    axe.spines[["top", "right"]].set_visible(False)
+    legende = axe.legend(loc="lower right", frameon=False)
+    for texte in legende.get_texts():
+        texte.set_color(TEXTE)
+    figure.tight_layout()
+    figure.savefig(chemin, facecolor=FOND)
+    plt.close(figure)
+    return chemin
+
+
 def main() -> int:
     parseur = argparse.ArgumentParser()
     parseur.add_argument("--jour", required=True)
@@ -224,15 +277,18 @@ def main() -> int:
         ("secteurs.png", lambda chemin: figure_sections(args.jour, chemin)),
         ("controles-qualite.png", figure_controles),
         ("signaux.png", lambda chemin: figure_signaux(args.jour, chemin)),
+        ("fenetre-glissante.png", lambda chemin: figure_fenetre(args.jour, chemin)),
     ):
         resultat = fonction(FIGURES / nom)
         if resultat:
             produites.append(nom)
 
-    # Le teaser reprend la figure des communes, en 1600x900.
+    # Le teaser reprend la fenetre glissante quand elle existe (elle porte le
+    # signal de risque), sinon la figure du jour.
     teaser = Path(args.teaser)
     teaser.parent.mkdir(parents=True, exist_ok=True)
-    figure_communes(args.jour, teaser)
+    if figure_fenetre(args.jour, teaser) is None:
+        figure_communes(args.jour, teaser)
 
     print(json.dumps({"figures": produites, "teaser": str(teaser)}, ensure_ascii=False, indent=2))
     return 0

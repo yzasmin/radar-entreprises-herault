@@ -8,8 +8,9 @@ on le verifie explicitement au lieu de tronquer en silence.
 from __future__ import annotations
 
 import logging
+import threading
 import time
-from collections.abc import Iterator
+from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
 import requests
@@ -142,23 +143,48 @@ def communes_du_departement(cfg: Config, departement: str | None = None) -> list
     return reponse.json()
 
 
-def _fragments_siren(sirens: list[str], taille: int) -> Iterator[list[str]]:
-    for debut in range(0, len(sirens), taille):
-        yield sirens[debut : debut + taille]
+class Cadence:
+    """Limiteur de debit partage entre plusieurs fils d'execution.
+
+    L'API Recherche d'entreprises accepte 7 requetes par seconde et par adresse
+    IP. Une boucle sequentielle qui attend 1/5 de seconde entre deux appels ne
+    fait jamais 5 requetes par seconde : elle fait 1 / (0,2 + latence), soit
+    environ 1 par seconde en pratique. On separe donc les deux choses : plusieurs
+    fils attendent le reseau en parallele, et ce jeton d'entree garantit que le
+    debit global reste sous la limite annoncee.
+    """
+
+    def __init__(self, par_seconde: float) -> None:
+        self.intervalle = 1.0 / max(par_seconde, 0.1)
+        self._verrou = threading.Lock()
+        self._prochain = 0.0
+
+    def attendre(self) -> float:
+        """Bloque le temps qu'il faut, et renvoie la duree attendue."""
+        with self._verrou:
+            maintenant = time.monotonic()
+            depart = max(maintenant, self._prochain)
+            self._prochain = depart + self.intervalle
+        attente = depart - maintenant
+        if attente > 0:
+            time.sleep(attente)
+        return max(attente, 0.0)
 
 
 def enrichir_sirens(cfg: Config, sirens: list[str]) -> dict[str, dict[str, Any]]:
     """Fiche d'entreprise pour chaque SIREN, via l'API Recherche d'entreprises.
 
-    L'API accepte 7 requetes par seconde et par adresse IP : on reste en dessous.
-    Un SIREN introuvable (entreprise non diffusible) renvoie simplement une
-    absence, ce qui est un resultat et non une erreur.
+    Un SIREN introuvable (entreprise non diffusible, radiee du RCS) renvoie une
+    absence : c'est un resultat, pas une erreur, et le graphe continue sans.
     """
     fiches: dict[str, dict[str, Any]] = {}
     if not sirens:
         return fiches
-    pause = 1.0 / max(cfg.requetes_par_seconde, 0.5)
-    for siren in sirens[: cfg.max_sirens_enrichis]:
+    demandes = sirens[: cfg.max_sirens_enrichis]
+    cadence = Cadence(cfg.requetes_par_seconde)
+
+    def interroger(siren: str) -> tuple[str, dict[str, Any] | None]:
+        cadence.attendre()
         try:
             charge = _get(
                 cfg.url_recherche_entreprises,
@@ -167,12 +193,21 @@ def enrichir_sirens(cfg: Config, sirens: list[str]) -> dict[str, dict[str, Any]]
             )
         except ExtractionError as err:
             LOG.warning("enrichissement impossible pour %s : %s", siren, err)
-            time.sleep(pause)
-            continue
+            return siren, None
         resultats = charge.get("results") or []
-        trouve = next((r for r in resultats if r.get("siren") == siren), None)
-        if trouve:
-            fiches[siren] = trouve
-        time.sleep(pause)
-    LOG.info("enrichissement : %d fiches pour %d SIREN demandes", len(fiches), len(sirens))
+        return siren, next((r for r in resultats if r.get("siren") == siren), None)
+
+    debut = time.monotonic()
+    with ThreadPoolExecutor(max_workers=cfg.fils_enrichissement) as pool:
+        for siren, trouve in pool.map(interroger, demandes):
+            if trouve:
+                fiches[siren] = trouve
+    duree = time.monotonic() - debut
+    LOG.info(
+        "enrichissement : %d fiches pour %d SIREN demandes en %.1f s (%.1f req/s)",
+        len(fiches),
+        len(demandes),
+        duree,
+        len(demandes) / duree if duree else 0,
+    )
     return fiches

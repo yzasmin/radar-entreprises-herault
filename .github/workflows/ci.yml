@@ -69,7 +69,7 @@ jobs:
     # Desktop plante sur un socket perime). L'execution de reference a donc lieu
     # ici, sur un runner qui fournit Docker et Docker Compose.
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 70
     env:
       # Memoire desserree : le runner en a plus que le poste de 8 Go.
       AIRFLOW_MEM_LIMIT: 2500m
@@ -82,10 +82,13 @@ jobs:
       AWS_SECRET_ACCESS_KEY: test
       AWS_REGION: eu-west-3
       AWS_DEFAULT_REGION: eu-west-3
-      RADAR_BUCKET: radar-entreprises-herault
+      RADAR_BUCKET: amzn-s3-seau
       RADAR_PREFIXE: radar
       RADAR_DEPARTEMENT: "34"
       RADAR_MOTEUR: duckdb
+      # Jours de parution rejoues pour remplir la fenetre glissante. Le BODACC
+      # parait du mardi au samedi : les dimanches et lundis sont absents.
+      JOURS_HISTORIQUE: "2026-09-08 2026-09-09 2026-09-10 2026-09-11 2026-09-13 2026-09-15 2026-09-16 2026-09-17 2026-09-18 2026-09-20 2026-09-23"
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -156,9 +159,46 @@ jobs:
       - name: Deuxieme execution, pour prouver le rejeu idempotent
         run: |
           set -o pipefail
-          docker compose run --rm airflow-cli \
-            airflow dags test radar_entreprises_herault ${{ steps.date.outputs.jour }} 2>&1 \
-            | tee results/airflow_dags_test_rejeu.txt
+          docker compose run --rm airflow-cli             airflow dags test radar_entreprises_herault ${{ steps.date.outputs.jour }} 2>&1             | tee results/airflow_dags_test_rejeu.txt
+
+      - name: Rejeu des autres jours de parution, pour la fenetre glissante
+        # Volontairement tolerant : un jour peut echouer sur un controle de
+        # qualite, et c'est precisement ce que l'on veut voir. Le resultat de
+        # chaque jour est enregistre, reussite comme echec.
+        run: |
+          echo "[" > results/rejeu_historique.json
+          premier=1
+          for jour in $JOURS_HISTORIQUE; do
+            echo "::group::parution $jour"
+            debut=$(date +%s)
+            if docker compose run --rm airflow-cli                  airflow dags test radar_entreprises_herault "$jour" > "results/dag_$jour.log" 2>&1; then
+              etat="reussi"
+            else
+              etat="bloque"
+            fi
+            fin=$(date +%s)
+            # Les journaux d'Airflow pesent lourd : on ne garde que la fin utile.
+            tail -200 "results/dag_$jour.log" > "results/dag_$jour.tail" && mv "results/dag_$jour.tail" "results/dag_$jour.log"
+            tail -25 "results/dag_$jour.log"
+            echo "-> $jour : $etat en $((fin - debut)) s"
+            echo "::endgroup::"
+            [ $premier -eq 0 ] && echo "," >> results/rejeu_historique.json
+            premier=0
+            printf '  {"jour": "%s", "etat": "%s", "duree_s": %d}' "$jour" "$etat" "$((fin - debut))"               >> results/rejeu_historique.json
+          done
+          echo "" >> results/rejeu_historique.json
+          echo "]" >> results/rejeu_historique.json
+          cat results/rejeu_historique.json
+
+      - name: Motif de blocage des jours refuses
+        run: |
+          for fichier in results/dag_*.log; do
+            if grep -q "QualiteError" "$fichier"; then
+              echo "=== $fichier"
+              grep -m1 -A2 "QualiteError" "$fichier"
+            fi
+          done | tee results/motifs_blocage.txt
+          echo "(vide signifie : aucun jour bloque)"
 
       - name: Contenu du seau S3 emule
         run: |

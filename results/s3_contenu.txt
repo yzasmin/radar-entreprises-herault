@@ -1,0 +1,17 @@
+2026-09-23 20:41:46      72699 radar/argent/evenements/date_parution=2026-09-22/evenements.parquet
+2026-09-23 20:36:01        807 radar/bronze/bodacc/date_parution=2026-09-22/_meta.json
+2026-09-23 20:36:00     954123 radar/bronze/bodacc/date_parution=2026-09-22/annonces.json
+2026-09-23 20:41:45    1019548 radar/bronze/entreprises/date_parution=2026-09-22/fiches.json
+2026-09-23 20:35:57      78970 radar/bronze/referentiel/communes_34.json
+2026-09-23 20:41:46      13518 radar/or/indicateurs_commune_secteur/date_parution=2026-09-22/indicateurs.parquet
+2026-09-23 20:41:46          2 radar/or/signaux/date_parution=2026-09-22/signaux.json
+2026-09-23 20:41:47       3769 radar/publication/date_parution=2026-09-22/par_section.json
+2026-09-23 20:41:47          2 radar/publication/date_parution=2026-09-22/signaux_du_jour.json
+2026-09-23 20:41:47        254 radar/publication/date_parution=2026-09-22/solde_net_departement.json
+2026-09-23 20:41:47        964 radar/publication/date_parution=2026-09-22/synthese.json
+2026-09-23 20:41:47      24452 radar/publication/date_parution=2026-09-22/top_communes.json
+2026-09-23 20:41:46       2783 radar/qualite/date_parution=2026-09-22/controles_argent.json
+2026-09-23 20:41:46       1508 radar/qualite/date_parution=2026-09-22/controles_or.json
+
+Total Objects: 14
+   Total Size: 2173399

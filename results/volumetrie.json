@@ -1,0 +1,16 @@
+{
+  "jour": "2026-09-22",
+  "execution_emulee": true,
+  "moteur_requete": "duckdb",
+  "nb_annonces_bronze": 475,
+  "octets_bronze_json": 954123,
+  "nb_evenements_argent": 475,
+  "nb_lignes_or": 267,
+  "nb_objets_s3": 14,
+  "octets_s3_total": 2173399,
+  "octets_parquet_argent": 72699,
+  "octets_parquet_or": 13518,
+  "derniere_parution_source": "2026-09-23",
+  "extrait_le": "2026-09-23T20:36:01+00:00",
+  "compression_parquet_vs_json": 13.12
+}

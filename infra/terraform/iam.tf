@@ -15,7 +15,7 @@ data "aws_iam_policy_document" "radar_donnees" {
     sid       = "ListerLePrefixeDuProjet"
     effect    = "Allow"
     actions   = ["s3:ListBucket", "s3:GetBucketLocation"]
-    resources = [aws_s3_bucket.radar.arn]
+    resources = [local.seau_arn]
     condition {
       test     = "StringLike"
       variable = "s3:prefix"
@@ -33,7 +33,7 @@ data "aws_iam_policy_document" "radar_donnees" {
       "s3:DeleteObject",
       "s3:AbortMultipartUpload",
     ]
-    resources = ["${aws_s3_bucket.radar.arn}/${var.prefixe}/*"]
+    resources = ["${local.seau_arn}/${var.prefixe}/*"]
   }
 
   # 3. Athena : le seul workgroup du projet.
@@ -100,7 +100,7 @@ data "aws_iam_policy_document" "radar_refus" {
     sid       = "RefuserHorsDuPrefixe"
     effect    = "Deny"
     actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-    resources = ["${aws_s3_bucket.radar.arn}/*"]
+    resources = ["${local.seau_arn}/*"]
     condition {
       test     = "StringNotLike"
       variable = "s3:prefix"

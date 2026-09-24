@@ -35,13 +35,14 @@ x-airflow-commun: &airflow-commun
     AWS_REGION: ${AWS_REGION:-eu-west-3}
     AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
     # --- Parametres du radar ------------------------------------------------
-    RADAR_BUCKET: ${RADAR_BUCKET:-radar-entreprises-herault}
+    RADAR_BUCKET: ${RADAR_BUCKET:-amzn-s3-seau}
     RADAR_PREFIXE: ${RADAR_PREFIXE:-radar}
     RADAR_DEPARTEMENT: ${RADAR_DEPARTEMENT:-34}
     RADAR_MOTEUR: ${RADAR_MOTEUR:-duckdb}
     RADAR_GLUE_DB: ${RADAR_GLUE_DB:-radar_entreprises}
     RADAR_ENRICHISSEMENT: ${RADAR_ENRICHISSEMENT:-1}
-    RADAR_MAX_SIRENS: ${RADAR_MAX_SIRENS:-400}
+    RADAR_MAX_SIRENS: ${RADAR_MAX_SIRENS:-800}
+    RADAR_FILS: ${RADAR_FILS:-5}
     RADAR_RPS: ${RADAR_RPS:-5}
   volumes:
     - ./dags:/opt/airflow/dags:ro

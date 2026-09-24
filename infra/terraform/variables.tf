@@ -5,9 +5,15 @@ variable "region" {
 }
 
 variable "nom_seau" {
-  description = "Prefixe du nom du seau S3. L'identifiant du compte y est ajoute, un nom de seau etant global."
+  description = "Nom exact du compartiment S3. Un nom de compartiment est global : il doit etre unique sur tout AWS."
   type        = string
-  default     = "radar-entreprises-herault"
+  default     = "amzn-s3-seau"
+}
+
+variable "compartiment_existant" {
+  description = "Vrai si le compartiment a deja ete cree a la main dans la console. Terraform le lit alors au lieu de le creer."
+  type        = bool
+  default     = true
 }
 
 variable "prefixe" {

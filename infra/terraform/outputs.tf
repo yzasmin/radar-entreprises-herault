@@ -1,6 +1,6 @@
 output "seau" {
   description = "Nom du seau S3 a reporter dans RADAR_BUCKET."
-  value       = aws_s3_bucket.radar.bucket
+  value       = local.seau_nom
 }
 
 output "prefixe" {
@@ -31,7 +31,7 @@ output "politiques_attachees" {
 output "variables_a_exporter" {
   description = "Bloc pret a coller dans le fichier .env, apres creation de la cle d'acces."
   value = join("\n", [
-    "RADAR_BUCKET=${aws_s3_bucket.radar.bucket}",
+    "RADAR_BUCKET=${local.seau_nom}",
     "RADAR_PREFIXE=${var.prefixe}",
     "RADAR_GLUE_DB=${aws_glue_catalog_database.radar.name}",
     "RADAR_ATHENA_WORKGROUP=${aws_athena_workgroup.radar.name}",

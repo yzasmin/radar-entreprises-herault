@@ -22,24 +22,37 @@ provider "aws" {
 
 data "aws_caller_identity" "courant" {}
 
-locals {
-  compte = data.aws_caller_identity.courant.account_id
-  # Un seau S3 est global : on suffixe par le compte pour eviter la collision de nom.
-  seau = "${var.nom_seau}-${local.compte}"
-}
-
-# ---------------------------------------------------------------------------
-# Stockage : un seul seau, trois couches, plus les resultats Athena
-# ---------------------------------------------------------------------------
-
+# Le compartiment peut preexister : il a ete cree a la main dans la console avant
+# que l'infrastructure ne soit decrite. Deux cas, un seul nom.
+#  - compartiment_existant = true  : Terraform le lit, ne le cree pas, ne le detruit pas.
+#  - compartiment_existant = false : Terraform le cree entierement.
+# Pour passer du premier cas au second sans rien perdre :
+#   terraform import 'aws_s3_bucket.radar[0]' amzn-s3-seau
 resource "aws_s3_bucket" "radar" {
-  bucket        = local.seau
+  count         = var.compartiment_existant ? 0 : 1
+  bucket        = var.nom_seau
   force_destroy = var.autoriser_destruction
 }
 
+data "aws_s3_bucket" "radar" {
+  count  = var.compartiment_existant ? 1 : 0
+  bucket = var.nom_seau
+}
+
+locals {
+  compte    = data.aws_caller_identity.courant.account_id
+  seau_nom  = var.compartiment_existant ? data.aws_s3_bucket.radar[0].id : aws_s3_bucket.radar[0].id
+  seau_arn  = var.compartiment_existant ? data.aws_s3_bucket.radar[0].arn : aws_s3_bucket.radar[0].arn
+  racine_s3 = "s3://${local.seau_nom}/${var.prefixe}"
+}
+
+# ---------------------------------------------------------------------------
+# Reglages du compartiment : appliques dans les deux cas
+# ---------------------------------------------------------------------------
+
 # Aucun acces public, jamais : les quatre verrous sont poses explicitement.
 resource "aws_s3_bucket_public_access_block" "radar" {
-  bucket                  = aws_s3_bucket.radar.id
+  bucket                  = local.seau_nom
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
@@ -47,14 +60,14 @@ resource "aws_s3_bucket_public_access_block" "radar" {
 }
 
 resource "aws_s3_bucket_ownership_controls" "radar" {
-  bucket = aws_s3_bucket.radar.id
+  bucket = local.seau_nom
   rule {
     object_ownership = "BucketOwnerEnforced"
   }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "radar" {
-  bucket = aws_s3_bucket.radar.id
+  bucket = local.seau_nom
   rule {
     apply_server_side_encryption_by_default {
       sse_algorithm = "AES256"
@@ -64,7 +77,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "radar" {
 }
 
 resource "aws_s3_bucket_versioning" "radar" {
-  bucket = aws_s3_bucket.radar.id
+  bucket = local.seau_nom
   versioning_configuration {
     status = "Enabled"
   }
@@ -73,7 +86,7 @@ resource "aws_s3_bucket_versioning" "radar" {
 # Les resultats Athena et les versions anciennes ne servent qu'au debogage :
 # on les laisse expirer pour que le cout ne derive pas.
 resource "aws_s3_bucket_lifecycle_configuration" "radar" {
-  bucket = aws_s3_bucket.radar.id
+  bucket = local.seau_nom
 
   rule {
     id     = "expirer-resultats-athena"
@@ -119,7 +132,7 @@ resource "aws_athena_workgroup" "radar" {
     bytes_scanned_cutoff_per_query = var.octets_max_par_requete
 
     result_configuration {
-      output_location = "s3://${aws_s3_bucket.radar.bucket}/${var.prefixe}/athena-results/"
+      output_location = "${local.racine_s3}/athena-results/"
       encryption_configuration {
         encryption_option = "SSE_S3"
       }

@@ -35,7 +35,9 @@ def _bool_env(nom: str, defaut: bool) -> bool:
 class Config:
     """Parametres d'execution. Aucun secret n'est stocke ici, seulement lu."""
 
-    bucket: str = field(default_factory=lambda: os.environ.get("RADAR_BUCKET", "radar-entreprises-herault"))
+    # Nom du compartiment cible. Volontairement identique en emulation et sur le vrai
+    # compte : la bascule ne doit changer que l'adresse du service, jamais un chemin.
+    bucket: str = field(default_factory=lambda: os.environ.get("RADAR_BUCKET", "amzn-s3-seau"))
     prefixe: str = field(default_factory=lambda: os.environ.get("RADAR_PREFIXE", "radar"))
     region: str = field(default_factory=lambda: os.environ.get("AWS_REGION", "eu-west-3"))
     endpoint_url: str | None = field(
@@ -68,8 +70,11 @@ class Config:
 
     # Garde-fous.
     enrichissement_actif: bool = field(default_factory=lambda: _bool_env("RADAR_ENRICHISSEMENT", True))
-    max_sirens_enrichis: int = field(default_factory=lambda: int(os.environ.get("RADAR_MAX_SIRENS", "400")))
+    max_sirens_enrichis: int = field(default_factory=lambda: int(os.environ.get("RADAR_MAX_SIRENS", "800")))
     requetes_par_seconde: float = field(default_factory=lambda: float(os.environ.get("RADAR_RPS", "5")))
+    # Plusieurs fils attendent le reseau en parallele ; la cadence globale reste
+    # bornee par requetes_par_seconde, sous la limite de 7 par seconde de l'API.
+    fils_enrichissement: int = field(default_factory=lambda: int(os.environ.get("RADAR_FILS", "5")))
 
     @property
     def est_emule(self) -> bool:
