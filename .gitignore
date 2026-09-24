@@ -14,3 +14,4 @@ infra/terraform/*.tfstate.*
 infra/terraform/*.tfvars
 !infra/terraform/*.tfvars.example
 .DS_Store
+*.stackdump
