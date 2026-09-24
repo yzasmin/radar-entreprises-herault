@@ -36,13 +36,13 @@ BLOCAGE CONFIRME [annonce publiee deux fois] : 1 controle(s) bloquant(s) en eche
 
 
 Controles de qualite : evenements perdus entre argent et or
-+--------+-----------------------------+----------------------+--------------------------------+
-| statut | controle                    | attendu              | observe                        |
-+--------+-----------------------------+----------------------+--------------------------------+
-| ECHEC  | conservation_argent_vers_or | 2 evenements agreges | 1 evenements dans la couche or |
-+--------+-----------------------------+----------------------+--------------------------------+
++--------+-------------------------------+----------------------+--------------------------------+
+| statut | controle                      | attendu              | observe                        |
++--------+-------------------------------+----------------------+--------------------------------+
+| ECHEC  | conservation_silver_vers_gold | 2 evenements agreges | 1 evenements dans la couche or |
++--------+-------------------------------+----------------------+--------------------------------+
 1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
 
-BLOCAGE CONFIRME [evenements perdus entre argent et or] : 1 controle(s) bloquant(s) en echec a l'etape evenements perdus entre argent et or : conservation_argent_vers_or (attendu 2 evenements agreges, observe 1 evenements dans la couche or)
+BLOCAGE CONFIRME [evenements perdus entre argent et or] : 1 controle(s) bloquant(s) en echec a l'etape evenements perdus entre argent et or : conservation_silver_vers_gold (attendu 2 evenements agreges, observe 1 evenements dans la couche or)
 
 4 cas sur 4 ont bien arrete le graphe.

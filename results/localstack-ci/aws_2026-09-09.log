@@ -1,0 +1,136 @@
+2026-09-24 03:36:19,367 INFO botocore.credentials Found credentials in environment variables.
+2026-09-24 03:36:25,976 INFO radar.extract BODACC 2026-09-09 departement 34 : 101 annonces
+2026-09-24 03:36:55,373 INFO radar.extract enrichissement : 98 fiches pour 98 SIREN demandes en 25.0 s (3.9 req/s)
+2026-09-24 03:37:00,018 INFO radar.storage ecrit s3://amzn-s3-seau/radar/silver/evenements/date_parution=2026-09-09/evenements.parquet (14968 octets, 101 lignes)
+2026-09-24 03:37:04,432 INFO radar.storage ecrit s3://amzn-s3-seau/radar/gold/indicateurs_commune_secteur/date_parution=2026-09-09/indicateurs.parquet (8847 octets, 75 lignes)
+
+===== preparer (2026-09-09) =====
+{
+  "jour": "2026-09-09",
+  "endpoint": "https://s3.eu-north-1.amazonaws.com",
+  "execution_emulee": false,
+  "bucket": "amzn-s3-seau",
+  "seau_cree_par_le_graphe": false,
+  "nb_communes_referentiel": 341,
+  "departement": "34"
+}
+
+===== extraire (2026-09-09) =====
+{
+  "jour": "2026-09-09",
+  "nb_annonces": 101,
+  "total_annonce_par_la_source": 101,
+  "octets_bronze": 179499,
+  "cle_bronze": "radar/bronze/bodacc/date_parution=2026-09-09/annonces.json",
+  "derniere_parution_source": "2026-09-23",
+  "extrait_le": "2026-09-24T01:36:28+00:00"
+}
+
+===== enrichir (2026-09-09) =====
+{
+  "jour": "2026-09-09",
+  "nb_sirens_distincts": 98,
+  "nb_sirens_demandes": 98,
+  "nb_fiches_obtenues": 98,
+  "enrichissement_actif": true,
+  "taux_couverture": 1.0
+}
+
+===== silver (2026-09-09) =====
+{
+  "jour": "2026-09-09",
+  "nb_annonces_bronze": 101,
+  "nb_evenements_silver": 101,
+  "nb_doublons_ecartes": 0,
+  "octets_parquet": 14968,
+  "cle_silver": "radar/silver/evenements/date_parution=2026-09-09/evenements.parquet"
+}
+
+===== controler_silver (2026-09-09) =====
+
+Controles de qualite : couche silver
++--------+------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------+
+| statut | controle                           | attendu                                                                              | observe                                            |
++--------+------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------+
+| OK     | completude_extraction              | 101 annonces, soit le total annonce par l'API pour ce jour                           | 101 annonces ecrites en bronze                     |
+| OK     | unicite_id_annonce                 | aucun identifiant d'annonce en double                                                | 0 identifiant(s) en double                         |
+| OK     | cles_non_nulles                    | id_annonce et date_parution toujours renseignes                                      | 0 ligne(s) incompletes                             |
+| OK     | type_evenement_dans_le_vocabulaire | types parmi 14 valeurs connues                                                       | 0 type(s) hors vocabulaire                         |
+| OK     | partition_homogene                 | toutes les lignes portent la date de parution 2026-09-09                             | 0 autre(s) date(s) dans la partition               |
+| OK     | perimetre_departemental            | tous les codes commune commencent par 34                                             | 0 ligne(s) hors perimetre                          |
+| OK     | volumetrie_dans_la_norme           | entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5) | 101 annonces                                       |
+| OK     | fraicheur_source                   | derniere parution a moins de 5 jours de la date traitee                              | -14 jour(s) d'ecart (derniere parution 2026-09-23) |
+| OK     | rapprochement_communes             | au moins 95% des annonces rattachees a une commune du referentiel                    | 99.01% (100/101)                                   |
+| OK     | presence_siren                     | au moins 90% des annonces portent un SIREN valide (cle de Luhn)                      | 100.00% (101/101)                                  |
++--------+------------------------------------+--------------------------------------------------------------------------------------+----------------------------------------------------+
+10 controles : 10 OK, 0 alerte(s), 0 echec(s) bloquant(s)
+
+
+===== gold (2026-09-09) =====
+{
+  "jour": "2026-09-09",
+  "nb_lignes_gold": 75,
+  "nb_signaux": 0,
+  "octets_parquet": 8847
+}
+
+===== controler_gold (2026-09-09) =====
+
+Controles de qualite : couche gold
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+| statut | controle                    | attendu                                                              | observe                          |
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+| OK     | grain_or_unique             | une seule ligne par (jour, commune, section NAF)                     | 0 cle(s) en double               |
+| OK     | conservation_argent_vers_or | 101 evenements agreges                                               | 101 evenements dans la couche or |
+| OK     | coherence_solde_net         | solde_net = creations + immatriculations - radiations - liquidations | 0 ligne(s) incoherentes          |
+| OK     | compteurs_positifs          | tous les compteurs nb_* sont positifs ou nuls                        | 0 valeur(s) negatives            |
+| OK     | couverture_naf              | au moins 50% des evenements rattaches a une section NAF              | 99.01% (100/101)                 |
++--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
+5 controles : 5 OK, 0 alerte(s), 0 echec(s) bloquant(s)
+
+
+===== publier (2026-09-09) =====
+{
+  "nb_evenements": 101,
+  "nb_lignes_or": 75,
+  "nb_communes_touchees": 37,
+  "nb_sans_commune": 1,
+  "taux_rapprochement_commune": 0.9901,
+  "nb_avec_siren": 101,
+  "nb_avec_naf": 100,
+  "par_type": {
+    "depot_comptes": 101
+  },
+  "par_section": {
+    "C": 10,
+    "D": 3,
+    "F": 12,
+    "G": 10,
+    "H": 4,
+    "I": 4,
+    "J": 2,
+    "K": 15,
+    "L": 7,
+    "M": 18,
+    "N": 7,
+    "P": 3,
+    "Q": 1,
+    "R": 1,
+    "S": 3,
+    "Z": 1
+  },
+  "nb_defaillances": 0,
+  "nb_ouvertures": 0,
+  "solde_net": 0,
+  "nb_ventes_avec_montant": 0,
+  "montant_total_ventes_eur": null,
+  "jour": "2026-09-09",
+  "execution_emulee": false,
+  "moteur_requete": "duckdb",
+  "requetes_entrepot": {
+    "top_communes": 37,
+    "par_section": 16,
+    "signaux_du_jour": 0,
+    "solde_net_departement": 1
+  }
+}

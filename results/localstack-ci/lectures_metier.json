@@ -1,0 +1,40 @@
+{
+  "jour_fin": "2026-09-22",
+  "fenetre_jours": 30,
+  "commune_la_plus_touchee": "Montpellier",
+  "defaillances_commune_la_plus_touchee": 21,
+  "creations_commune_la_plus_touchee": 66,
+  "defaillances_total": 32,
+  "part_defaillances_premiere_commune_pct": 65.6,
+  "secteurs_par_defaillances": [
+    {
+      "secteur": "Secteur non renseigne",
+      "defaillances": 7,
+      "creations": 74
+    },
+    {
+      "secteur": "Construction",
+      "defaillances": 6,
+      "creations": 2
+    },
+    {
+      "secteur": "Hebergement et restauration",
+      "defaillances": 6,
+      "creations": 6
+    },
+    {
+      "secteur": "Commerce, reparation d'automobiles",
+      "defaillances": 5,
+      "creations": 37
+    },
+    {
+      "secteur": "Activites specialisees, scientifiques et techniques",
+      "defaillances": 2,
+      "creations": 10
+    }
+  ],
+  "transferts_fenetre": 71,
+  "creations_fenetre": 234,
+  "immatriculations_fenetre": 0,
+  "surestimation_si_famille_brute_pct": 30.3
+}

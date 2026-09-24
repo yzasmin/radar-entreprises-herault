@@ -189,6 +189,15 @@ Tableau complet dans `results/controles_qualite.csv`. Deux controles sont des **
 blocages : `presence_siren` et `couverture_naf`. Tous deux dependent d'une API tierce, dont la panne
 doit degrader la richesse des indicateurs, pas empecher de publier les comptes par commune.
 
+**Ce choix s'est verifie tout seul.** Sur la meme parution du 22 septembre, l'enrichissement a
+rattache **463 annonces sur 475** a une section NAF depuis le poste, mais seulement **330 sur 475**
+depuis le runner d'integration continue (`results/localstack-ci/synthese.json`). L'API Recherche
+d'entreprises limite ses appels par adresse IP, et un runner partage en obtient moins. Les comptes par
+commune sont identiques des deux cotes (117 communes, solde net +68) ; seule la ventilation par
+secteur se degrade, et la couche gold passe de 275 a 265 couples commune-secteur. Si `couverture_naf`
+avait ete bloquant, l'integration continue serait rouge pour une raison qui n'a rien a voir avec le
+code.
+
 **Preuve que les blocages bloquent** : `scripts/preuve_blocage.py` force quatre situations anormales,
 volumetrie effondree, source gelee, annonce publiee deux fois, evenements perdus entre silver et
 gold, et exige que les quatre levent. En integration continue, **4 cas sur 4** ont arrete le graphe
@@ -242,6 +251,25 @@ Parquet directement depuis le vrai S3 par-dessus Internet. Source : `results/req
 
 La premiere requete porte le cout d'ouverture de la connexion et du chargement de l'extension
 `httpfs` ; les suivantes tiennent sous 1,5 s, lecture reseau comprise.
+
+### Orchestration : ce que le run d'integration continue etablit
+
+Run [35980564289](https://github.com/yzasmin/radar-entreprises-herault/actions/runs/35980564289),
+contre LocalStack. Sorties conservees dans `results/localstack-ci/`.
+
+| Etape | Resultat |
+| --- | --- |
+| Chargement du graphe | Aucune erreur d'import, 8 taches, ordre verifie |
+| Tests du graphe dans le conteneur | 9 passes (`results/localstack-ci/pytest_airflow.txt`) |
+| `airflow dags test` sur le 22/09 | Reussi en 580 s (`results/localstack-ci/duree_graphe.json`) |
+| Deuxieme execution de la meme date | Reussie, partitions ecrasees et non empilees |
+| Preuve que les controles bloquent | 4 cas sur 4 ont arrete le graphe |
+| Rejeu de 3 autres parutions | 17/09 et 18/09 publiees, **16/09 refusee en 22 s** |
+
+Ces 22 secondes sont un resultat en soi. Avant correction, la meme parution refusee coutait
+**1 676 s** : les taches de controle heritaient des deux reprises et de l'attente exponentielle des
+taches reseau. Un echec de qualite etant deterministe, le rejouer ne fait qu'attendre. Les deux
+taches de controle sont depuis en `retries=0`, et un test verrouille cette propriete.
 
 ### Cout reel sur la facture AWS
 
@@ -460,7 +488,8 @@ radar-entreprises-herault/
 │   ├── verifier_chiffres.py         Verifie que chaque nombre publie existe dans results/
 │   └── bascule_aws.sh               Bascule vers le vrai compte, en une commande
 ├── tests/                           Transformations, qualite, S3 simule (moto), graphe Airflow
-├── results/                         Sorties chiffrees du run d'integration continue
+├── results/                         Sorties chiffrees de l'execution sur le vrai S3
+│   └── localstack-ci/               Sorties du run d'integration continue, preuve de l'orchestration
 ├── teaser/                          variables.json et figure 1600x900 du portfolio
 ├── docker/Dockerfile.airflow        Airflow 2.10.5 epingle, plus quatre dependances
 └── docker-compose.yml               Airflow LocalExecutor, PostgreSQL, LocalStack

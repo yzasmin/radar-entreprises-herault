@@ -1,0 +1,71 @@
+{
+  "cible": "vrai compartiment S3 amzn-s3-seau, region eu-north-1",
+  "emule": false,
+  "nb_parutions": 12,
+  "nb_reussies": 11,
+  "nb_bloquees": 1,
+  "duree_totale_s": 1371,
+  "duree_mediane_s": 136,
+  "parutions": [
+    {
+      "jour": "2026-09-08",
+      "etat": "reussi",
+      "duree_s": 138
+    },
+    {
+      "jour": "2026-09-09",
+      "etat": "reussi",
+      "duree_s": 62
+    },
+    {
+      "jour": "2026-09-10",
+      "etat": "reussi",
+      "duree_s": 86
+    },
+    {
+      "jour": "2026-09-11",
+      "etat": "reussi",
+      "duree_s": 142
+    },
+    {
+      "jour": "2026-09-13",
+      "etat": "reussi",
+      "duree_s": 120
+    },
+    {
+      "jour": "2026-09-15",
+      "etat": "reussi",
+      "duree_s": 222
+    },
+    {
+      "jour": "2026-09-16",
+      "etat": "bloque",
+      "duree_s": 19
+    },
+    {
+      "jour": "2026-09-17",
+      "etat": "reussi",
+      "duree_s": 139
+    },
+    {
+      "jour": "2026-09-18",
+      "etat": "reussi",
+      "duree_s": 136
+    },
+    {
+      "jour": "2026-09-20",
+      "etat": "reussi",
+      "duree_s": 92
+    },
+    {
+      "jour": "2026-09-22",
+      "etat": "reussi",
+      "duree_s": 160
+    },
+    {
+      "jour": "2026-09-23",
+      "etat": "reussi",
+      "duree_s": 55
+    }
+  ]
+}

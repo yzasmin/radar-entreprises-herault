@@ -1,20 +1,19 @@
 section_naf,libelle_section_naf,creations,radiations,defaillances,evenements,solde_net
-G,"Commerce, reparation d'automobiles",32,16,0,93,16
-L,Activites immobilieres,17,6,0,58,11
-M,"Activites specialisees, scientifiques et techniques",10,2,0,57,8
-I,Hebergement et restauration,5,5,0,44,0
-F,Construction,1,4,0,41,-3
-H,Transports et entreposage,21,8,0,35,13
-J,Information et communication,13,3,0,31,10
-N,Services administratifs et de soutien,8,1,0,23,7
-C,Industrie manufacturiere,2,1,0,18,1
-K,Activites financieres et d'assurance,1,0,0,16,1
-S,Autres activites de services,1,2,0,16,-1
-Z,Secteur non renseigne,6,1,0,12,5
-Q,Sante humaine et action sociale,1,0,0,9,1
-D,Production et distribution d'energie,1,0,0,8,1
+Z,Secteur non renseigne,35,12,0,145,23
+G,"Commerce, reparation d'automobiles",23,12,0,69,11
+M,"Activites specialisees, scientifiques et techniques",7,2,0,42,5
+L,Activites immobilieres,11,5,0,38,6
+I,Hebergement et restauration,5,4,0,30,1
+H,Transports et entreposage,18,7,0,28,11
+F,Construction,1,2,0,24,-1
+J,Information et communication,10,1,0,23,9
+N,Services administratifs et de soutien,3,1,0,15,2
+S,Autres activites de services,1,2,0,14,-1
+C,Industrie manufacturiere,2,1,0,12,1
+K,Activites financieres et d'assurance,1,0,0,12,1
+Q,Sante humaine et action sociale,1,0,0,7,1
+D,Production et distribution d'energie,1,0,0,5,1
 P,Enseignement,1,2,0,4,-1
-R,"Arts, spectacles et activites recreatives",1,0,0,4,1
-A,"Agriculture, sylviculture et peche",0,2,0,3,-2
+R,"Arts, spectacles et activites recreatives",1,0,0,3,1
+A,"Agriculture, sylviculture et peche",0,2,0,2,-2
 E,"Eau, assainissement, dechets",0,0,0,2,0
-B,Industries extractives,0,0,0,1,0

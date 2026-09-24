@@ -1,0 +1,16 @@
+etape,controle,statut,bloquant,attendu,observe
+silver,completude_extraction,OK,True,"475 annonces, soit le total annonce par l'API pour ce jour",475 annonces ecrites en bronze
+silver,unicite_id_annonce,OK,True,aucun identifiant d'annonce en double,0 identifiant(s) en double
+silver,cles_non_nulles,OK,True,id_annonce et date_parution toujours renseignes,0 ligne(s) incompletes
+silver,type_evenement_dans_le_vocabulaire,OK,True,types parmi 14 valeurs connues,0 type(s) hors vocabulaire
+silver,partition_homogene,OK,True,toutes les lignes portent la date de parution 2026-09-22,0 autre(s) date(s) dans la partition
+silver,perimetre_departemental,OK,True,tous les codes commune commencent par 34,0 ligne(s) hors perimetre
+silver,volumetrie_dans_la_norme,OK,True,"entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)",475 annonces
+silver,fraicheur_source,OK,True,derniere parution a moins de 5 jours de la date traitee,-1 jour(s) d'ecart (derniere parution 2026-09-23)
+silver,rapprochement_communes,OK,True,au moins 95% des annonces rattachees a une commune du referentiel,99.79% (474/475)
+silver,presence_siren,OK,False,au moins 90% des annonces portent un SIREN valide (cle de Luhn),100.00% (475/475)
+gold,grain_or_unique,OK,True,"une seule ligne par (jour, commune, section NAF)",0 cle(s) en double
+gold,conservation_argent_vers_or,OK,True,475 evenements agreges,475 evenements dans la couche or
+gold,coherence_solde_net,OK,True,solde_net = creations + immatriculations - radiations - liquidations,0 ligne(s) incoherentes
+gold,compteurs_positifs,OK,True,tous les compteurs nb_* sont positifs ou nuls,0 valeur(s) negatives
+gold,couverture_naf,OK,False,au moins 50% des evenements rattaches a une section NAF,97.47% (463/475)

@@ -1,58 +1,57 @@
 code_commune,nom_commune,population_commune,latitude,longitude,section_naf,libelle_section_naf,nb_creations,nb_immatriculations,nb_transferts,nb_ventes_fonds,nb_modifications,nb_radiations,nb_sauvegardes,nb_redressements,nb_liquidations,nb_plans_cession,nb_defaillances,nb_depots_comptes,nb_evenements,solde_net,montant_ventes_eur,date_parution
 ,,,,,Z,Secteur non renseigne,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34003,Agde,29939,43.3084,3.4838,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34003,Agde,29939,43.3084,3.4838,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34003,Agde,29939,43.3084,3.4838,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34003,Agde,29939,43.3084,3.4838,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34003,Agde,29939,43.3084,3.4838,I,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,1,3,0,,2026-09-22
-34003,Agde,29939,43.3084,3.4838,L,Activites immobilieres,1,0,1,0,0,0,0,0,0,0,0,1,3,1,,2026-09-22
+34003,Agde,29939,43.3084,3.4838,I,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
+34003,Agde,29939,43.3084,3.4838,L,Activites immobilieres,1,0,1,0,0,0,0,0,0,0,0,0,2,1,,2026-09-22
 34003,Agde,29939,43.3084,3.4838,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34003,Agde,29939,43.3084,3.4838,S,Autres activites de services,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34013,Aspiran,1672,43.5654,3.4499,G,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
+34003,Agde,29939,43.3084,3.4838,Z,Secteur non renseigne,1,0,0,0,1,0,0,0,0,0,0,3,5,1,,2026-09-22
+34013,Aspiran,1672,43.5654,3.4499,Z,Secteur non renseigne,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34018,Autignac,982,43.4991,3.1636,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34022,Baillargues,7829,43.6565,4.0102,H,Transports et entreposage,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
+34022,Baillargues,7829,43.6565,4.0102,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34022,Baillargues,7829,43.6565,4.0102,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34022,Baillargues,7829,43.6565,4.0102,Z,Secteur non renseigne,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34023,Balaruc-les-Bains,7139,43.4476,3.6922,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34023,Balaruc-les-Bains,7139,43.4476,3.6922,Q,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34024,Balaruc-le-Vieux,2737,43.465,3.6971,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34025,Bassan,2383,43.4093,3.2563,H,Transports et entreposage,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34028,Bédarieux,5804,43.6113,3.1637,S,Autres activites de services,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34031,Bessan,5838,43.3566,3.4141,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34031,Bessan,5838,43.3566,3.4141,S,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
+34031,Bessan,5838,43.3566,3.4141,Z,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,C,Industrie manufacturiere,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,D,Production et distribution d'energie,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,F,Construction,0,0,4,0,2,0,0,0,0,0,0,0,6,0,,2026-09-22
-34032,Béziers,81545,43.3481,3.2342,G,"Commerce, reparation d'automobiles",2,0,1,0,0,1,0,0,0,0,0,1,5,1,,2026-09-22
+34032,Béziers,81545,43.3481,3.2342,G,"Commerce, reparation d'automobiles",1,0,1,0,0,1,0,0,0,0,0,1,4,0,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,H,Transports et entreposage,3,0,0,0,0,1,0,0,0,0,0,0,4,2,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,I,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,L,Activites immobilieres,2,0,0,0,0,0,0,0,0,0,0,1,3,2,,2026-09-22
-34032,Béziers,81545,43.3481,3.2342,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,2,0,0,0,0,0,0,1,4,1,,2026-09-22
+34032,Béziers,81545,43.3481,3.2342,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,2,0,0,0,0,0,0,1,3,0,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,N,Services administratifs et de soutien,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34032,Béziers,81545,43.3481,3.2342,S,Autres activites de services,0,0,0,0,1,1,0,0,0,0,0,1,3,-1,,2026-09-22
-34032,Béziers,81545,43.3481,3.2342,Z,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
+34032,Béziers,81545,43.3481,3.2342,Z,Secteur non renseigne,2,0,1,0,0,0,0,0,0,0,0,0,3,2,,2026-09-22
 34036,Le Bosc,1435,43.6985,3.3896,D,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34039,Bouzigues,1601,43.445,3.6563,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
+34039,Bouzigues,1601,43.445,3.6563,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34047,Campagnan,714,43.5406,3.4936,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34052,Capestang,3514,43.3184,3.0501,G,"Commerce, reparation d'automobiles",0,0,1,0,1,0,0,0,0,0,0,0,2,0,,2026-09-22
-34056,Castelnau-de-Guers,1208,43.436,3.4718,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34057,Castelnau-le-Lez,26058,43.6372,3.9113,F,Construction,0,0,0,0,1,0,0,0,0,0,0,6,7,0,,2026-09-22
+34056,Castelnau-de-Guers,1208,43.436,3.4718,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34057,Castelnau-le-Lez,26058,43.6372,3.9113,F,Construction,0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
 34057,Castelnau-le-Lez,26058,43.6372,3.9113,G,"Commerce, reparation d'automobiles",1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
 34057,Castelnau-le-Lez,26058,43.6372,3.9113,H,Transports et entreposage,1,0,0,0,1,1,0,0,0,0,0,0,3,0,,2026-09-22
 34057,Castelnau-le-Lez,26058,43.6372,3.9113,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34057,Castelnau-le-Lez,26058,43.6372,3.9113,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
-34057,Castelnau-le-Lez,26058,43.6372,3.9113,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,4,4,0,,2026-09-22
+34057,Castelnau-le-Lez,26058,43.6372,3.9113,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,3,3,0,,2026-09-22
 34057,Castelnau-le-Lez,26058,43.6372,3.9113,N,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34057,Castelnau-le-Lez,26058,43.6372,3.9113,Z,Secteur non renseigne,1,0,0,1,0,0,0,0,0,0,0,0,2,1,155000.0,2026-09-22
+34057,Castelnau-le-Lez,26058,43.6372,3.9113,Z,Secteur non renseigne,2,0,0,1,0,0,0,0,0,0,0,7,10,2,155000.0,2026-09-22
 34058,Castries,6883,43.6905,3.9853,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34058,Castries,6883,43.6905,3.9853,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34058,Castries,6883,43.6905,3.9853,J,Information et communication,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34058,Castries,6883,43.6905,3.9853,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,2,3,0,,2026-09-22
+34058,Castries,6883,43.6905,3.9853,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
 34058,Castries,6883,43.6905,3.9853,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
-34063,Caux,2718,43.5031,3.3709,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34058,Castries,6883,43.6905,3.9853,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34063,Caux,2718,43.5031,3.3709,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34063,Caux,2718,43.5031,3.3709,S,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
-34065,Cazedarnes,682,43.4225,3.0299,H,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34063,Caux,2718,43.5031,3.3709,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34065,Cazedarnes,682,43.4225,3.0299,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34077,Clapiers,6006,43.666,3.8848,P,Enseignement,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34079,Clermont-l'Hérault,9461,43.6323,3.4017,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34079,Clermont-l'Hérault,9461,43.6323,3.4017,L,Activites immobilieres,0,0,0,1,0,1,0,0,0,0,0,0,2,-1,435086.0,2026-09-22
@@ -61,108 +60,106 @@ code_commune,nom_commune,population_commune,latitude,longitude,section_naf,libel
 34082,Combaillaux,2001,43.6744,3.7847,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34082,Combaillaux,2001,43.6744,3.7847,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34084,Corneilhan,1622,43.4026,3.1927,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34087,Cournonsec,3616,43.5395,3.7024,H,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34087,Cournonsec,3616,43.5395,3.7024,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34087,Cournonsec,3616,43.5395,3.7024,M,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,1,2,0,,2026-09-22
-34088,Cournonterral,7359,43.5712,3.7072,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34088,Cournonterral,7359,43.5712,3.7072,Q,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34087,Cournonsec,3616,43.5395,3.7024,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34087,Cournonsec,3616,43.5395,3.7024,Z,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,1,2,0,,2026-09-22
+34088,Cournonterral,7359,43.5712,3.7072,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
 34090,Le Crès,9226,43.6513,3.9343,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34090,Le Crès,9226,43.6513,3.9343,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34090,Le Crès,9226,43.6513,3.9343,S,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34090,Le Crès,9226,43.6513,3.9343,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34094,Espondeilhan,1268,43.4385,3.2594,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
 34095,Fabrègues,7447,43.5312,3.7737,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34095,Fabrègues,7447,43.5312,3.7737,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34095,Fabrègues,7447,43.5312,3.7737,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34095,Fabrègues,7447,43.5312,3.7737,N,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34096,Faugères,548,43.5665,3.174,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34095,Fabrègues,7447,43.5312,3.7737,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34096,Faugères,548,43.5665,3.174,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34108,Frontignan,24136,43.4486,3.7493,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34108,Frontignan,24136,43.4486,3.7493,G,"Commerce, reparation d'automobiles",1,0,1,0,0,1,0,0,0,0,0,1,4,0,,2026-09-22
+34108,Frontignan,24136,43.4486,3.7493,G,"Commerce, reparation d'automobiles",1,0,0,0,0,1,0,0,0,0,0,1,3,0,,2026-09-22
 34108,Frontignan,24136,43.4486,3.7493,I,Hebergement et restauration,0,0,0,1,0,0,0,0,0,0,0,1,2,0,80000.0,2026-09-22
 34108,Frontignan,24136,43.4486,3.7493,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34108,Frontignan,24136,43.4486,3.7493,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34108,Frontignan,24136,43.4486,3.7493,Z,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34109,Gabian,886,43.5182,3.2621,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34111,Ganges,3724,43.9448,3.7039,S,Autres activites de services,0,0,0,1,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34113,Gigean,6639,43.4953,3.7242,G,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1,,2026-09-22
 34113,Gigean,6639,43.4953,3.7242,H,Transports et entreposage,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
 34114,Gignac,6651,43.6416,3.5661,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34116,Grabels,9092,43.6503,3.7894,G,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
+34116,Grabels,9092,43.6503,3.7894,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34116,Grabels,9092,43.6503,3.7894,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34116,Grabels,9092,43.6503,3.7894,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
+34116,Grabels,9092,43.6503,3.7894,Z,Secteur non renseigne,0,0,0,0,2,0,0,0,0,0,0,0,2,0,,2026-09-22
 34120,Jacou,6924,43.6648,3.9138,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34123,Juvignac,14055,43.6173,3.7908,G,"Commerce, reparation d'automobiles",2,0,0,0,0,1,0,0,0,0,0,0,3,1,,2026-09-22
-34123,Juvignac,14055,43.6173,3.7908,H,Transports et entreposage,1,0,0,0,0,2,0,0,0,0,0,0,3,-1,,2026-09-22
+34123,Juvignac,14055,43.6173,3.7908,H,Transports et entreposage,0,0,0,0,0,2,0,0,0,0,0,0,2,-2,,2026-09-22
 34123,Juvignac,14055,43.6173,3.7908,J,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34123,Juvignac,14055,43.6173,3.7908,K,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34123,Juvignac,14055,43.6173,3.7908,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34123,Juvignac,14055,43.6173,3.7908,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34126,Lamalou-les-Bains,2389,43.5982,3.0847,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34127,Lansargues,3233,43.6314,4.0789,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34127,Lansargues,3233,43.6314,4.0789,L,Activites immobilieres,2,0,0,0,0,0,0,0,0,0,0,0,2,2,,2026-09-22
+34127,Lansargues,3233,43.6314,4.0789,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34127,Lansargues,3233,43.6314,4.0789,P,Enseignement,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
+34127,Lansargues,3233,43.6314,4.0789,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34128,Laroque,1668,43.9253,3.7333,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34128,Laroque,1668,43.9253,3.7333,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34129,Lattes,17351,43.567,3.899,G,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34129,Lattes,17351,43.567,3.899,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34129,Lattes,17351,43.567,3.899,I,Hebergement et restauration,1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
+34129,Lattes,17351,43.567,3.899,I,Hebergement et restauration,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34129,Lattes,17351,43.567,3.899,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34129,Lattes,17351,43.567,3.899,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34129,Lattes,17351,43.567,3.899,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34129,Lattes,17351,43.567,3.899,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34129,Lattes,17351,43.567,3.899,Z,Secteur non renseigne,0,0,0,0,1,1,0,0,0,0,0,1,3,-1,,2026-09-22
 34136,Lézignan-la-Cèbe,1580,43.4923,3.4405,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34139,Lieuran-lès-Béziers,1486,43.4109,3.2324,C,Industrie manufacturiere,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34139,Lieuran-lès-Béziers,1486,43.4109,3.2324,L,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
+34139,Lieuran-lès-Béziers,1486,43.4109,3.2324,Z,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34142,Lodève,7251,43.7296,3.2949,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34142,Lodève,7251,43.7296,3.2949,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34145,Lunel,26623,43.678,4.1329,F,Construction,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
-34145,Lunel,26623,43.678,4.1329,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34145,Lunel,26623,43.678,4.1329,J,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34145,Lunel,26623,43.678,4.1329,N,Services administratifs et de soutien,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
-34145,Lunel,26623,43.678,4.1329,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34145,Lunel,26623,43.678,4.1329,Z,Secteur non renseigne,2,0,0,0,0,1,0,0,0,0,0,0,3,1,,2026-09-22
 34146,Lunel-Viel,4507,43.6803,4.0821,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34148,Maraussan,4789,43.3733,3.154,G,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
 34150,Marseillan,8414,43.3543,3.556,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34151,Marsillargues,6988,43.6376,4.1346,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34151,Marsillargues,6988,43.6376,4.1346,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34151,Marsillargues,6988,43.6376,4.1346,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,G,"Commerce, reparation d'automobiles",1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
+34151,Marsillargues,6988,43.6376,4.1346,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34154,Mauguio,16522,43.5915,4.0128,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34154,Mauguio,16522,43.5915,4.0128,J,Information et communication,1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,L,Activites immobilieres,1,0,1,0,0,0,0,0,0,0,0,0,2,1,,2026-09-22
+34154,Mauguio,16522,43.5915,4.0128,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34154,Mauguio,16522,43.5915,4.0128,L,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34154,Mauguio,16522,43.5915,4.0128,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,N,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,3,4,0,,2026-09-22
+34154,Mauguio,16522,43.5915,4.0128,N,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,2,3,0,,2026-09-22
 34154,Mauguio,16522,43.5915,4.0128,S,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34154,Mauguio,16522,43.5915,4.0128,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
+34154,Mauguio,16522,43.5915,4.0128,Z,Secteur non renseigne,2,0,0,0,1,1,0,0,0,0,0,3,7,1,,2026-09-22
 34155,Maureilhan,2495,43.3517,3.0982,F,Construction,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34155,Maureilhan,2495,43.3517,3.0982,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34157,Mèze,12669,43.4323,3.5843,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34157,Mèze,12669,43.4323,3.5843,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34157,Mèze,12669,43.4323,3.5843,N,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34159,Mireval,3301,43.5158,3.8022,J,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
+34157,Mèze,12669,43.4323,3.5843,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34159,Mireval,3301,43.5158,3.8022,Z,Secteur non renseigne,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34161,Montady,3990,43.3277,3.1177,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34161,Montady,3990,43.3277,3.1177,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34162,Montagnac,4515,43.4709,3.5067,A,"Agriculture, sylviculture et peche",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34162,Montagnac,4515,43.4709,3.5067,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34163,Montarnaud,4208,43.648,3.7053,F,Construction,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
+34163,Montarnaud,4208,43.648,3.7053,Z,Secteur non renseigne,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34164,Montaud,1014,43.7422,3.9502,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34166,Montblanc,2932,43.3775,3.3569,Q,Sante humaine et action sociale,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,C,Industrie manufacturiere,0,0,0,0,2,1,0,0,0,0,0,0,3,-1,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,D,Production et distribution d'energie,0,0,0,0,4,0,0,0,0,0,0,0,4,0,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,F,Construction,0,0,0,0,0,2,0,0,0,0,0,4,6,-2,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,G,"Commerce, reparation d'automobiles",13,0,1,2,5,4,0,0,0,0,0,2,27,9,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,H,Transports et entreposage,9,0,0,0,1,1,0,0,0,0,0,0,11,8,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,I,Hebergement et restauration,0,0,0,0,2,1,0,0,0,0,0,9,12,-1,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,C,Industrie manufacturiere,0,0,0,0,1,1,0,0,0,0,0,0,2,-1,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,D,Production et distribution d'energie,0,0,0,0,3,0,0,0,0,0,0,0,3,0,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,F,Construction,0,0,0,0,0,1,0,0,0,0,0,2,3,-1,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,G,"Commerce, reparation d'automobiles",7,0,1,2,3,4,0,0,0,0,0,1,18,3,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,H,Transports et entreposage,8,0,0,0,1,1,0,0,0,0,0,0,10,7,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,I,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,5,6,0,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,J,Information et communication,4,0,0,0,2,0,0,0,0,0,0,5,11,4,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,K,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,2,3,0,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,L,Activites immobilieres,1,0,0,0,0,2,0,0,0,0,0,5,8,-1,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,M,"Activites specialisees, scientifiques et techniques",2,0,1,0,4,1,0,0,0,0,0,6,14,1,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,N,Services administratifs et de soutien,2,0,1,0,1,0,0,0,0,0,0,1,5,2,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,L,Activites immobilieres,1,0,0,0,0,1,0,0,0,0,0,3,5,0,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,M,"Activites specialisees, scientifiques et techniques",2,0,1,0,1,1,0,0,0,0,0,4,9,1,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,P,Enseignement,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,Q,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,R,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34172,Montpellier,310240,43.61,3.8742,S,Autres activites de services,1,0,0,0,1,0,0,0,0,0,0,2,4,1,,2026-09-22
-34172,Montpellier,310240,43.61,3.8742,Z,Secteur non renseigne,2,0,0,0,0,0,0,0,0,0,0,0,2,2,,2026-09-22
-34174,Moulès-et-Baucels,875,43.9488,3.7561,C,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34172,Montpellier,310240,43.61,3.8742,Z,Secteur non renseigne,10,0,1,0,9,3,0,0,0,0,0,11,34,7,,2026-09-22
 34174,Moulès-et-Baucels,875,43.9488,3.7561,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34174,Moulès-et-Baucels,875,43.9488,3.7561,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34179,Murviel-lès-Montpellier,2075,43.6116,3.7405,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34184,Nizas,662,43.5127,3.4167,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34187,Olargues,488,43.538,2.9173,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
@@ -171,106 +168,99 @@ code_commune,nom_commune,population_commune,latitude,longitude,section_naf,libel
 34192,Palavas-les-Flots,6133,43.5323,3.9346,G,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
 34192,Palavas-les-Flots,6133,43.5323,3.9346,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34194,Paulhan,4039,43.5378,3.4599,C,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34194,Paulhan,4039,43.5378,3.4599,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34194,Paulhan,4039,43.5378,3.4599,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34198,Pérols,9615,43.5609,3.9512,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34198,Pérols,9615,43.5609,3.9512,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
+34198,Pérols,9615,43.5609,3.9512,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34198,Pérols,9615,43.5609,3.9512,L,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
+34198,Pérols,9615,43.5609,3.9512,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34199,Pézenas,7797,43.4616,3.418,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34199,Pézenas,7797,43.4616,3.418,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34202,Pignan,8431,43.5819,3.742,Q,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34207,Pomérols,2299,43.3952,3.5142,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34209,Portiragnes,3530,43.3024,3.3458,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34209,Portiragnes,3530,43.3024,3.3458,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34210,Le Pouget,2122,43.5919,3.5184,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34210,Le Pouget,2122,43.5919,3.5184,Q,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34210,Le Pouget,2122,43.5919,3.5184,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34213,Poussan,6797,43.4976,3.6623,G,"Commerce, reparation d'automobiles",0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
-34214,Pouzolles,1233,43.478,3.2727,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34214,Pouzolles,1233,43.478,3.2727,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34217,Prades-le-Lez,6184,43.7079,3.8648,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34223,Puimisson,1225,43.4376,3.2084,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34239,Saint-André-de-Sangonis,6427,43.6492,3.5056,I,Hebergement et restauration,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34239,Saint-André-de-Sangonis,6427,43.6492,3.5056,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34240,Saint-Aunès,4530,43.6341,3.97,F,Construction,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34240,Saint-Aunès,4530,43.6341,3.97,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34240,Saint-Aunès,4530,43.6341,3.97,K,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34242,Saint-Bauzille-de-Montmel,1246,43.7762,3.9434,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34240,Saint-Aunès,4530,43.6341,3.97,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34242,Saint-Bauzille-de-Montmel,1246,43.7762,3.9434,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34243,Saint-Bauzille-de-Putois,1766,43.9025,3.757,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34242,Saint-Bauzille-de-Montmel,1246,43.7762,3.9434,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34243,Saint-Bauzille-de-Putois,1766,43.9025,3.757,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34244,Saint-Brès,3623,43.6656,4.0377,S,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
-34246,Entre-Vignes,2200,43.7193,4.081,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34246,Entre-Vignes,2200,43.7193,4.081,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34247,Saint-Clément-de-Rivière,5218,43.6831,3.8447,C,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34247,Saint-Clément-de-Rivière,5218,43.6831,3.8447,L,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34249,Saint-Drézéry,3006,43.7308,3.9764,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34254,Saint-Félix-de-Lodez,1135,43.6595,3.4682,K,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,K,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,L,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,1,2,-1,,2026-09-22
+34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,L,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
 34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34259,Saint-Georges-d'Orques,5676,43.6167,3.775,F,Construction,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
-34259,Saint-Georges-d'Orques,5676,43.6167,3.775,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34263,Saint-Hilaire-de-Beauvoir,461,43.752,4.0175,D,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34267,Saint-Jean-de-Fos,1745,43.6955,3.5463,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34255,Saint-Gély-du-Fesc,10472,43.6897,3.81,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,2,3,1,,2026-09-22
+34259,Saint-Georges-d'Orques,5676,43.6167,3.775,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,3,3,0,,2026-09-22
+34263,Saint-Hilaire-de-Beauvoir,461,43.752,4.0175,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34267,Saint-Jean-de-Fos,1745,43.6955,3.5463,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34269,Saint-Jean-de-Minervois,131,43.4051,2.8187,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,B,Industries extractives,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,D,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,F,Construction,0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
+34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
 34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,I,Hebergement et restauration,0,0,0,1,0,0,0,0,0,0,0,0,1,0,54000.0,2026-09-22
 34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,N,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
 34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,Q,Sante humaine et action sociale,1,0,0,0,0,0,0,0,0,0,0,2,3,1,,2026-09-22
+34270,Saint-Jean-de-Védas,13328,43.5732,3.8329,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,2,3,0,,2026-09-22
 34272,Saint-Just,3293,43.657,4.1108,L,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34276,Saint-Mathieu-de-Tréviers,4979,43.7679,3.8628,C,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34276,Saint-Mathieu-de-Tréviers,4979,43.7679,3.8628,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34276,Saint-Mathieu-de-Tréviers,4979,43.7679,3.8628,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34276,Saint-Mathieu-de-Tréviers,4979,43.7679,3.8628,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34280,Saint-Nazaire-de-Pézan,625,43.6348,4.1177,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,2,0,0,0,0,0,0,0,2,0,,2026-09-22
 34281,Saint-Pargoire,2501,43.5268,3.5416,L,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34287,Saint-Saturnin-de-Lucian,303,43.7085,3.4685,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34288,Saint-Sériès,972,43.7365,4.1069,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34298,Sauvian,5608,43.2885,3.2541,G,"Commerce, reparation d'automobiles",1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
 34299,Sérignan,8588,43.271,3.3011,L,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
-34300,Servian,5517,43.4121,3.3017,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,A,"Agriculture, sylviculture et peche",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,G,"Commerce, reparation d'automobiles",1,0,1,0,1,0,0,0,0,0,0,2,5,1,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,I,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,1,3,0,,2026-09-22
+34300,Servian,5517,43.4121,3.3017,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34301,Sète,45337,43.3844,3.6441,G,"Commerce, reparation d'automobiles",1,0,1,0,0,0,0,0,0,0,0,2,4,1,,2026-09-22
+34301,Sète,45337,43.3844,3.6441,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34301,Sète,45337,43.3844,3.6441,I,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
 34301,Sète,45337,43.3844,3.6441,K,Activites financieres et d'assurance,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,L,Activites immobilieres,0,0,0,0,2,0,0,0,0,0,0,2,4,0,,2026-09-22
-34301,Sète,45337,43.3844,3.6441,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
+34301,Sète,45337,43.3844,3.6441,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
 34301,Sète,45337,43.3844,3.6441,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34301,Sète,45337,43.3844,3.6441,R,"Arts, spectacles et activites recreatives",1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
 34301,Sète,45337,43.3844,3.6441,S,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34309,Teyran,4787,43.688,3.9258,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34309,Teyran,4787,43.688,3.9258,L,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34301,Sète,45337,43.3844,3.6441,Z,Secteur non renseigne,0,0,0,0,4,0,0,0,0,0,0,6,10,0,,2026-09-22
+34309,Teyran,4787,43.688,3.9258,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,1,2,1,,2026-09-22
 34310,Thézan-lès-Béziers,3124,43.4126,3.1593,E,"Eau, assainissement, dechets",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34310,Thézan-lès-Béziers,3124,43.4126,3.1593,I,Hebergement et restauration,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34310,Thézan-lès-Béziers,3124,43.4126,3.1593,L,Activites immobilieres,1,0,0,0,0,1,0,0,0,0,0,0,2,0,,2026-09-22
+34310,Thézan-lès-Béziers,3124,43.4126,3.1593,L,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
+34310,Thézan-lès-Béziers,3124,43.4126,3.1593,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
 34320,Vailhauquès,2722,43.6652,3.7304,E,"Eau, assainissement, dechets",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34320,Vailhauquès,2722,43.6652,3.7304,G,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34320,Vailhauquès,2722,43.6652,3.7304,M,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,1,2,0,,2026-09-22
 34324,Valras-Plage,4432,43.2471,3.2909,G,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34324,Valras-Plage,4432,43.2471,3.2909,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34324,Valras-Plage,4432,43.2471,3.2909,Z,Secteur non renseigne,0,0,0,1,0,0,0,0,0,0,0,0,1,0,650000.0,2026-09-22
-34327,Vendargues,7262,43.6624,3.9657,C,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34327,Vendargues,7262,43.6624,3.9657,F,Construction,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
+34324,Valras-Plage,4432,43.2471,3.2909,Z,Secteur non renseigne,0,0,0,1,0,0,0,0,0,0,0,1,2,0,650000.0,2026-09-22
+34327,Vendargues,7262,43.6624,3.9657,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34327,Vendargues,7262,43.6624,3.9657,G,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34327,Vendargues,7262,43.6624,3.9657,K,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,0,1,0,,2026-09-22
 34327,Vendargues,7262,43.6624,3.9657,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34327,Vendargues,7262,43.6624,3.9657,N,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34327,Vendargues,7262,43.6624,3.9657,Z,Secteur non renseigne,1,0,1,0,0,0,0,0,0,0,0,2,4,1,,2026-09-22
 34329,Vendres,2616,43.2569,3.2304,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34329,Vendres,2616,43.2569,3.2304,H,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34329,Vendres,2616,43.2569,3.2304,I,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34332,Vias,5952,43.3091,3.3948,G,"Commerce, reparation d'automobiles",0,0,0,0,2,1,0,0,0,0,0,0,3,-1,,2026-09-22
+34332,Vias,5952,43.3091,3.3948,G,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34332,Vias,5952,43.3091,3.3948,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34332,Vias,5952,43.3091,3.3948,R,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34333,Vic-la-Gardiole,3428,43.4838,3.8046,M,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34332,Vias,5952,43.3091,3.3948,Z,Secteur non renseigne,0,0,0,0,1,1,0,0,0,0,0,1,3,-1,,2026-09-22
+34333,Vic-la-Gardiole,3428,43.4838,3.8046,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34336,Villeneuve-lès-Béziers,4500,43.3178,3.2909,A,"Agriculture, sylviculture et peche",0,0,0,0,0,1,0,0,0,0,0,0,1,-1,,2026-09-22
-34336,Villeneuve-lès-Béziers,4500,43.3178,3.2909,J,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34337,Villeneuve-lès-Maguelone,10872,43.5119,3.8589,L,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
+34336,Villeneuve-lès-Béziers,4500,43.3178,3.2909,Z,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34337,Villeneuve-lès-Maguelone,10872,43.5119,3.8589,Z,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0,,2026-09-22
 34340,Villetelle,1768,43.7248,4.1381,H,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
-34340,Villetelle,1768,43.7248,4.1381,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,2,2,0,,2026-09-22
+34340,Villetelle,1768,43.7248,4.1381,J,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
+34340,Villetelle,1768,43.7248,4.1381,Z,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
 34341,Villeveyrac,3972,43.4956,3.5931,C,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,1,2,0,,2026-09-22
 34343,Viols-le-Fort,1229,43.735,3.6901,F,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0,,2026-09-22
-34344,La Grande-Motte,8440,43.571,4.072,G,"Commerce, reparation d'automobiles",1,0,1,0,0,0,0,0,0,0,0,0,2,1,,2026-09-22
-34344,La Grande-Motte,8440,43.571,4.072,I,Hebergement et restauration,1,0,0,0,1,0,0,0,0,0,0,0,2,1,,2026-09-22
-34344,La Grande-Motte,8440,43.571,4.072,M,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34344,La Grande-Motte,8440,43.571,4.072,G,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34344,La Grande-Motte,8440,43.571,4.072,I,Hebergement et restauration,1,0,0,0,0,0,0,0,0,0,0,0,1,1,,2026-09-22
+34344,La Grande-Motte,8440,43.571,4.072,Z,Secteur non renseigne,1,0,1,0,1,0,0,0,0,0,0,0,3,1,,2026-09-22

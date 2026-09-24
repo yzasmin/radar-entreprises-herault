@@ -1,0 +1,11 @@
+ Container radar-entreprises-herault-postgres-1  Running
+ Container radar-entreprises-herault-localstack-1  Running
+
+<Task(_PythonDecoratedOperator): preparer>
+    <Task(_PythonDecoratedOperator): extraire_bodacc>
+        <Task(_PythonDecoratedOperator): enrichir_sirene>
+            <Task(_PythonDecoratedOperator): construire_silver>
+                <Task(_PythonDecoratedOperator): controles_qualite_silver>
+                    <Task(_PythonDecoratedOperator): construire_gold>
+                        <Task(_PythonDecoratedOperator): controles_qualite_gold>
+                            <Task(_PythonDecoratedOperator): publier_indicateurs>

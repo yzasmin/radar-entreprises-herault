@@ -1,4 +1,4 @@
 === results/dag_2026-09-16.log
     raise QualiteError(f"{len(echecs)} controle(s) bloquant(s) en echec a l'etape {etape} : {details}")
 radar.quality.QualiteError: 1 controle(s) bloquant(s) en echec a l'etape couche silver : volumetrie_dans_la_norme (attendu entre 6 et 1501 annonces (centiles 5 et 95 de 60 jours : 11 et 1000, marges 2 et 1.5), observe 1 annonces)
-[2026-09-24T01:54:00.415+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+[2026-09-24T09:43:26.212+0000] {taskinstance.py:3313} ERROR - Task failed with exception

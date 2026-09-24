@@ -1,0 +1,19 @@
+libelle_section_naf,nb_creations,nb_immatriculations,nb_transferts,nb_ventes_fonds,nb_modifications,nb_radiations,nb_sauvegardes,nb_redressements,nb_liquidations,nb_plans_cession,nb_defaillances,nb_depots_comptes,nb_evenements,solde_net
+Secteur non renseigne,74,0,18,5,50,35,0,3,4,0,7,140,341,35
+Construction,2,0,6,0,7,11,0,4,2,0,6,34,75,-11
+Hebergement et restauration,6,0,2,3,10,8,0,3,3,0,6,25,69,-5
+"Commerce, reparation d'automobiles",37,0,9,3,23,31,0,3,2,0,5,47,161,4
+"Activites specialisees, scientifiques et techniques",10,0,6,0,15,5,0,0,2,0,2,57,99,3
+Services administratifs et de soutien,14,0,3,0,2,3,0,0,2,0,2,16,41,9
+Industrie manufacturiere,4,0,0,1,7,4,0,1,1,0,2,11,32,-1
+Activites financieres et d'assurance,3,0,4,0,4,2,0,0,1,0,1,31,45,0
+Enseignement,2,0,2,0,1,4,0,1,0,0,1,4,15,-2
+Transports et entreposage,34,0,0,0,3,17,0,0,0,0,0,5,60,17
+Information et communication,15,0,2,0,7,4,0,0,0,0,0,18,46,11
+Activites immobilieres,21,0,14,1,10,8,0,0,0,0,0,30,84,13
+Autres activites de services,4,0,3,1,5,3,0,0,0,0,0,12,29,1
+Production et distribution d'energie,1,0,0,0,4,0,0,0,0,0,0,2,7,1
+"Eau, assainissement, dechets",3,0,1,0,3,2,0,0,0,0,0,1,10,1
+Sante humaine et action sociale,1,0,0,0,2,0,0,0,0,0,0,14,17,1
+"Arts, spectacles et activites recreatives",2,0,0,0,0,3,0,0,0,0,0,5,12,-1
+"Agriculture, sylviculture et peche",1,0,1,0,3,3,0,0,0,0,0,2,10,-2

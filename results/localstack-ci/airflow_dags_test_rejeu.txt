@@ -1,15 +1,15 @@
- Container radar-entreprises-herault-postgres-1  Running
  Container radar-entreprises-herault-localstack-1  Running
+ Container radar-entreprises-herault-postgres-1  Running
 
-[2026-09-24T01:24:07.293+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags
-[2026-09-24T01:24:08.013+0000] {dag.py:4435} INFO - dagrun id: radar_entreprises_herault
-[2026-09-24T01:24:08.045+0000] {dag.py:4451} INFO - created dagrun <DagRun radar_entreprises_herault @ 2026-09-22 00:00:00+02:00: manual__2026-09-22T00:00:00+02:00, state:running, queued_at: None. externally triggered: False>
-[2026-09-24T01:24:08.066+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=preparer map_index=-1
-[2026-09-24T01:24:08.067+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.preparer manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:24:08,303] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='preparer' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:08.303+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='preparer' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:08.307+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2026-09-24T01:24:08.318+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2026-09-24T09:32:45.983+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags
+[2026-09-24T09:32:46.863+0000] {dag.py:4435} INFO - dagrun id: radar_entreprises_herault
+[2026-09-24T09:32:46.906+0000] {dag.py:4451} INFO - created dagrun <DagRun radar_entreprises_herault @ 2026-09-22 00:00:00+02:00: manual__2026-09-22T00:00:00+02:00, state:running, queued_at: None. externally triggered: False>
+[2026-09-24T09:32:46.932+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=preparer map_index=-1
+[2026-09-24T09:32:46.933+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.preparer manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:32:47,149] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='preparer' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:47.149+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='preparer' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:47.153+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T09:32:47.167+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
 {
   "jour": "2026-09-22",
   "endpoint": "http://localstack:4566",
@@ -19,105 +19,853 @@
   "nb_communes_referentiel": 341,
   "departement": "34"
 }
-[2026-09-24 01:24:09,306] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'endpoint': 'http://localstack:4566', 'execution_emulee': True, 'bucket': 'amzn-s3-seau', 'seau_cree_par_le_graphe': False, 'nb_communes_referentiel': 341, 'departement': '34'}
-[2026-09-24T01:24:09.306+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'endpoint': 'http://localstack:4566', 'execution_emulee': True, 'bucket': 'amzn-s3-seau', 'seau_cree_par_le_graphe': False, 'nb_communes_referentiel': 341, 'departement': '34'}
-[2026-09-24T01:24:09.314+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:24:09.315+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=preparer, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012409
-[2026-09-24T01:24:09.322+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=preparer map_index=-1
-[2026-09-24T01:24:09.333+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=extraire_bodacc map_index=-1
-[2026-09-24T01:24:09.333+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.extraire_bodacc manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:24:09,346] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:09.346+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:09.347+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2026-09-24T01:24:13.049+0000] {extract.py:89} INFO - BODACC 2026-09-22 departement 34 : 475 annonces
+[2026-09-24 09:32:48,287] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'endpoint': 'http://localstack:4566', 'execution_emulee': True, 'bucket': 'amzn-s3-seau', 'seau_cree_par_le_graphe': False, 'nb_communes_referentiel': 341, 'departement': '34'}
+[2026-09-24T09:32:48.287+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'endpoint': 'http://localstack:4566', 'execution_emulee': True, 'bucket': 'amzn-s3-seau', 'seau_cree_par_le_graphe': False, 'nb_communes_referentiel': 341, 'departement': '34'}
+[2026-09-24T09:32:48.297+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:32:48.298+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=preparer, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T093248
+[2026-09-24T09:32:48.306+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=preparer map_index=-1
+[2026-09-24T09:32:48.320+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=extraire_bodacc map_index=-1
+[2026-09-24T09:32:48.320+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.extraire_bodacc manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:32:48,335] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:48.335+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='extraire_bodacc' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:48.336+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T09:32:52.717+0000] {extract.py:89} INFO - BODACC 2026-09-22 departement 34 : 475 annonces
 {
   "jour": "2026-09-22",
   "nb_annonces": 475,
   "total_annonce_par_la_source": 475,
   "octets_bronze": 954123,
   "cle_bronze": "radar/bronze/bodacc/date_parution=2026-09-22/annonces.json",
-  "derniere_parution_source": "2026-09-23",
-  "extrait_le": "2026-09-24T01:24:13+00:00"
+  "derniere_parution_source": "2026-09-24",
+  "extrait_le": "2026-09-24T09:32:53+00:00"
 }
-[2026-09-24 01:24:13,716] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces': 475, 'total_annonce_par_la_source': 475, 'octets_bronze': 954123, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-22/annonces.json', 'derniere_parution_source': '2026-09-23', 'historique_volumetrie': [4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354, 324, 219], 'extrait_le': '2026-09-24T01:24:13+00:00'}
-[2026-09-24T01:24:13.716+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces': 475, 'total_annonce_par_la_source': 475, 'octets_bronze': 954123, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-22/annonces.json', 'derniere_parution_source': '2026-09-23', 'historique_volumetrie': [4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354, 324, 219], 'extrait_le': '2026-09-24T01:24:13+00:00'}
-[2026-09-24T01:24:13.721+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:24:13.722+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=extraire_bodacc, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012413
-[2026-09-24T01:24:13.727+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=extraire_bodacc map_index=-1
-[2026-09-24T01:24:13.737+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=enrichir_sirene map_index=-1
-[2026-09-24T01:24:13.737+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.enrichir_sirene manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:24:13,753] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:13.753+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:24:13.753+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2026-09-24T01:24:22.461+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:24.626+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:24.936+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:31.483+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:35.958+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:36.153+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:49.130+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:50.725+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:24:56.075+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:07.364+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:11.958+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:12.567+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:12.759+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:13.367+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:17.216+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:18.598+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:20.145+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:22.816+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:22.867+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:25.783+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:27.611+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:29.157+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:32.759+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:35.436+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:37.063+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:37.475+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:38.539+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:38.742+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:44.245+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:57.311+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:25:58.293+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
-[2026-09-24T01:26:03.708+0000] {extract.py:206} INFO - enrichissement : 473 fiches pour 477 SIREN demandes en 109.9 s (4.3 req/s)
+[2026-09-24 09:32:53,554] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces': 475, 'total_annonce_par_la_source': 475, 'octets_bronze': 954123, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-22/annonces.json', 'derniere_parution_source': '2026-09-24', 'historique_volumetrie': [4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354, 324, 219], 'extrait_le': '2026-09-24T09:32:53+00:00'}
+[2026-09-24T09:32:53.554+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces': 475, 'total_annonce_par_la_source': 475, 'octets_bronze': 954123, 'cle_bronze': 'radar/bronze/bodacc/date_parution=2026-09-22/annonces.json', 'derniere_parution_source': '2026-09-24', 'historique_volumetrie': [4, 525, 512, 303, 808, 77, 440, 439, 389, 1003, 11, 495, 565, 478, 1046, 361, 11, 710, 899, 468, 9, 342, 514, 950, 545, 464, 427, 1012, 495, 444, 634, 580, 820, 357, 356, 471, 243, 93, 304, 60, 574, 438, 401, 181, 222, 365, 184, 598, 164, 278, 423, 101, 218, 428, 324, 723, 1, 354, 324, 219], 'extrait_le': '2026-09-24T09:32:53+00:00'}
+[2026-09-24T09:32:53.559+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:32:53.560+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=extraire_bodacc, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T093253
+[2026-09-24T09:32:53.565+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=extraire_bodacc map_index=-1
+[2026-09-24T09:32:53.576+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=enrichir_sirene map_index=-1
+[2026-09-24T09:32:53.577+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.enrichir_sirene manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:32:53,591] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:53.591+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='enrichir_sirene' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:32:53.592+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T09:32:53.981+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:54.770+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:54.999+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:56.210+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:58.320+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:58.328+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:59.122+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:32:59.362+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:00.580+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:02.661+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:02.675+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:03.982+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:04.214+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:04.933+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:06.675+0000] {extract.py:195} WARNING - enrichissement impossible pour 104931241 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:07.013+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:07.026+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:08.589+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:08.742+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:08.934+0000] {extract.py:195} WARNING - enrichissement impossible pour 988719043 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:09.283+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:11.014+0000] {extract.py:195} WARNING - enrichissement impossible pour 130074842 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:11.378+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:11.408+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:12.928+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:13.093+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:13.634+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:15.741+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:16.929+0000] {extract.py:195} WARNING - enrichissement impossible pour 109961151 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:17.281+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:17.466+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:17.488+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:18.012+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:20.794+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:21.466+0000] {extract.py:195} WARNING - enrichissement impossible pour 109827758 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:21.677+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:21.848+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:21.858+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:22.012+0000] {extract.py:195} WARNING - enrichissement impossible pour 109499574 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:22.855+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:25.531+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:26.051+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:27.032+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:28.753+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:28.977+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:29.900+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:30.051+0000] {extract.py:195} WARNING - enrichissement impossible pour 888091162 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:30.406+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:31.383+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:33.112+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:33.334+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:34.240+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:34.801+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:35.734+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:38.241+0000] {extract.py:195} WARNING - enrichissement impossible pour 130158140 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:38.285+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:38.975+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:39.169+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:39.278+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:39.734+0000] {extract.py:195} WARNING - enrichissement impossible pour 109887612 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:40.087+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:42.655+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:43.169+0000] {extract.py:195} WARNING - enrichissement impossible pour 443135801 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:33:43.333+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:43.982+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:44.455+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:44.802+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:49.628+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:49.851+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:50.044+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:50.225+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:52.120+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:53.978+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:54.573+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:54.723+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:55.037+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:56.502+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:58.332+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:33:59.080+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:00.015+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:00.855+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:01.038+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:02.333+0000] {extract.py:195} WARNING - enrichissement impossible pour 428122105 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:02.682+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:03.430+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:04.386+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:04.856+0000] {extract.py:195} WARNING - enrichissement impossible pour 411386444 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:05.215+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:05.398+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:07.043+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:07.431+0000] {extract.py:195} WARNING - enrichissement impossible pour 130179856 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:08.306+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:08.756+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:10.318+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:10.547+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:12.262+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:12.704+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:12.757+0000] {extract.py:195} WARNING - enrichissement impossible pour 109944363 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:13.697+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:14.654+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:14.914+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:17.642+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:18.126+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:19.017+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:19.263+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:19.344+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:21.997+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:23.018+0000] {extract.py:195} WARNING - enrichissement impossible pour 109739169 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:23.264+0000] {extract.py:195} WARNING - enrichissement impossible pour 109905067 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:23.773+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:24.009+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:24.182+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:24.393+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:27.971+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:28.138+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:28.382+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:28.531+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:28.727+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:32.340+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:32.747+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:32.884+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:33.300+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:33.916+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:36.695+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:36.748+0000] {extract.py:195} WARNING - enrichissement impossible pour 109932350 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:36.884+0000] {extract.py:195} WARNING - enrichissement impossible pour 109996397 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:38.157+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:38.303+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:38.323+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:38.916+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:40.695+0000] {extract.py:195} WARNING - enrichissement impossible pour 109886333 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:41.046+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:42.668+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:42.668+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:42.909+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:43.292+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:45.383+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:46.669+0000] {extract.py:195} WARNING - enrichissement impossible pour 109877944 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:47.020+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:47.021+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:47.266+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:48.039+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:50.228+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:51.022+0000] {extract.py:195} WARNING - enrichissement impossible pour 107967176 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:51.382+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:51.413+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:51.627+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:52.940+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:54.592+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:55.627+0000] {extract.py:195} WARNING - enrichissement impossible pour 109935916 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:34:55.751+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:55.756+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:55.986+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:57.291+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:34:59.752+0000] {extract.py:195} WARNING - enrichissement impossible pour 109962530 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:03.144+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:03.349+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:03.565+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:03.759+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:03.948+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:07.496+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:07.709+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:07.900+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:08.301+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:08.565+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:11.864+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:12.069+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:12.256+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:13.361+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:14.140+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:15.865+0000] {extract.py:195} WARNING - enrichissement impossible pour 130134695 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:16.069+0000] {extract.py:195} WARNING - enrichissement impossible pour 130212137 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:16.215+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:16.257+0000] {extract.py:195} WARNING - enrichissement impossible pour 130220569 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:16.418+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:17.425+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:17.716+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:18.491+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:20.578+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:20.754+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:21.776+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:22.088+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:23.218+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:24.971+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:25.144+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:26.088+0000] {extract.py:195} WARNING - enrichissement impossible pour 109776948 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:26.164+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:26.579+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:28.006+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:28.971+0000] {extract.py:195} WARNING - enrichissement impossible pour 130110422 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:29.144+0000] {extract.py:195} WARNING - enrichissement impossible pour 130076730 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:29.356+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:29.658+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:30.164+0000] {extract.py:195} WARNING - enrichissement impossible pour 130137797 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:30.516+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:31.403+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:32.421+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:33.734+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:34.012+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:34.862+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:35.766+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:37.241+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:38.169+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:38.381+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:39.292+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:42.170+0000] {extract.py:195} WARNING - enrichissement impossible pour 130252422 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:42.377+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:42.381+0000] {extract.py:195} WARNING - enrichissement impossible pour 130147580 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:42.622+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:43.292+0000] {extract.py:195} WARNING - enrichissement impossible pour 130154107 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:43.530+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:43.934+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:44.294+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:47.202+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:47.441+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:48.294+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:48.386+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:48.644+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:51.571+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:51.797+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:52.650+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:52.996+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:53.145+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:56.645+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:56.650+0000] {extract.py:195} WARNING - enrichissement impossible pour 440869576 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:56.854+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:56.997+0000] {extract.py:195} WARNING - enrichissement impossible pour 925211559 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:35:57.361+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:58.155+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:35:58.456+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:01.384+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:01.604+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:02.343+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:02.507+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:02.860+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:05.964+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:06.092+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:06.709+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:06.895+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:07.211+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:10.896+0000] {extract.py:195} WARNING - enrichissement impossible pour 434609921 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:11.211+0000] {extract.py:195} WARNING - enrichissement impossible pour 931639991 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:11.647+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:11.869+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:12.666+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:12.866+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:13.047+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:16.045+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:16.894+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:17.217+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:19.243+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:22.413+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:23.351+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:23.586+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:23.609+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:26.007+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:28.603+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:28.770+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:28.938+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:30.280+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:31.796+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:33.292+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:33.349+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:34.438+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:35.485+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:36.149+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:37.684+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:37.688+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:39.698+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:39.835+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:40.524+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:41.684+0000] {extract.py:195} WARNING - enrichissement impossible pour 523138915 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:42.035+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:42.083+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:44.524+0000] {extract.py:195} WARNING - enrichissement impossible pour 941844151 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:44.763+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:45.580+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:45.779+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:46.083+0000] {extract.py:195} WARNING - enrichissement impossible pour 102044732 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:46.389+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:46.438+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:49.116+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:49.976+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:50.139+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:50.777+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:50.788+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:54.499+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:54.571+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:54.777+0000] {extract.py:195} WARNING - enrichissement impossible pour 440546133 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:54.832+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:55.152+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:55.173+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:58.499+0000] {extract.py:195} WARNING - enrichissement impossible pour 889212056 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:58.955+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:59.153+0000] {extract.py:195} WARNING - enrichissement impossible pour 982373987 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:36:59.188+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:59.240+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:59.507+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:36:59.521+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:03.636+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:03.868+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:03.874+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:03.905+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:05.267+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:07.874+0000] {extract.py:195} WARNING - enrichissement impossible pour 989259098 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:07.994+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:08.214+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:08.252+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:08.272+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:10.057+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:11.995+0000] {extract.py:195} WARNING - enrichissement impossible pour 913953972 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:12.215+0000] {extract.py:195} WARNING - enrichissement impossible pour 106286222 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:12.349+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:12.551+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:12.621+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:12.629+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:14.434+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:16.630+0000] {extract.py:195} WARNING - enrichissement impossible pour 905228805 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:16.712+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:16.948+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:16.971+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:16.990+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:19.012+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:20.971+0000] {extract.py:195} WARNING - enrichissement impossible pour 480555192 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:21.334+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:21.336+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:21.343+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:23.012+0000] {extract.py:195} WARNING - enrichissement impossible pour 443646476 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:23.525+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:24.372+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:25.337+0000] {extract.py:195} WARNING - enrichissement impossible pour 942676891 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:25.674+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:25.681+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:25.703+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:27.878+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:28.736+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:29.704+0000] {extract.py:195} WARNING - enrichissement impossible pour 932091507 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:30.024+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:30.074+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:30.096+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:34.074+0000] {extract.py:195} WARNING - enrichissement impossible pour 377770904 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:34.136+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:34.333+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:34.374+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:35.240+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:35.420+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:38.374+0000] {extract.py:195} WARNING - enrichissement impossible pour 899078588 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:38.489+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:38.673+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:38.725+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:39.606+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:40.245+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:42.850+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:43.393+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:43.975+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:44.619+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:44.758+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:46.850+0000] {extract.py:195} WARNING - enrichissement impossible pour 934473190 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:47.205+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:47.976+0000] {extract.py:195} WARNING - enrichissement impossible pour 999437601 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:48.310+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:48.477+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:49.144+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:49.446+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:51.563+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:52.828+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:53.544+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:54.436+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:55.168+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:55.916+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:57.168+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:57.544+0000] {extract.py:195} WARNING - enrichissement impossible pour 879006633 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:37:57.913+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:58.792+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:59.565+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:37:59.916+0000] {extract.py:195} WARNING - enrichissement impossible pour 490023439 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:00.255+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:01.168+0000] {extract.py:195} WARNING - enrichissement impossible pour 532892601 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:01.534+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:02.270+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:03.701+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:03.938+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:06.271+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:06.472+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:06.658+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:07.939+0000] {extract.py:195} WARNING - enrichissement impossible pour 107372633 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:08.076+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:08.289+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:10.658+0000] {extract.py:195} WARNING - enrichissement impossible pour 989264072 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:10.670+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:10.827+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:11.011+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:13.120+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:13.281+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:15.164+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:15.361+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:15.488+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:17.468+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:17.656+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:19.165+0000] {extract.py:195} WARNING - enrichissement impossible pour 849863402 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:19.882+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:19.886+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:19.908+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:22.006+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:22.800+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:23.909+0000] {extract.py:195} WARNING - enrichissement impossible pour 894299197 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:24.239+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:24.245+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:24.253+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:26.007+0000] {extract.py:195} WARNING - enrichissement impossible pour 107988339 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:26.882+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:27.152+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:28.240+0000] {extract.py:195} WARNING - enrichissement impossible pour 978932606 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:28.595+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:28.602+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:30.133+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:31.270+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:31.504+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:32.602+0000] {extract.py:195} WARNING - enrichissement impossible pour 523543601 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:33.906+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:34.510+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:34.689+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:35.504+0000] {extract.py:195} WARNING - enrichissement impossible pour 477498471 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:35.631+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:36.577+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:38.242+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:38.908+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:39.042+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:39.632+0000] {extract.py:195} WARNING - enrichissement impossible pour 419712880 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:39.970+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:40.929+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:42.593+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:42.909+0000] {extract.py:195} WARNING - enrichissement impossible pour 483107579 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:43.306+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:43.401+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:44.320+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:45.294+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:46.593+0000] {extract.py:195} WARNING - enrichissement impossible pour 902577857 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:47.359+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:47.401+0000] {extract.py:195} WARNING - enrichissement impossible pour 108159187 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:47.677+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:47.791+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:48.681+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:49.295+0000] {extract.py:195} WARNING - enrichissement impossible pour 932956808 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:49.687+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:51.700+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:52.030+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:52.141+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:52.682+0000] {extract.py:195} WARNING - enrichissement impossible pour 933690380 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:53.400+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:54.042+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:56.030+0000] {extract.py:195} WARNING - enrichissement impossible pour 830089272 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:38:56.046+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:57.023+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:57.241+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:57.751+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:38:58.415+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:00.046+0000] {extract.py:195} WARNING - enrichissement impossible pour 899428700 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:00.396+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:01.389+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:01.617+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:02.121+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:02.417+0000] {extract.py:195} WARNING - enrichissement impossible pour 933341562 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:02.754+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:04.777+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:05.747+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:06.122+0000] {extract.py:195} WARNING - enrichissement impossible pour 444450639 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:07.674+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:07.905+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:08.091+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:09.135+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:09.748+0000] {extract.py:195} WARNING - enrichissement impossible pour 478259872 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:10.120+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:12.080+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:12.243+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:12.478+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:13.136+0000] {extract.py:195} WARNING - enrichissement impossible pour 521514059 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:13.507+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:14.457+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:16.436+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:16.854+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:17.284+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:17.860+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:18.813+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:20.436+0000] {extract.py:195} WARNING - enrichissement impossible pour 822233615 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:20.854+0000] {extract.py:195} WARNING - enrichissement impossible pour 878134121 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:20.961+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:21.204+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:21.680+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:22.220+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:22.814+0000] {extract.py:195} WARNING - enrichissement impossible pour 883294910 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:23.178+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:25.299+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:25.578+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:26.221+0000] {extract.py:195} WARNING - enrichissement impossible pour 904552973 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:27.545+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:27.556+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:27.764+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:29.970+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:30.402+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:31.899+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:31.909+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:32.160+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:33.971+0000] {extract.py:195} WARNING - enrichissement impossible pour 911305845 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:35.640+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:35.677+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:35.899+0000] {extract.py:195} WARNING - enrichissement impossible pour 928601756 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:36.261+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:36.267+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:36.587+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:40.268+0000] {extract.py:195} WARNING - enrichissement impossible pour 322521766 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:40.464+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:40.587+0000] {extract.py:195} WARNING - enrichissement impossible pour 329059711 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:40.744+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:40.750+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:41.023+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:41.256+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:45.381+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:45.476+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:45.604+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:45.684+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:46.233+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:49.776+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:49.829+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:49.940+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:50.034+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:52.473+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:53.776+0000] {extract.py:195} WARNING - enrichissement impossible pour 448173690 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:53.940+0000] {extract.py:195} WARNING - enrichissement impossible pour 450672654 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:54.168+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:54.168+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:54.349+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:54.413+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:57.326+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:58.168+0000] {extract.py:195} WARNING - enrichissement impossible pour 453472367 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:58.413+0000] {extract.py:195} WARNING - enrichissement impossible pour 478894124 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:39:58.523+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:58.530+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:58.699+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:39:58.808+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:01.662+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:02.876+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:02.925+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:03.072+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:03.157+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:06.023+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:06.926+0000] {extract.py:195} WARNING - enrichissement impossible pour 515236800 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:07.072+0000] {extract.py:195} WARNING - enrichissement impossible pour 518618426 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:07.246+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:07.281+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:07.557+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:07.564+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:10.024+0000] {extract.py:195} WARNING - enrichissement impossible pour 522108950 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:10.405+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:11.247+0000] {extract.py:195} WARNING - enrichissement impossible pour 522571249 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:11.558+0000] {extract.py:195} WARNING - enrichissement impossible pour 522888387 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:11.608+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:11.631+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:11.908+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:11.947+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:14.743+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:16.806+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:17.052+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:17.460+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:18.025+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:19.131+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:21.445+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:21.820+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:21.869+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:22.381+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:23.132+0000] {extract.py:195} WARNING - enrichissement impossible pour 529948234 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:23.493+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:25.801+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:26.170+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:26.742+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:27.169+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:27.849+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:29.801+0000] {extract.py:195} WARNING - enrichissement impossible pour 751388653 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:30.168+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:30.170+0000] {extract.py:195} WARNING - enrichissement impossible pour 788713170 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:30.561+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:30.742+0000] {extract.py:195} WARNING - enrichissement impossible pour 790287247 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:31.099+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:31.528+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:32.221+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:35.449+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:35.734+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:35.867+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:36.029+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:36.221+0000] {extract.py:195} WARNING - enrichissement impossible pour 792347718 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:36.574+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:39.848+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:39.868+0000] {extract.py:195} WARNING - enrichissement impossible pour 797802238 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:40.431+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:40.928+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:41.113+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:42.239+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:43.848+0000] {extract.py:195} WARNING - enrichissement impossible pour 800346819 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:45.293+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:45.488+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:45.488+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:46.483+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:46.615+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:49.294+0000] {extract.py:195} WARNING - enrichissement impossible pour 811802297 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:49.646+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:49.826+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:49.840+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:50.837+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:50.966+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:53.826+0000] {extract.py:195} WARNING - enrichissement impossible pour 814523825 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:54.008+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:54.180+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:54.187+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:54.966+0000] {extract.py:195} WARNING - enrichissement impossible pour 818001232 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:58.188+0000] {extract.py:195} WARNING - enrichissement impossible pour 818786436 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:40:58.334+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:58.358+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:58.539+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:58.540+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:40:59.051+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:02.359+0000] {extract.py:195} WARNING - enrichissement impossible pour 819821562 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:02.692+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:02.732+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:02.893+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:02.932+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:03.401+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:06.932+0000] {extract.py:195} WARNING - enrichissement impossible pour 820644508 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:07.029+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:07.091+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:07.233+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:07.297+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:07.741+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:11.029+0000] {extract.py:195} WARNING - enrichissement impossible pour 834974685 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:11.233+0000] {extract.py:195} WARNING - enrichissement impossible pour 838025906 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:11.386+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:11.487+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:11.581+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:11.649+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:11.741+0000] {extract.py:195} WARNING - enrichissement impossible pour 838838902 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:12.143+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:15.487+0000] {extract.py:195} WARNING - enrichissement impossible pour 839467271 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:15.852+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:16.546+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:16.740+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:16.984+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:17.159+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:20.211+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:21.053+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:21.077+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:21.349+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:21.519+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:24.940+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:25.413+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:25.443+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:26.982+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:27.212+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:29.413+0000] {extract.py:195} WARNING - enrichissement impossible pour 845349976 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:29.444+0000] {extract.py:195} WARNING - enrichissement impossible pour 848422143 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:29.639+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:29.861+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:30.052+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:31.342+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:31.561+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:33.978+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:34.221+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:34.406+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:36.838+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:37.033+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:38.329+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:38.795+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:38.946+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:41.189+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:41.391+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:42.329+0000] {extract.py:195} WARNING - enrichissement impossible pour 887720704 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:42.796+0000] {extract.py:195} WARNING - enrichissement impossible pour 887991370 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:43.064+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:43.312+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:43.619+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:46.089+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:47.177+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:47.428+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:47.699+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:48.068+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:50.448+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:51.530+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:51.700+0000] {extract.py:195} WARNING - enrichissement impossible pour 898011937 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:51.815+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:52.050+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:52.418+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:55.189+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:55.816+0000] {extract.py:195} WARNING - enrichissement impossible pour 900228354 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:56.419+0000] {extract.py:195} WARNING - enrichissement impossible pour 902304666 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:41:56.602+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:56.794+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:56.995+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:58.230+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:41:59.531+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:00.965+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:01.160+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:01.326+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:02.570+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:03.884+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:05.320+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:05.526+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:05.678+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:07.592+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:07.885+0000] {extract.py:195} WARNING - enrichissement impossible pour 910523794 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:08.234+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:09.320+0000] {extract.py:195} WARNING - enrichissement impossible pour 914382429 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:09.526+0000] {extract.py:195} WARNING - enrichissement impossible pour 914845474 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:09.679+0000] {extract.py:195} WARNING - enrichissement impossible pour 917851891 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:09.688+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:09.902+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:10.117+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:11.942+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:12.596+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:14.050+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:14.279+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:14.467+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:16.813+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:16.963+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:18.402+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:18.634+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:18.807+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:20.964+0000] {extract.py:195} WARNING - enrichissement impossible pour 922991807 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:21.400+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:21.830+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:22.402+0000] {extract.py:195} WARNING - enrichissement impossible pour 925303240 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:22.634+0000] {extract.py:195} WARNING - enrichissement impossible pour 928201037 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:22.807+0000] {extract.py:195} WARNING - enrichissement impossible pour 928518729 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:23.040+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:23.193+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:23.396+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:25.824+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:26.189+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:27.392+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:27.532+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:27.764+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:30.179+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:30.548+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:32.115+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:32.145+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:32.362+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:34.180+0000] {extract.py:195} WARNING - enrichissement impossible pour 931757603 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:34.531+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:34.549+0000] {extract.py:195} WARNING - enrichissement impossible pour 933234163 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:34.905+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:36.116+0000] {extract.py:195} WARNING - enrichissement impossible pour 939145835 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:37.836+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:38.047+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:38.294+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:39.259+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:39.343+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:42.196+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:42.396+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:42.677+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:43.633+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:43.687+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:46.562+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:46.748+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:47.027+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:47.634+0000] {extract.py:195} WARNING - enrichissement impossible pour 948138276 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:48.587+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:48.823+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:50.563+0000] {extract.py:195} WARNING - enrichissement impossible pour 977985159 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:50.749+0000] {extract.py:195} WARNING - enrichissement impossible pour 978019461 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:50.914+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:51.028+0000] {extract.py:195} WARNING - enrichissement impossible pour 978137594 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:42:51.122+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:51.421+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:55.252+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:55.482+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:55.794+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:59.605+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:42:59.863+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:43:00.160+0000] {extract.py:38} WARNING - 429 sur https://recherche-entreprises.api.gouv.fr/search, attente 4.0 s
+[2026-09-24T09:43:03.605+0000] {extract.py:195} WARNING - enrichissement impossible pour 982824658 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:43:03.864+0000] {extract.py:195} WARNING - enrichissement impossible pour 988341327 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:43:04.161+0000] {extract.py:195} WARNING - enrichissement impossible pour 988600227 : echec apres 3 tentatives sur https://recherche-entreprises.api.gouv.fr/search: None
+[2026-09-24T09:43:04.162+0000] {extract.py:206} INFO - enrichissement : 336 fiches pour 477 SIREN demandes en 610.5 s (0.8 req/s)
 {
   "jour": "2026-09-22",
   "nb_sirens_distincts": 477,
   "nb_sirens_demandes": 477,
-  "nb_fiches_obtenues": 473,
+  "nb_fiches_obtenues": 336,
   "enrichissement_actif": true,
-  "taux_couverture": 0.9916
+  "taux_couverture": 0.7044
 }
-[2026-09-24 01:26:03,746] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_sirens_distincts': 477, 'nb_sirens_demandes': 477, 'nb_fiches_obtenues': 473, 'enrichissement_actif': True, 'taux_couverture': 0.9916}
-[2026-09-24T01:26:03.746+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_sirens_distincts': 477, 'nb_sirens_demandes': 477, 'nb_fiches_obtenues': 473, 'enrichissement_actif': True, 'taux_couverture': 0.9916}
-[2026-09-24T01:26:03.753+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:03.753+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=enrichir_sirene, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012603
-[2026-09-24T01:26:03.758+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=enrichir_sirene map_index=-1
-[2026-09-24T01:26:03.767+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_silver map_index=-1
-[2026-09-24T01:26:03.768+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_silver manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:26:03,780] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:03.780+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:03.781+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2026-09-24T01:26:05.244+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/silver/evenements/date_parution=2026-09-22/evenements.parquet (73329 octets, 475 lignes)
+[2026-09-24 09:43:04,208] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_sirens_distincts': 477, 'nb_sirens_demandes': 477, 'nb_fiches_obtenues': 336, 'enrichissement_actif': True, 'taux_couverture': 0.7044}
+[2026-09-24T09:43:04.208+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_sirens_distincts': 477, 'nb_sirens_demandes': 477, 'nb_fiches_obtenues': 336, 'enrichissement_actif': True, 'taux_couverture': 0.7044}
+[2026-09-24T09:43:04.220+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:04.220+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=enrichir_sirene, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094304
+[2026-09-24T09:43:04.230+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=enrichir_sirene map_index=-1
+[2026-09-24T09:43:04.246+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_silver map_index=-1
+[2026-09-24T09:43:04.246+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_silver manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:43:04,271] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:04.271+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:04.272+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T09:43:05.582+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/silver/evenements/date_parution=2026-09-22/evenements.parquet (72467 octets, 475 lignes)
 {
   "jour": "2026-09-22",
   "nb_annonces_bronze": 475,
   "nb_evenements_silver": 475,
   "nb_doublons_ecartes": 0,
-  "octets_parquet": 73329,
+  "octets_parquet": 72467,
   "cle_silver": "radar/silver/evenements/date_parution=2026-09-22/evenements.parquet"
 }
-[2026-09-24 01:26:05,247] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces_bronze': 475, 'nb_evenements_silver': 475, 'nb_doublons_ecartes': 0, 'octets_parquet': 73329, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-22/evenements.parquet'}
-[2026-09-24T01:26:05.247+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces_bronze': 475, 'nb_evenements_silver': 475, 'nb_doublons_ecartes': 0, 'octets_parquet': 73329, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-22/evenements.parquet'}
-[2026-09-24T01:26:05.252+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:05.252+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_silver, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012605
-[2026-09-24T01:26:05.257+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_silver map_index=-1
-[2026-09-24T01:26:05.266+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_silver map_index=-1
-[2026-09-24T01:26:05.266+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_silver manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:26:05,279] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.279+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.280+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24 09:43:05,585] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces_bronze': 475, 'nb_evenements_silver': 475, 'nb_doublons_ecartes': 0, 'octets_parquet': 72467, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-22/evenements.parquet'}
+[2026-09-24T09:43:05.585+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_annonces_bronze': 475, 'nb_evenements_silver': 475, 'nb_doublons_ecartes': 0, 'octets_parquet': 72467, 'cle_silver': 'radar/silver/evenements/date_parution=2026-09-22/evenements.parquet'}
+[2026-09-24T09:43:05.593+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:05.593+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_silver, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094305
+[2026-09-24T09:43:05.600+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_silver map_index=-1
+[2026-09-24T09:43:05.615+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_silver map_index=-1
+[2026-09-24T09:43:05.615+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_silver manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:43:05,633] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.633+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.634+0000] {taskinstance.py:732} INFO - ::endgroup::
 
 Controles de qualite : couche silver
 +--------+------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------+
@@ -130,70 +878,70 @@ Controles de qualite : couche silver
 | OK     | partition_homogene                 | toutes les lignes portent la date de parution 2026-09-22                             | 0 autre(s) date(s) dans la partition              |
 | OK     | perimetre_departemental            | tous les codes commune commencent par 34                                             | 0 ligne(s) hors perimetre                         |
 | OK     | volumetrie_dans_la_norme           | entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5) | 475 annonces                                      |
-| OK     | fraicheur_source                   | derniere parution a moins de 5 jours de la date traitee                              | -1 jour(s) d'ecart (derniere parution 2026-09-23) |
+| OK     | fraicheur_source                   | derniere parution a moins de 5 jours de la date traitee                              | -2 jour(s) d'ecart (derniere parution 2026-09-24) |
 | OK     | rapprochement_communes             | au moins 95% des annonces rattachees a une commune du referentiel                    | 99.79% (474/475)                                  |
 | OK     | presence_siren                     | au moins 90% des annonces portent un SIREN valide (cle de Luhn)                      | 100.00% (475/475)                                 |
 +--------+------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------+
 10 controles : 10 OK, 0 alerte(s), 0 echec(s) bloquant(s)
 
-[2026-09-24 01:26:05,327] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "475 annonces, soit le total annonce par l'API pour ce jour", 'observe': '475 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-22', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '475 annonces', 'detail': {'mediane': 425.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-1 jour(s) d'ecart (derniere parution 2026-09-23)", 'detail': {'ecart_jours': -1, 'derniere_parution': '2026-09-23'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.79% (474/475)', 'detail': {'taux': 0.9979}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '100.00% (475/475)', 'detail': {'taux': 1.0}, 'statut': 'OK'}]}
-[2026-09-24T01:26:05.327+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "475 annonces, soit le total annonce par l'API pour ce jour", 'observe': '475 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-22', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '475 annonces', 'detail': {'mediane': 425.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-1 jour(s) d'ecart (derniere parution 2026-09-23)", 'detail': {'ecart_jours': -1, 'derniere_parution': '2026-09-23'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.79% (474/475)', 'detail': {'taux': 0.9979}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '100.00% (475/475)', 'detail': {'taux': 1.0}, 'statut': 'OK'}]}
-[2026-09-24T01:26:05.332+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:05.332+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_silver, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012605
-[2026-09-24T01:26:05.337+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_silver map_index=-1
-[2026-09-24T01:26:05.345+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_gold map_index=-1
-[2026-09-24T01:26:05.346+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_gold manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:26:05,359] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.359+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.360+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2026-09-24T01:26:05.398+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/gold/indicateurs_commune_secteur/date_parution=2026-09-22/indicateurs.parquet (13601 octets, 275 lignes)
+[2026-09-24 09:43:05,700] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "475 annonces, soit le total annonce par l'API pour ce jour", 'observe': '475 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-22', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '475 annonces', 'detail': {'mediane': 425.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-2 jour(s) d'ecart (derniere parution 2026-09-24)", 'detail': {'ecart_jours': -2, 'derniere_parution': '2026-09-24'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.79% (474/475)', 'detail': {'taux': 0.9979}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '100.00% (475/475)', 'detail': {'taux': 1.0}, 'statut': 'OK'}]}
+[2026-09-24T09:43:05.700+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche silver', 'total': 10, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'completude_extraction', 'reussi': True, 'bloquant': True, 'attendu': "475 annonces, soit le total annonce par l'API pour ce jour", 'observe': '475 annonces ecrites en bronze', 'detail': {'ecart': 0}, 'statut': 'OK'}, {'nom': 'unicite_id_annonce', 'reussi': True, 'bloquant': True, 'attendu': "aucun identifiant d'annonce en double", 'observe': '0 identifiant(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'cles_non_nulles', 'reussi': True, 'bloquant': True, 'attendu': 'id_annonce et date_parution toujours renseignes', 'observe': '0 ligne(s) incompletes', 'detail': {}, 'statut': 'OK'}, {'nom': 'type_evenement_dans_le_vocabulaire', 'reussi': True, 'bloquant': True, 'attendu': 'types parmi 14 valeurs connues', 'observe': '0 type(s) hors vocabulaire', 'detail': {'inconnus': []}, 'statut': 'OK'}, {'nom': 'partition_homogene', 'reussi': True, 'bloquant': True, 'attendu': 'toutes les lignes portent la date de parution 2026-09-22', 'observe': '0 autre(s) date(s) dans la partition', 'detail': {'dates': []}, 'statut': 'OK'}, {'nom': 'perimetre_departemental', 'reussi': True, 'bloquant': True, 'attendu': 'tous les codes commune commencent par 34', 'observe': '0 ligne(s) hors perimetre', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'volumetrie_dans_la_norme', 'reussi': True, 'bloquant': True, 'attendu': 'entre 5 et 1501 annonces (centiles 5 et 95 de 60 jours : 9 et 1000, marges 2 et 1.5)', 'observe': '475 annonces', 'detail': {'mediane': 425.0, 'centile_5': 9.1, 'centile_95': 1000.4, 'borne_basse': 4.5, 'borne_haute': 1500.5, 'jours_historique': 60}, 'statut': 'OK'}, {'nom': 'fraicheur_source', 'reussi': True, 'bloquant': True, 'attendu': 'derniere parution a moins de 5 jours de la date traitee', 'observe': "-2 jour(s) d'ecart (derniere parution 2026-09-24)", 'detail': {'ecart_jours': -2, 'derniere_parution': '2026-09-24'}, 'statut': 'OK'}, {'nom': 'rapprochement_communes', 'reussi': True, 'bloquant': True, 'attendu': 'au moins 95% des annonces rattachees a une commune du referentiel', 'observe': '99.79% (474/475)', 'detail': {'taux': 0.9979}, 'statut': 'OK'}, {'nom': 'presence_siren', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 90% des annonces portent un SIREN valide (cle de Luhn)', 'observe': '100.00% (475/475)', 'detail': {'taux': 1.0}, 'statut': 'OK'}]}
+[2026-09-24T09:43:05.707+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:05.708+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_silver, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094305
+[2026-09-24T09:43:05.718+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_silver map_index=-1
+[2026-09-24T09:43:05.731+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=construire_gold map_index=-1
+[2026-09-24T09:43:05.731+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.construire_gold manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:43:05,749] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.749+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='construire_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.750+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24T09:43:05.806+0000] {storage.py:79} INFO - ecrit s3://amzn-s3-seau/radar/gold/indicateurs_commune_secteur/date_parution=2026-09-22/indicateurs.parquet (13616 octets, 265 lignes)
 {
   "jour": "2026-09-22",
-  "nb_lignes_gold": 275,
+  "nb_lignes_gold": 265,
   "nb_signaux": 0,
-  "octets_parquet": 13601
+  "octets_parquet": 13616
 }
-[2026-09-24 01:26:05,408] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_lignes_gold': 275, 'nb_signaux': 0, 'octets_parquet': 13601}
-[2026-09-24T01:26:05.408+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_lignes_gold': 275, 'nb_signaux': 0, 'octets_parquet': 13601}
-[2026-09-24T01:26:05.413+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:05.414+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_gold, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012605
-[2026-09-24T01:26:05.419+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_gold map_index=-1
-[2026-09-24T01:26:05.427+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_gold map_index=-1
-[2026-09-24T01:26:05.428+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_gold manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:26:05,440] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.440+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.441+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24 09:43:05,818] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_lignes_gold': 265, 'nb_signaux': 0, 'octets_parquet': 13616}
+[2026-09-24T09:43:05.818+0000] {python.py:240} INFO - Done. Returned value was: {'jour': '2026-09-22', 'nb_lignes_gold': 265, 'nb_signaux': 0, 'octets_parquet': 13616}
+[2026-09-24T09:43:05.826+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:05.826+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=construire_gold, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094305
+[2026-09-24T09:43:05.836+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=construire_gold map_index=-1
+[2026-09-24T09:43:05.846+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=controles_qualite_gold map_index=-1
+[2026-09-24T09:43:05.846+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.controles_qualite_gold manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:43:05,861] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.861+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='controles_qualite_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.862+0000] {taskinstance.py:732} INFO - ::endgroup::
 
 Controles de qualite : couche gold
-+--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
-| statut | controle                    | attendu                                                              | observe                          |
-+--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
-| OK     | grain_or_unique             | une seule ligne par (jour, commune, section NAF)                     | 0 cle(s) en double               |
-| OK     | conservation_argent_vers_or | 475 evenements agreges                                               | 475 evenements dans la couche or |
-| OK     | coherence_solde_net         | solde_net = creations + immatriculations - radiations - liquidations | 0 ligne(s) incoherentes          |
-| OK     | compteurs_positifs          | tous les compteurs nb_* sont positifs ou nuls                        | 0 valeur(s) negatives            |
-| OK     | couverture_naf              | au moins 50% des evenements rattaches a une section NAF              | 97.47% (463/475)                 |
-+--------+-----------------------------+----------------------------------------------------------------------+----------------------------------+
++--------+-------------------------------+----------------------------------------------------------------------+----------------------------------+
+| statut | controle                      | attendu                                                              | observe                          |
++--------+-------------------------------+----------------------------------------------------------------------+----------------------------------+
+| OK     | grain_gold_unique             | une seule ligne par (jour, commune, section NAF)                     | 0 cle(s) en double               |
+| OK     | conservation_silver_vers_gold | 475 evenements agreges                                               | 475 evenements dans la couche or |
+| OK     | coherence_solde_net           | solde_net = creations + immatriculations - radiations - liquidations | 0 ligne(s) incoherentes          |
+| OK     | compteurs_positifs            | tous les compteurs nb_* sont positifs ou nuls                        | 0 valeur(s) negatives            |
+| OK     | couverture_naf                | au moins 50% des evenements rattaches a une section NAF              | 69.47% (330/475)                 |
++--------+-------------------------------+----------------------------------------------------------------------+----------------------------------+
 5 controles : 5 OK, 0 alerte(s), 0 echec(s) bloquant(s)
 
-[2026-09-24 01:26:05,483] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_or_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_argent_vers_or', 'reussi': True, 'bloquant': True, 'attendu': '475 evenements agreges', 'observe': '475 evenements dans la couche or', 'detail': {'argent': 475, 'or_': 475}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '97.47% (463/475)', 'detail': {'taux': 0.9747}, 'statut': 'OK'}]}
-[2026-09-24T01:26:05.483+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_or_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_argent_vers_or', 'reussi': True, 'bloquant': True, 'attendu': '475 evenements agreges', 'observe': '475 evenements dans la couche or', 'detail': {'argent': 475, 'or_': 475}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '97.47% (463/475)', 'detail': {'taux': 0.9747}, 'statut': 'OK'}]}
-[2026-09-24T01:26:05.527+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:05.527+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_gold, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012605
-[2026-09-24T01:26:05.532+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_gold map_index=-1
-[2026-09-24T01:26:05.539+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=publier_indicateurs map_index=-1
-[2026-09-24T01:26:05.540+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.publier_indicateurs manual__2026-09-22T00:00:00+02:00 [scheduled]>
-[2026-09-24 01:26:05,551] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.551+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
-[2026-09-24T01:26:05.552+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-09-24 09:43:05,924] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_gold_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_silver_vers_gold', 'reussi': True, 'bloquant': True, 'attendu': '475 evenements agreges', 'observe': '475 evenements dans la couche or', 'detail': {'argent': 475, 'or_': 475}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '69.47% (330/475)', 'detail': {'taux': 0.6947}, 'statut': 'OK'}]}
+[2026-09-24T09:43:05.924+0000] {python.py:240} INFO - Done. Returned value was: {'etape': 'couche gold', 'total': 5, 'echecs_bloquants': 0, 'alertes': 0, 'controles': [{'nom': 'grain_gold_unique', 'reussi': True, 'bloquant': True, 'attendu': 'une seule ligne par (jour, commune, section NAF)', 'observe': '0 cle(s) en double', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'conservation_silver_vers_gold', 'reussi': True, 'bloquant': True, 'attendu': '475 evenements agreges', 'observe': '475 evenements dans la couche or', 'detail': {'argent': 475, 'or_': 475}, 'statut': 'OK'}, {'nom': 'coherence_solde_net', 'reussi': True, 'bloquant': True, 'attendu': 'solde_net = creations + immatriculations - radiations - liquidations', 'observe': '0 ligne(s) incoherentes', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'compteurs_positifs', 'reussi': True, 'bloquant': True, 'attendu': 'tous les compteurs nb_* sont positifs ou nuls', 'observe': '0 valeur(s) negatives', 'detail': {'exemples': []}, 'statut': 'OK'}, {'nom': 'couverture_naf', 'reussi': True, 'bloquant': False, 'attendu': 'au moins 50% des evenements rattaches a une section NAF', 'observe': '69.47% (330/475)', 'detail': {'taux': 0.6947}, 'statut': 'OK'}]}
+[2026-09-24T09:43:05.933+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:05.934+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=controles_qualite_gold, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094305
+[2026-09-24T09:43:05.941+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=controles_qualite_gold map_index=-1
+[2026-09-24T09:43:05.956+0000] {dag.py:4396} INFO - [DAG TEST] starting task_id=publier_indicateurs map_index=-1
+[2026-09-24T09:43:05.956+0000] {dag.py:4399} INFO - [DAG TEST] running task <TaskInstance: radar_entreprises_herault.publier_indicateurs manual__2026-09-22T00:00:00+02:00 [scheduled]>
+[2026-09-24 09:43:05,977] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.977+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yasmina' AIRFLOW_CTX_DAG_ID='radar_entreprises_herault' AIRFLOW_CTX_TASK_ID='publier_indicateurs' AIRFLOW_CTX_EXECUTION_DATE='2026-09-21T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-22T00:00:00+02:00'
+[2026-09-24T09:43:05.978+0000] {taskinstance.py:732} INFO - ::endgroup::
 {
   "nb_evenements": 475,
-  "nb_lignes_or": 275,
+  "nb_lignes_or": 265,
   "nb_communes_touchees": 117,
   "nb_sans_commune": 1,
   "taux_rapprochement_commune": 0.9979,
   "nb_avec_siren": 475,
-  "nb_avec_naf": 463,
+  "nb_avec_naf": 330,
   "par_type": {
     "creation": 121,
     "depot_comptes": 176,
@@ -203,25 +951,24 @@ Controles de qualite : couche gold
     "vente_fonds": 8
   },
   "par_section": {
-    "A": 3,
-    "B": 1,
-    "C": 18,
-    "D": 8,
+    "A": 2,
+    "C": 12,
+    "D": 5,
     "E": 2,
-    "F": 41,
-    "G": 93,
-    "H": 35,
-    "I": 44,
-    "J": 31,
-    "K": 16,
-    "L": 58,
-    "M": 57,
-    "N": 23,
+    "F": 24,
+    "G": 69,
+    "H": 28,
+    "I": 30,
+    "J": 23,
+    "K": 12,
+    "L": 38,
+    "M": 42,
+    "N": 15,
     "P": 4,
-    "Q": 9,
-    "R": 4,
-    "S": 16,
-    "Z": 12
+    "Q": 7,
+    "R": 3,
+    "S": 14,
+    "Z": 145
   },
   "nb_defaillances": 0,
   "nb_ouvertures": 121,
@@ -233,15 +980,15 @@ Controles de qualite : couche gold
   "moteur_requete": "duckdb",
   "requetes_entrepot": {
     "top_communes": 117,
-    "par_section": 19,
+    "par_section": 18,
     "signaux_du_jour": 0,
     "solde_net_departement": 1
   }
 }
-[2026-09-24 01:26:06,074] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 475, 'nb_lignes_or': 275, 'nb_communes_touchees': 117, 'nb_sans_commune': 1, 'taux_rapprochement_commune': 0.9979, 'nb_avec_siren': 475, 'nb_avec_naf': 463, 'par_type': {'creation': 121, 'depot_comptes': 176, 'modification': 87, 'radiation': 53, 'transfert': 30, 'vente_fonds': 8}, 'par_section': {'A': 3, 'B': 1, 'C': 18, 'D': 8, 'E': 2, 'F': 41, 'G': 93, 'H': 35, 'I': 44, 'J': 31, 'K': 16, 'L': 58, 'M': 57, 'N': 23, 'P': 4, 'Q': 9, 'R': 4, 'S': 16, 'Z': 12}, 'nb_defaillances': 0, 'nb_ouvertures': 121, 'solde_net': 68, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 1374086.0, 'jour': '2026-09-22', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 117, 'par_section': 19, 'signaux_du_jour': 0, 'solde_net_departement': 1}}
-[2026-09-24T01:26:06.074+0000] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 475, 'nb_lignes_or': 275, 'nb_communes_touchees': 117, 'nb_sans_commune': 1, 'taux_rapprochement_commune': 0.9979, 'nb_avec_siren': 475, 'nb_avec_naf': 463, 'par_type': {'creation': 121, 'depot_comptes': 176, 'modification': 87, 'radiation': 53, 'transfert': 30, 'vente_fonds': 8}, 'par_section': {'A': 3, 'B': 1, 'C': 18, 'D': 8, 'E': 2, 'F': 41, 'G': 93, 'H': 35, 'I': 44, 'J': 31, 'K': 16, 'L': 58, 'M': 57, 'N': 23, 'P': 4, 'Q': 9, 'R': 4, 'S': 16, 'Z': 12}, 'nb_defaillances': 0, 'nb_ouvertures': 121, 'solde_net': 68, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 1374086.0, 'jour': '2026-09-22', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 117, 'par_section': 19, 'signaux_du_jour': 0, 'solde_net_departement': 1}}
-[2026-09-24T01:26:06.079+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2026-09-24T01:26:06.080+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=publier_indicateurs, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T012606
-[2026-09-24T01:26:06.085+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=publier_indicateurs map_index=-1
-[2026-09-24T01:26:06.087+0000] {dagrun.py:854} INFO - Marking run <DagRun radar_entreprises_herault @ 2026-09-21 22:00:00+00:00: manual__2026-09-22T00:00:00+02:00, state:running, queued_at: None. externally triggered: False> successful
-[2026-09-24T01:26:06.087+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=radar_entreprises_herault, execution_date=2026-09-21 22:00:00+00:00, run_id=manual__2026-09-22T00:00:00+02:00, run_start_date=2026-09-21 22:00:00+00:00, run_end_date=2026-09-24 01:26:06.087782+00:00, run_duration=185166.087782, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-09-18 04:00:00+00:00, data_interval_end=2026-09-19 04:00:00+00:00, dag_hash=None
+[2026-09-24 09:43:06,823] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 475, 'nb_lignes_or': 265, 'nb_communes_touchees': 117, 'nb_sans_commune': 1, 'taux_rapprochement_commune': 0.9979, 'nb_avec_siren': 475, 'nb_avec_naf': 330, 'par_type': {'creation': 121, 'depot_comptes': 176, 'modification': 87, 'radiation': 53, 'transfert': 30, 'vente_fonds': 8}, 'par_section': {'A': 2, 'C': 12, 'D': 5, 'E': 2, 'F': 24, 'G': 69, 'H': 28, 'I': 30, 'J': 23, 'K': 12, 'L': 38, 'M': 42, 'N': 15, 'P': 4, 'Q': 7, 'R': 3, 'S': 14, 'Z': 145}, 'nb_defaillances': 0, 'nb_ouvertures': 121, 'solde_net': 68, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 1374086.0, 'jour': '2026-09-22', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 117, 'par_section': 18, 'signaux_du_jour': 0, 'solde_net_departement': 1}}
+[2026-09-24T09:43:06.823+0000] {python.py:240} INFO - Done. Returned value was: {'nb_evenements': 475, 'nb_lignes_or': 265, 'nb_communes_touchees': 117, 'nb_sans_commune': 1, 'taux_rapprochement_commune': 0.9979, 'nb_avec_siren': 475, 'nb_avec_naf': 330, 'par_type': {'creation': 121, 'depot_comptes': 176, 'modification': 87, 'radiation': 53, 'transfert': 30, 'vente_fonds': 8}, 'par_section': {'A': 2, 'C': 12, 'D': 5, 'E': 2, 'F': 24, 'G': 69, 'H': 28, 'I': 30, 'J': 23, 'K': 12, 'L': 38, 'M': 42, 'N': 15, 'P': 4, 'Q': 7, 'R': 3, 'S': 14, 'Z': 145}, 'nb_defaillances': 0, 'nb_ouvertures': 121, 'solde_net': 68, 'nb_ventes_avec_montant': 5, 'montant_total_ventes_eur': 1374086.0, 'jour': '2026-09-22', 'execution_emulee': True, 'moteur_requete': 'duckdb', 'requetes_entrepot': {'top_communes': 117, 'par_section': 18, 'signaux_du_jour': 0, 'solde_net_departement': 1}}
+[2026-09-24T09:43:06.830+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-09-24T09:43:06.831+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=radar_entreprises_herault, task_id=publier_indicateurs, run_id=manual__2026-09-22T00:00:00+02:00, execution_date=20260921T220000, start_date=, end_date=20260924T094306
+[2026-09-24T09:43:06.838+0000] {dag.py:4410} INFO - [DAG TEST] end task task_id=publier_indicateurs map_index=-1
+[2026-09-24T09:43:06.842+0000] {dagrun.py:854} INFO - Marking run <DagRun radar_entreprises_herault @ 2026-09-21 22:00:00+00:00: manual__2026-09-22T00:00:00+02:00, state:running, queued_at: None. externally triggered: False> successful
+[2026-09-24T09:43:06.842+0000] {dagrun.py:905} INFO - DagRun Finished: dag_id=radar_entreprises_herault, execution_date=2026-09-21 22:00:00+00:00, run_id=manual__2026-09-22T00:00:00+02:00, run_start_date=2026-09-21 22:00:00+00:00, run_end_date=2026-09-24 09:43:06.842457+00:00, run_duration=214986.842457, state=success, external_trigger=False, run_type=manual, data_interval_start=2026-09-18 04:00:00+00:00, data_interval_end=2026-09-19 04:00:00+00:00, dag_hash=None

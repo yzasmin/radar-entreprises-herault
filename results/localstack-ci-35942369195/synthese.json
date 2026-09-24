@@ -1,0 +1,52 @@
+{
+  "nb_evenements": 475,
+  "nb_lignes_or": 275,
+  "nb_communes_touchees": 117,
+  "nb_sans_commune": 1,
+  "taux_rapprochement_commune": 0.9979,
+  "nb_avec_siren": 475,
+  "nb_avec_naf": 463,
+  "par_type": {
+    "creation": 121,
+    "depot_comptes": 176,
+    "modification": 87,
+    "radiation": 53,
+    "transfert": 30,
+    "vente_fonds": 8
+  },
+  "par_section": {
+    "A": 3,
+    "B": 1,
+    "C": 18,
+    "D": 8,
+    "E": 2,
+    "F": 41,
+    "G": 93,
+    "H": 35,
+    "I": 44,
+    "J": 31,
+    "K": 16,
+    "L": 58,
+    "M": 57,
+    "N": 23,
+    "P": 4,
+    "Q": 9,
+    "R": 4,
+    "S": 16,
+    "Z": 12
+  },
+  "nb_defaillances": 0,
+  "nb_ouvertures": 121,
+  "solde_net": 68,
+  "nb_ventes_avec_montant": 5,
+  "montant_total_ventes_eur": 1374086.0,
+  "jour": "2026-09-22",
+  "execution_emulee": true,
+  "moteur_requete": "duckdb",
+  "requetes_entrepot": {
+    "top_communes": 117,
+    "par_section": 19,
+    "signaux_du_jour": 0,
+    "solde_net_departement": 1
+  }
+}

@@ -1,0 +1,534 @@
+jour_fin,fenetre_jours,code_commune,section_naf,nom_commune,libelle_section_naf,nb_creations,nb_immatriculations,nb_transferts,nb_ventes_fonds,nb_modifications,nb_radiations,nb_sauvegardes,nb_redressements,nb_liquidations,nb_plans_cession,nb_defaillances,nb_depots_comptes,nb_evenements,solde_net
+2026-09-22,30,34172,G,Montpellier,"Commerce, reparation d'automobiles",18,0,4,2,8,10,0,3,2,0,5,7,56,6
+2026-09-22,30,34172,I,Montpellier,Hebergement et restauration,1,0,0,0,3,6,0,2,3,0,5,15,36,-8
+2026-09-22,30,34172,M,Montpellier,"Activites specialisees, scientifiques et techniques",3,0,2,0,6,1,0,0,2,0,2,20,34,0
+2026-09-22,30,34172,F,Montpellier,Construction,0,0,0,0,1,7,0,3,1,0,4,11,29,-8
+2026-09-22,30,34172,L,Montpellier,Activites immobilieres,6,0,3,0,4,3,0,0,0,0,0,10,26,3
+2026-09-22,30,34172,J,Montpellier,Information et communication,7,0,2,0,3,2,0,0,0,0,0,11,25,5
+2026-09-22,30,34172,H,Montpellier,Transports et entreposage,16,0,0,0,1,6,0,0,0,0,0,1,24,10
+2026-09-22,30,34172,N,Montpellier,Services administratifs et de soutien,3,0,1,0,2,2,0,1,1,0,2,6,16,0
+2026-09-22,30,34032,F,Béziers,Construction,0,0,8,0,2,0,0,0,1,0,1,1,12,-1
+2026-09-22,30,34172,Z,Montpellier,Secteur non renseigne,8,0,0,0,0,1,0,0,0,0,0,1,12,7
+2026-09-22,30,34032,L,Béziers,Activites immobilieres,4,0,4,0,2,0,0,0,0,0,0,1,11,4
+2026-09-22,30,34057,F,Castelnau-le-Lez,Construction,1,0,0,0,1,1,0,0,0,0,0,7,11,0
+2026-09-22,30,34172,S,Montpellier,Autres activites de services,1,0,0,0,2,1,0,0,0,0,0,5,10,0
+2026-09-22,30,34032,G,Béziers,"Commerce, reparation d'automobiles",2,0,2,0,2,1,0,0,0,0,0,2,9,1
+2026-09-22,30,34032,M,Béziers,"Activites specialisees, scientifiques et techniques",2,0,0,0,3,0,0,0,0,0,0,3,9,2
+2026-09-22,30,34145,G,Lunel,"Commerce, reparation d'automobiles",2,0,0,1,0,0,0,0,0,0,0,6,9,2
+2026-09-22,30,34003,L,Agde,Activites immobilieres,2,0,2,0,2,1,0,0,0,0,0,1,8,1
+2026-09-22,30,34172,K,Montpellier,Activites financieres et d'assurance,0,0,0,0,1,1,0,0,1,0,1,5,8,-2
+2026-09-22,30,34032,N,Béziers,Services administratifs et de soutien,5,0,1,0,0,1,0,0,0,0,0,0,7,4
+2026-09-22,30,34032,S,Béziers,Autres activites de services,0,0,0,0,2,1,0,0,1,0,1,3,7,-2
+2026-09-22,30,34154,M,Mauguio,"Activites specialisees, scientifiques et techniques",0,0,0,0,2,0,0,0,0,0,0,5,7,0
+2026-09-22,30,34172,C,Montpellier,Industrie manufacturiere,1,0,0,0,2,2,0,1,0,0,1,1,7,-1
+2026-09-22,30,34172,D,Montpellier,Production et distribution d'energie,0,0,0,0,6,0,0,0,0,0,0,1,7,0
+2026-09-22,30,34032,H,Béziers,Transports et entreposage,5,0,0,0,0,1,0,0,0,0,0,0,6,4
+2026-09-22,30,34108,G,Frontignan,"Commerce, reparation d'automobiles",2,0,1,0,0,1,0,0,0,0,0,2,6,1
+2026-09-22,30,34129,F,Lattes,Construction,0,0,0,0,0,1,0,0,0,0,0,4,6,-1
+2026-09-22,30,34154,I,Mauguio,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,3,6,0
+2026-09-22,30,34172,P,Montpellier,Enseignement,2,0,0,0,0,2,0,1,0,0,1,1,6,0
+2026-09-22,30,34199,G,Pézenas,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,5,6,1
+2026-09-22,30,34270,G,Saint-Jean-de-Védas,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,5,6,-1
+2026-09-22,30,34301,L,Sète,Activites immobilieres,0,0,1,0,2,0,0,0,0,0,0,3,6,0
+2026-09-22,30,34032,I,Béziers,Hebergement et restauration,1,0,0,0,0,2,0,0,0,0,0,1,5,-1
+2026-09-22,30,34032,J,Béziers,Information et communication,1,0,0,0,3,1,0,0,0,0,0,0,5,0
+2026-09-22,30,34057,G,Castelnau-le-Lez,"Commerce, reparation d'automobiles",1,0,0,0,0,3,0,0,0,0,0,0,5,-2
+2026-09-22,30,34057,H,Castelnau-le-Lez,Transports et entreposage,1,0,0,0,1,2,0,0,0,0,0,1,5,-1
+2026-09-22,30,34057,M,Castelnau-le-Lez,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,4,5,0
+2026-09-22,30,34087,M,Cournonsec,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,4,5,0
+2026-09-22,30,34123,H,Juvignac,Transports et entreposage,2,0,0,0,0,3,0,0,0,0,0,0,5,-1
+2026-09-22,30,34123,G,Juvignac,"Commerce, reparation d'automobiles",2,0,0,0,0,2,0,0,0,0,0,1,5,0
+2026-09-22,30,34154,K,Mauguio,Activites financieres et d'assurance,0,0,2,0,0,0,0,0,0,0,0,3,5,0
+2026-09-22,30,34198,M,Pérols,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,1,0,0,0,0,0,2,5,0
+2026-09-22,30,34198,G,Pérols,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,1,0,0,1,3,5,0
+2026-09-22,30,34301,G,Sète,"Commerce, reparation d'automobiles",1,0,1,0,1,0,0,0,0,0,0,2,5,1
+2026-09-22,30,34332,G,Vias,"Commerce, reparation d'automobiles",0,0,0,0,3,2,0,0,0,0,0,0,5,-2
+2026-09-22,30,34341,F,Villeveyrac,Construction,0,0,0,0,0,0,0,0,0,0,0,5,5,0
+2026-09-22,30,34003,I,Agde,Hebergement et restauration,1,0,0,0,0,2,0,0,0,0,0,1,4,-1
+2026-09-22,30,34022,H,Baillargues,Transports et entreposage,1,0,0,0,0,2,0,0,0,0,0,0,4,-1
+2026-09-22,30,34032,K,Béziers,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,4,4,0
+2026-09-22,30,34129,I,Lattes,Hebergement et restauration,1,0,0,0,1,0,0,0,0,0,0,1,4,1
+2026-09-22,30,34154,N,Mauguio,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,3,4,0
+2026-09-22,30,34172,Q,Montpellier,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,4,4,0
+2026-09-22,30,34270,Q,Saint-Jean-de-Védas,Sante humaine et action sociale,1,0,0,0,0,0,0,0,0,0,0,3,4,1
+2026-09-22,30,34301,A,Sète,"Agriculture, sylviculture et peche",0,0,0,0,2,0,0,0,0,0,0,2,4,0
+2026-09-22,30,34301,I,Sète,Hebergement et restauration,1,0,0,0,0,1,0,0,0,0,0,1,4,0
+2026-09-22,30,,Z,,Secteur non renseigne,0,0,0,0,0,3,0,0,0,0,0,0,3,-3
+2026-09-22,30,34003,G,Agde,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,2,3,1
+2026-09-22,30,34003,M,Agde,"Activites specialisees, scientifiques et techniques",0,0,1,0,1,0,0,0,0,0,0,1,3,0
+2026-09-22,30,34032,C,Béziers,Industrie manufacturiere,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+2026-09-22,30,34032,E,Béziers,"Eau, assainissement, dechets",2,0,0,0,0,1,0,0,0,0,0,0,3,1
+2026-09-22,30,34057,Z,Castelnau-le-Lez,Secteur non renseigne,2,0,0,1,0,0,0,0,0,0,0,0,3,2
+2026-09-22,30,34057,L,Castelnau-le-Lez,Activites immobilieres,1,0,1,0,0,0,0,0,0,0,0,1,3,1
+2026-09-22,30,34057,N,Castelnau-le-Lez,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34058,L,Castries,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34111,S,Ganges,Autres activites de services,0,0,0,1,0,0,0,0,1,0,1,1,3,-1
+2026-09-22,30,34116,G,Grabels,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,1,3,1
+2026-09-22,30,34129,K,Lattes,Activites financieres et d'assurance,0,0,0,0,2,0,0,0,0,0,0,1,3,0
+2026-09-22,30,34129,L,Lattes,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34129,M,Lattes,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34145,F,Lunel,Construction,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+2026-09-22,30,34154,L,Mauguio,Activites immobilieres,2,0,1,0,0,0,0,0,0,0,0,0,3,2
+2026-09-22,30,34154,G,Mauguio,"Commerce, reparation d'automobiles",1,0,0,0,1,1,0,0,0,0,0,0,3,0
+2026-09-22,30,34157,L,Mèze,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34172,R,Montpellier,"Arts, spectacles et activites recreatives",0,0,0,0,0,1,0,0,0,0,0,1,3,-1
+2026-09-22,30,34240,J,Saint-Aunès,Information et communication,0,0,0,0,0,0,0,0,0,0,0,3,3,0
+2026-09-22,30,34240,M,Saint-Aunès,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,3,3,0
+2026-09-22,30,34255,L,Saint-Gély-du-Fesc,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,2,3,-1
+2026-09-22,30,34270,M,Saint-Jean-de-Védas,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,1,0,0,0,0,0,2,3,-1
+2026-09-22,30,34276,G,Saint-Mathieu-de-Tréviers,"Commerce, reparation d'automobiles",2,0,0,0,0,0,0,0,0,0,0,1,3,2
+2026-09-22,30,34301,M,Sète,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,3,3,0
+2026-09-22,30,34301,R,Sète,"Arts, spectacles et activites recreatives",1,0,0,0,0,0,0,0,0,0,0,2,3,1
+2026-09-22,30,34307,J,Sussargues,Information et communication,0,0,0,0,1,0,0,0,0,0,0,2,3,0
+2026-09-22,30,34309,G,Teyran,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,3,-1
+2026-09-22,30,34337,C,Villeneuve-lès-Maguelone,Industrie manufacturiere,0,0,0,0,0,1,0,0,0,0,0,1,3,-1
+2026-09-22,30,34344,M,La Grande-Motte,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,2,3,1
+2026-09-22,30,34344,I,La Grande-Motte,Hebergement et restauration,1,0,0,0,1,0,0,0,0,0,0,0,3,1
+2026-09-22,30,34003,F,Agde,Construction,0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34003,N,Agde,Services administratifs et de soutien,2,0,0,0,0,0,0,0,0,0,0,0,2,2
+2026-09-22,30,34003,H,Agde,Transports et entreposage,2,0,0,0,0,0,0,0,0,0,0,0,2,2
+2026-09-22,30,34010,G,Aniane,"Commerce, reparation d'automobiles",0,0,0,0,2,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34013,G,Aspiran,"Commerce, reparation d'automobiles",0,0,0,0,1,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34022,G,Baillargues,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34023,I,Balaruc-les-Bains,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34024,G,Balaruc-le-Vieux,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34039,N,Bouzigues,Services administratifs et de soutien,0,0,0,0,0,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34052,G,Capestang,"Commerce, reparation d'automobiles",0,0,1,0,1,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34058,M,Castries,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34063,I,Caux,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34079,C,Clermont-l'Hérault,Industrie manufacturiere,0,0,0,0,0,1,0,0,1,0,1,0,2,-2
+2026-09-22,30,34079,G,Clermont-l'Hérault,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34079,L,Clermont-l'Hérault,Activites immobilieres,0,0,0,1,0,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34082,M,Combaillaux,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34088,M,Cournonterral,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34090,M,Le Crès,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34094,L,Espondeilhan,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34095,G,Fabrègues,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34095,L,Fabrègues,Activites immobilieres,2,0,0,0,0,0,0,0,0,0,0,0,2,2
+2026-09-22,30,34108,N,Frontignan,Services administratifs et de soutien,2,0,0,0,0,0,0,0,0,0,0,0,2,2
+2026-09-22,30,34108,J,Frontignan,Information et communication,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34108,I,Frontignan,Hebergement et restauration,0,0,0,1,0,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34111,G,Ganges,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34113,G,Gigean,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34113,H,Gigean,Transports et entreposage,1,0,0,0,0,1,0,0,0,0,0,0,2,0
+2026-09-22,30,34116,M,Grabels,"Activites specialisees, scientifiques et techniques",1,0,0,0,1,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34120,K,Jacou,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34122,L,Jonquières,Activites immobilieres,1,0,1,0,0,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34123,F,Juvignac,Construction,0,0,0,0,1,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34123,M,Juvignac,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,1,0,0,0,0,0,0,2,0
+2026-09-22,30,34123,K,Juvignac,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34127,L,Lansargues,Activites immobilieres,2,0,0,0,0,0,0,0,0,0,0,0,2,2
+2026-09-22,30,34129,N,Lattes,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34129,G,Lattes,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,1,0,1,0,2,-2
+2026-09-22,30,34129,P,Lattes,Enseignement,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34145,I,Lunel,Hebergement et restauration,0,0,0,0,0,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34145,K,Lunel,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34147,G,Magalas,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34148,G,Maraussan,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34154,F,Mauguio,Construction,0,0,0,0,0,0,0,1,0,0,1,1,2,0
+2026-09-22,30,34154,Z,Mauguio,Secteur non renseigne,1,0,0,0,1,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34154,J,Mauguio,Information et communication,1,0,0,0,1,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34157,F,Mèze,Construction,0,0,0,0,0,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34162,C,Montagnac,Industrie manufacturiere,0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34163,F,Montarnaud,Construction,0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34172,E,Montpellier,"Eau, assainissement, dechets",0,0,0,0,2,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34179,M,Murviel-lès-Montpellier,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34192,G,Palavas-les-Flots,"Commerce, reparation d'automobiles",1,0,0,0,1,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34194,G,Paulhan,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34198,L,Pérols,Activites immobilieres,0,0,1,0,1,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34199,I,Pézenas,Hebergement et restauration,1,0,1,0,0,0,0,0,0,0,0,0,2,1
+2026-09-22,30,34213,G,Poussan,"Commerce, reparation d'automobiles",0,0,1,0,1,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34225,J,Puisserguier,Information et communication,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34255,Z,Saint-Gély-du-Fesc,Secteur non renseigne,1,0,0,0,0,0,0,1,0,0,1,0,2,1
+2026-09-22,30,34259,L,Saint-Georges-d'Orques,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34259,F,Saint-Georges-d'Orques,Construction,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34270,H,Saint-Jean-de-Védas,Transports et entreposage,1,0,0,0,0,1,0,0,0,0,0,0,2,0
+2026-09-22,30,34270,L,Saint-Jean-de-Védas,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34270,F,Saint-Jean-de-Védas,Construction,0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34270,N,Saint-Jean-de-Védas,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34276,L,Saint-Mathieu-de-Tréviers,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34280,M,Saint-Nazaire-de-Pézan,"Activites specialisees, scientifiques et techniques",0,0,0,0,2,0,0,0,0,0,0,0,2,0
+2026-09-22,30,34296,C,Saussines,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34298,G,Sauvian,"Commerce, reparation d'automobiles",1,0,0,0,0,1,0,0,0,0,0,0,2,0
+2026-09-22,30,34301,C,Sète,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34301,H,Sète,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34310,L,Thézan-lès-Béziers,Activites immobilieres,1,0,0,0,0,1,0,0,0,0,0,0,2,0
+2026-09-22,30,34320,M,Vailhauquès,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34327,G,Vendargues,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,1,2,-1
+2026-09-22,30,34327,N,Vendargues,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+2026-09-22,30,34327,F,Vendargues,Construction,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34329,G,Vendres,"Commerce, reparation d'automobiles",0,0,0,0,1,1,0,0,0,0,0,0,2,-1
+2026-09-22,30,34340,J,Villetelle,Information et communication,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34341,C,Villeveyrac,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,1,2,0
+2026-09-22,30,34344,P,La Grande-Motte,Enseignement,0,0,0,0,0,0,0,0,0,0,0,2,2,0
+2026-09-22,30,34344,G,La Grande-Motte,"Commerce, reparation d'automobiles",1,0,1,0,0,0,0,0,0,0,0,0,2,1
+2026-09-22,30,,I,"Rimeize, Clermont-l'Hérault",Hebergement et restauration,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,,G,"Avignon, Béziers","Commerce, reparation d'automobiles",0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,,R,Lyon IIe arrondissement,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34002,K,Adissan,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34002,G,Adissan,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34002,M,Adissan,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34003,P,Agde,Enseignement,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34003,C,Agde,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34003,S,Agde,Autres activites de services,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34005,S,Agonès,Autres activites de services,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34009,A,Alignan-du-Vent,"Agriculture, sylviculture et peche",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34017,M,Aumes,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34017,L,Aumes,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34018,N,Autignac,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34019,L,Avène,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34022,K,Baillargues,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34022,N,Baillargues,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34022,L,Baillargues,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,C,Balaruc-les-Bains,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,K,Balaruc-les-Bains,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,M,Balaruc-les-Bains,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,G,Balaruc-les-Bains,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,N,Balaruc-les-Bains,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34023,Q,Balaruc-les-Bains,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34024,H,Balaruc-le-Vieux,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34024,F,Balaruc-le-Vieux,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34025,G,Bassan,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34025,H,Bassan,Transports et entreposage,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34027,N,Beaulieu,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34027,E,Beaulieu,"Eau, assainissement, dechets",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34027,L,Beaulieu,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34028,S,Bédarieux,Autres activites de services,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34031,D,Bessan,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34031,L,Bessan,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34031,M,Bessan,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34031,S,Bessan,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34032,R,Béziers,"Arts, spectacles et activites recreatives",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34032,D,Béziers,Production et distribution d'energie,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34032,Z,Béziers,Secteur non renseigne,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34033,F,Boisseron,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34036,I,Le Bosc,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34036,D,Le Bosc,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34039,J,Bouzigues,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34039,L,Bouzigues,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34044,G,Cabrerolles,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34047,E,Campagnan,"Eau, assainissement, dechets",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34047,G,Campagnan,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34047,J,Campagnan,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34050,J,Candillargues,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34050,K,Candillargues,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34051,G,Canet,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34052,J,Capestang,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34052,P,Capestang,Enseignement,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34056,F,Castelnau-de-Guers,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34057,P,Castelnau-le-Lez,Enseignement,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34057,J,Castelnau-le-Lez,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34057,K,Castelnau-le-Lez,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34057,Q,Castelnau-le-Lez,Sante humaine et action sociale,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34057,I,Castelnau-le-Lez,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34058,G,Castries,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34058,Q,Castries,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34058,Z,Castries,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34058,K,Castries,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34058,C,Castries,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34058,F,Castries,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34058,J,Castries,Information et communication,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34063,K,Caux,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34063,J,Caux,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34063,S,Caux,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34065,H,Cazedarnes,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34068,G,Cazouls-d'Hérault,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34071,Z,Ceilhes-et-Rocozels,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34074,A,Cessenon-sur-Orb,"Agriculture, sylviculture et peche",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34074,G,Cessenon-sur-Orb,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34074,K,Cessenon-sur-Orb,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34074,L,Cessenon-sur-Orb,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34077,H,Clapiers,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34077,K,Clapiers,Activites financieres et d'assurance,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34077,L,Clapiers,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34077,P,Clapiers,Enseignement,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34078,C,Claret,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34078,I,Claret,Hebergement et restauration,0,0,0,0,0,0,0,1,0,0,1,0,1,0
+2026-09-22,30,34078,L,Claret,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34079,Q,Clermont-l'Hérault,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34079,A,Clermont-l'Hérault,"Agriculture, sylviculture et peche",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34079,S,Clermont-l'Hérault,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34079,N,Clermont-l'Hérault,Services administratifs et de soutien,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34081,G,Colombiers,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34081,I,Colombiers,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34082,L,Combaillaux,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34084,L,Corneilhan,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34087,G,Cournonsec,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34087,H,Cournonsec,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34087,L,Cournonsec,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34088,F,Cournonterral,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34088,G,Cournonterral,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34088,L,Cournonterral,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34088,Q,Cournonterral,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34089,J,Creissan,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34090,L,Le Crès,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34090,R,Le Crès,"Arts, spectacles et activites recreatives",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34090,C,Le Crès,Industrie manufacturiere,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34090,G,Le Crès,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34090,S,Le Crès,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34095,J,Fabrègues,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34095,E,Fabrègues,"Eau, assainissement, dechets",0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34095,R,Fabrègues,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34095,M,Fabrègues,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34095,N,Fabrègues,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34096,F,Faugères,Construction,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34096,J,Faugères,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34097,A,Félines-Minervois,"Agriculture, sylviculture et peche",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34101,K,Florensac,Activites financieres et d'assurance,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34108,F,Frontignan,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34108,M,Frontignan,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34109,N,Gabian,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34109,G,Gabian,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34111,L,Ganges,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34112,G,Garrigues,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34113,J,Gigean,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34114,I,Gignac,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34116,I,Grabels,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34116,K,Grabels,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34120,G,Jacou,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34120,H,Jacou,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34120,L,Jacou,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34120,M,Jacou,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34120,R,Jacou,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34120,N,Jacou,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34122,R,Jonquières,"Arts, spectacles et activites recreatives",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34123,Z,Juvignac,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34123,J,Juvignac,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34126,Q,Lamalou-les-Bains,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34126,M,Lamalou-les-Bains,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34127,S,Lansargues,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34127,N,Lansargues,Services administratifs et de soutien,0,0,0,0,0,0,0,0,1,0,1,0,1,-1
+2026-09-22,30,34127,G,Lansargues,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34127,P,Lansargues,Enseignement,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34128,F,Laroque,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34128,I,Laroque,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34129,H,Lattes,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34129,J,Lattes,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34130,A,Laurens,"Agriculture, sylviculture et peche",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34134,G,Lavérune,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34135,J,Lespignan,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34136,C,Lézignan-la-Cèbe,Industrie manufacturiere,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34136,J,Lézignan-la-Cèbe,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34139,C,Lieuran-lès-Béziers,Industrie manufacturiere,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34139,L,Lieuran-lès-Béziers,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34140,G,Lignan-sur-Orb,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34142,H,Lodève,Transports et entreposage,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34142,I,Lodève,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34142,M,Lodève,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34143,G,Loupian,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34143,H,Loupian,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34143,Z,Loupian,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34145,H,Lunel,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34145,Q,Lunel,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34145,J,Lunel,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34145,N,Lunel,Services administratifs et de soutien,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34145,Z,Lunel,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34146,N,Lunel-Viel,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34146,L,Lunel-Viel,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34150,H,Marseillan,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34150,G,Marseillan,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34151,K,Marsillargues,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34151,I,Marsillargues,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34151,J,Marsillargues,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34151,L,Marsillargues,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34153,M,Les Matelles,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34154,P,Mauguio,Enseignement,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34154,H,Mauguio,Transports et entreposage,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34154,S,Mauguio,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34155,F,Maureilhan,Construction,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34155,G,Maureilhan,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34157,G,Mèze,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34157,J,Mèze,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34157,R,Mèze,"Arts, spectacles et activites recreatives",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34157,Z,Mèze,Secteur non renseigne,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34157,K,Mèze,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34157,N,Mèze,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34159,J,Mireval,Information et communication,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34161,L,Montady,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34161,C,Montady,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34161,G,Montady,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34162,H,Montagnac,Transports et entreposage,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34162,K,Montagnac,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34162,N,Montagnac,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34162,A,Montagnac,"Agriculture, sylviculture et peche",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34162,M,Montagnac,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34164,M,Montaud,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34166,Q,Montblanc,Sante humaine et action sociale,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34169,F,Montferrier-sur-Lez,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34169,L,Montferrier-sur-Lez,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34174,C,Moulès-et-Baucels,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34174,I,Moulès-et-Baucels,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34176,G,Mudaison,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34176,M,Mudaison,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34183,G,Nissan-lez-Enserune,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34183,I,Nissan-lez-Enserune,Hebergement et restauration,0,0,0,0,0,0,0,0,1,0,1,0,1,-1
+2026-09-22,30,34183,S,Nissan-lez-Enserune,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34183,M,Nissan-lez-Enserune,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34184,I,Nizas,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34184,L,Nizas,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34186,I,Octon,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34186,N,Octon,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34187,F,Olargues,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34189,Z,Olonzac,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34191,G,Pailhès,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34192,J,Palavas-les-Flots,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34194,A,Paulhan,"Agriculture, sylviculture et peche",0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34194,C,Paulhan,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34198,I,Pérols,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34198,K,Pérols,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34198,C,Pérols,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34199,D,Pézenas,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34199,K,Pézenas,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34199,F,Pézenas,Construction,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34199,L,Pézenas,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34202,Q,Pignan,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34203,S,Pinet,Autres activites de services,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34207,K,Pomérols,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34207,Z,Pomérols,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34207,M,Pomérols,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34207,F,Pomérols,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34209,F,Portiragnes,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34209,G,Portiragnes,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34209,N,Portiragnes,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34210,M,Le Pouget,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34210,Q,Le Pouget,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34211,Z,Le Poujol-sur-Orb,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34213,J,Poussan,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34213,K,Poussan,Activites financieres et d'assurance,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34213,M,Poussan,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34213,C,Poussan,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34213,Q,Poussan,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34214,N,Pouzolles,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34217,I,Prades-le-Lez,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34217,G,Prades-le-Lez,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34217,K,Prades-le-Lez,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34217,N,Prades-le-Lez,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34217,M,Prades-le-Lez,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34223,L,Puimisson,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34225,Z,Puisserguier,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34227,G,Restinclières,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34227,I,Restinclières,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34227,M,Restinclières,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34239,H,Saint-André-de-Sangonis,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34239,G,Saint-André-de-Sangonis,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34239,S,Saint-André-de-Sangonis,Autres activites de services,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34239,I,Saint-André-de-Sangonis,Hebergement et restauration,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34239,Z,Saint-André-de-Sangonis,Secteur non renseigne,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34240,F,Saint-Aunès,Construction,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34240,G,Saint-Aunès,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34240,K,Saint-Aunès,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34242,N,Saint-Bauzille-de-Montmel,Services administratifs et de soutien,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34242,J,Saint-Bauzille-de-Montmel,Information et communication,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34242,K,Saint-Bauzille-de-Montmel,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34243,G,Saint-Bauzille-de-Putois,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34243,M,Saint-Bauzille-de-Putois,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34243,I,Saint-Bauzille-de-Putois,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34244,S,Saint-Brès,Autres activites de services,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34246,J,Entre-Vignes,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34247,M,Saint-Clément-de-Rivière,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34247,P,Saint-Clément-de-Rivière,Enseignement,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34247,C,Saint-Clément-de-Rivière,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34247,L,Saint-Clément-de-Rivière,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34249,C,Saint-Drézéry,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34249,Q,Saint-Drézéry,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34249,F,Saint-Drézéry,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34254,H,Saint-Félix-de-Lodez,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34254,K,Saint-Félix-de-Lodez,Activites financieres et d'assurance,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34255,G,Saint-Gély-du-Fesc,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34255,N,Saint-Gély-du-Fesc,Services administratifs et de soutien,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34255,S,Saint-Gély-du-Fesc,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34255,K,Saint-Gély-du-Fesc,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34255,M,Saint-Gély-du-Fesc,"Activites specialisees, scientifiques et techniques",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34256,G,Saint-Geniès-des-Mourgues,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34256,K,Saint-Geniès-des-Mourgues,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34258,G,Saint-Geniès-de-Fontedit,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34259,G,Saint-Georges-d'Orques,"Commerce, reparation d'automobiles",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34262,F,Saint-Guiraud,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34263,D,Saint-Hilaire-de-Beauvoir,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34267,F,Saint-Jean-de-Fos,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34269,C,Saint-Jean-de-Minervois,Industrie manufacturiere,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34270,P,Saint-Jean-de-Védas,Enseignement,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34270,B,Saint-Jean-de-Védas,Industries extractives,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34270,D,Saint-Jean-de-Védas,Production et distribution d'energie,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34270,I,Saint-Jean-de-Védas,Hebergement et restauration,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34272,L,Saint-Just,Activites immobilieres,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34274,M,Saint-Martin-de-Londres,"Activites specialisees, scientifiques et techniques",0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34274,I,Saint-Martin-de-Londres,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34274,L,Saint-Martin-de-Londres,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34276,K,Saint-Mathieu-de-Tréviers,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34276,C,Saint-Mathieu-de-Tréviers,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34276,M,Saint-Mathieu-de-Tréviers,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34280,G,Saint-Nazaire-de-Pézan,"Commerce, reparation d'automobiles",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34281,L,Saint-Pargoire,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34287,I,Saint-Saturnin-de-Lucian,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34288,M,Saint-Sériès,"Activites specialisees, scientifiques et techniques",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34289,K,Saint-Thibéry,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34289,R,Saint-Thibéry,"Arts, spectacles et activites recreatives",1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34293,S,La Salvetat-sur-Agout,Autres activites de services,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34295,F,Saussan,Construction,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34296,K,Saussines,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34298,R,Sauvian,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34298,S,Sauvian,Autres activites de services,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34298,K,Sauvian,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34298,L,Sauvian,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34299,I,Sérignan,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34299,P,Sérignan,Enseignement,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34299,R,Sérignan,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34299,C,Sérignan,Industrie manufacturiere,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34299,L,Sérignan,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34300,F,Servian,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34300,I,Servian,Hebergement et restauration,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34300,L,Servian,Activites immobilieres,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34300,M,Servian,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34300,G,Servian,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34300,N,Servian,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34301,Q,Sète,Sante humaine et action sociale,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34301,Z,Sète,Secteur non renseigne,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34301,F,Sète,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34301,K,Sète,Activites financieres et d'assurance,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34301,N,Sète,Services administratifs et de soutien,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34301,S,Sète,Autres activites de services,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34307,C,Sussargues,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34307,K,Sussargues,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34307,M,Sussargues,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34307,H,Sussargues,Transports et entreposage,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34309,L,Teyran,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34310,G,Thézan-lès-Béziers,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34310,E,Thézan-lès-Béziers,"Eau, assainissement, dechets",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34310,I,Thézan-lès-Béziers,Hebergement et restauration,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34320,E,Vailhauquès,"Eau, assainissement, dechets",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34320,G,Vailhauquès,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34321,K,Valergues,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34321,L,Valergues,Activites immobilieres,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34322,J,Valflaunès,Information et communication,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34324,G,Valras-Plage,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34324,I,Valras-Plage,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34324,Z,Valras-Plage,Secteur non renseigne,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34325,A,Valros,"Agriculture, sylviculture et peche",0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34325,Z,Valros,Secteur non renseigne,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34327,J,Vendargues,Information et communication,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34327,C,Vendargues,Industrie manufacturiere,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34327,K,Vendargues,Activites financieres et d'assurance,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34327,M,Vendargues,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34329,M,Vendres,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34329,Z,Vendres,Secteur non renseigne,0,0,0,1,0,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34329,H,Vendres,Transports et entreposage,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34329,I,Vendres,Hebergement et restauration,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34332,L,Vias,Activites immobilieres,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34332,I,Vias,Hebergement et restauration,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34332,H,Vias,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34332,R,Vias,"Arts, spectacles et activites recreatives",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34333,J,Vic-la-Gardiole,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34333,M,Vic-la-Gardiole,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34336,M,Villeneuve-lès-Béziers,"Activites specialisees, scientifiques et techniques",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34336,A,Villeneuve-lès-Béziers,"Agriculture, sylviculture et peche",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34336,J,Villeneuve-lès-Béziers,Information et communication,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34337,F,Villeneuve-lès-Maguelone,Construction,0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34337,G,Villeneuve-lès-Maguelone,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34337,L,Villeneuve-lès-Maguelone,Activites immobilieres,0,0,0,0,1,0,0,0,0,0,0,0,1,0
+2026-09-22,30,34340,G,Villetelle,"Commerce, reparation d'automobiles",0,0,0,0,0,1,0,0,0,0,0,0,1,-1
+2026-09-22,30,34340,H,Villetelle,Transports et entreposage,1,0,0,0,0,0,0,0,0,0,0,0,1,1
+2026-09-22,30,34341,G,Villeveyrac,"Commerce, reparation d'automobiles",0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34343,F,Viols-le-Fort,Construction,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34344,K,La Grande-Motte,Activites financieres et d'assurance,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+2026-09-22,30,34344,D,La Grande-Motte,Production et distribution d'energie,0,0,0,0,1,0,0,0,0,0,0,0,1,0

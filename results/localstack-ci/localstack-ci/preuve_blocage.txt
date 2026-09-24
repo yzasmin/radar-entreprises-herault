@@ -1,0 +1,48 @@
+ Container radar-entreprises-herault-localstack-1  Running
+ Container radar-entreprises-herault-postgres-1  Running
+
+
+Controles de qualite : volumetrie effondree
++--------+--------------------------+--------------------+---------------------------------------------------+
+| statut | controle                 | attendu            | observe                                           |
++--------+--------------------------+--------------------+---------------------------------------------------+
+| ECHEC  | volumetrie_dans_la_norme | au moins 1 annonce | 0 annonce(s), historique trop court pour calibrer |
++--------+--------------------------+--------------------+---------------------------------------------------+
+1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
+
+BLOCAGE CONFIRME [volumetrie effondree] : 1 controle(s) bloquant(s) en echec a l'etape volumetrie effondree : volumetrie_dans_la_norme (attendu au moins 1 annonce, observe 0 annonce(s), historique trop court pour calibrer)
+
+
+Controles de qualite : source gelee depuis sept semaines
++--------+------------------+---------------------------------------------------------+---------------------------------------------------+
+| statut | controle         | attendu                                                 | observe                                           |
++--------+------------------+---------------------------------------------------------+---------------------------------------------------+
+| ECHEC  | fraicheur_source | derniere parution a moins de 5 jours de la date traitee | 52 jour(s) d'ecart (derniere parution 2026-08-01) |
++--------+------------------+---------------------------------------------------------+---------------------------------------------------+
+1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
+
+BLOCAGE CONFIRME [source gelee depuis sept semaines] : 1 controle(s) bloquant(s) en echec a l'etape source gelee depuis sept semaines : fraicheur_source (attendu derniere parution a moins de 5 jours de la date traitee, observe 52 jour(s) d'ecart (derniere parution 2026-08-01))
+
+
+Controles de qualite : annonce publiee deux fois
++--------+--------------------+---------------------------------------+----------------------------+
+| statut | controle           | attendu                               | observe                    |
++--------+--------------------+---------------------------------------+----------------------------+
+| ECHEC  | unicite_id_annonce | aucun identifiant d'annonce en double | 1 identifiant(s) en double |
++--------+--------------------+---------------------------------------+----------------------------+
+1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
+
+BLOCAGE CONFIRME [annonce publiee deux fois] : 1 controle(s) bloquant(s) en echec a l'etape annonce publiee deux fois : unicite_id_annonce (attendu aucun identifiant d'annonce en double, observe 1 identifiant(s) en double)
+
+
+Controles de qualite : evenements perdus entre argent et or
++--------+-----------------------------+----------------------+--------------------------------+
+| statut | controle                    | attendu              | observe                        |
++--------+-----------------------------+----------------------+--------------------------------+
+| ECHEC  | conservation_argent_vers_or | 2 evenements agreges | 1 evenements dans la couche or |
++--------+-----------------------------+----------------------+--------------------------------+
+1 controles : 0 OK, 0 alerte(s), 1 echec(s) bloquant(s)
+
+BLOCAGE CONFIRME [evenements perdus entre argent et or] : 1 controle(s) bloquant(s) en echec a l'etape evenements perdus entre argent et or : conservation_argent_vers_or (attendu 2 evenements agreges, observe 1 evenements dans la couche or)
+
+4 cas sur 4 ont bien arrete le graphe.
