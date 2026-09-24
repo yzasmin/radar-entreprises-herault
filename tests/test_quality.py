@@ -183,12 +183,12 @@ def test_presence_siren_est_une_alerte_pas_un_blocage(evenements):
 # ---------------------------------------------------------------------------
 
 
-def test_conservation_argent_vers_or(evenements, lignes_or):
+def test_conservation_silver_vers_gold(evenements, lignes_or):
     assert q.controle_conservation(evenements, lignes_or).reussi
     assert not q.controle_conservation(evenements, lignes_or[:-1]).reussi
 
 
-def test_grain_or_unique(lignes_or):
+def test_grain_gold_unique(lignes_or):
     assert q.controle_grain_or(lignes_or).reussi
     assert not q.controle_grain_or([*lignes_or, lignes_or[0]]).reussi
 

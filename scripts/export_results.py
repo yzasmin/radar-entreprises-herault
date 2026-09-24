@@ -154,11 +154,43 @@ def main() -> int:
         {"jour": jour, "partitions_or": partitions, "fenetre_jours": args.jours_fenetre, "debut": debut_fenetre},
     )
 
-    # 5. Evenements du jour, anonymises sur rien : ce sont des annonces legales publiques.
+    # 5. Cout S3 attendu. Tarifs publics AWS pour eu-north-1 (Stockholm), releves
+    #    le 24/09/2026 dans l'index de tarification officiel :
+    #      stockage Standard, 50 premiers To : 0,023 USD par Go et par mois
+    #      requetes PUT, COPY, POST, LIST    : 0,005 USD pour 1 000
+    #      requetes GET et autres            : 0,0004 USD pour 1 000
+    #    Le graphe ecrit 8 objets par jour et en relit une quinzaine.
+    go = volumetrie["octets_s3_total"] / 1_000_000_000
+    objets_par_jour = 8
+    lectures_par_jour = 20
+    cout = {
+        "region": cfg.region,
+        "tarifs_usd": {"stockage_go_mois": 0.023, "put_1000": 0.005, "get_1000": 0.0004},
+        "tarifs_releves_le": "2026-09-24",
+        "octets_stockes": volumetrie["octets_s3_total"],
+        "go_stockes": round(go, 6),
+        "nb_objets": volumetrie["nb_objets_s3"],
+        "cout_stockage_usd_par_mois": round(go * 0.023, 6),
+        "cout_ecritures_usd_par_mois": round(objets_par_jour * 22 * 0.005 / 1000, 6),
+        "cout_lectures_usd_par_mois": round(lectures_par_jour * 22 * 0.0004 / 1000, 6),
+        "hypothese": "22 parutions par mois, 8 objets ecrits et 20 objets relus par parution",
+    }
+    cout["cout_total_usd_par_mois"] = round(
+        cout["cout_stockage_usd_par_mois"] + cout["cout_ecritures_usd_par_mois"] + cout["cout_lectures_usd_par_mois"], 6
+    )
+    # Projection a un an de collecte, au rythme mesure sur la fenetre traitee.
+    octets_par_parution = volumetrie["octets_s3_total"] / max(len(partitions), 1)
+    cout["octets_par_parution"] = round(octets_par_parution)
+    cout["go_apres_un_an"] = round(octets_par_parution * 250 / 1_000_000_000, 4)
+    cout["cout_stockage_usd_mois_apres_un_an"] = round(cout["go_apres_un_an"] * 0.023, 4)
+    _ecrire_json("cout_s3.json", cout)
+
+    # 6. Evenements du jour, anonymises sur rien : ce sont des annonces legales publiques.
     _ecrire_csv("evenements_du_jour.csv", evenements)
 
     print(json.dumps(volumetrie, ensure_ascii=False, indent=2))
     print(json.dumps(resume, ensure_ascii=False, indent=2))
+    print(json.dumps(cout, ensure_ascii=False, indent=2))
     print(f"\n{len(list(SORTIE.glob('*')))} fichiers ecrits dans results/")
     return 0
 

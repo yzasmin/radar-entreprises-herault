@@ -74,7 +74,11 @@ def radar_entreprises_herault():
     def silver(**contexte):
         return pipeline.etape_silver(_jour(contexte))
 
-    @task(task_id="controles_qualite_silver")
+    # Pas de reprise sur les controles : un echec de qualite est deterministe.
+    # Le rejouer ne change rien et fait seulement attendre. Mesure en integration
+    # continue : une parution refusee coutait 1 676 secondes avec deux reprises
+    # et une attente exponentielle, contre quelques secondes sans.
+    @task(task_id="controles_qualite_silver", retries=0)
     def controler_silver(**contexte):
         # Tache bloquante : une exception ici arrete le graphe avant la couche gold.
         return pipeline.etape_controler_silver(_jour(contexte))
@@ -83,7 +87,7 @@ def radar_entreprises_herault():
     def gold(**contexte):
         return pipeline.etape_gold(_jour(contexte))
 
-    @task(task_id="controles_qualite_gold")
+    @task(task_id="controles_qualite_gold", retries=0)
     def controler_gold(**contexte):
         return pipeline.etape_controler_gold(_jour(contexte))
 

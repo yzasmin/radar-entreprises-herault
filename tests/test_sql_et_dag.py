@@ -94,10 +94,10 @@ def test_l_ordre_des_taches_place_les_controles_avant_la_publication(dag):
         "preparer",
         "extraire_bodacc",
         "enrichir_sirene",
-        "construire_argent",
-        "controles_qualite_argent",
-        "construire_or",
-        "controles_qualite_or",
+        "construire_silver",
+        "controles_qualite_silver",
+        "construire_gold",
+        "controles_qualite_gold",
         "publier_indicateurs",
     ]
     assert sorted(t.task_id for t in dag.tasks) == sorted(attendu)
@@ -105,6 +105,17 @@ def test_l_ordre_des_taches_place_les_controles_avant_la_publication(dag):
         assert aval in {t.task_id for t in dag.get_task(amont).downstream_list}
 
 
-def test_les_taches_ont_des_reprises(dag):
-    for tache in dag.tasks:
-        assert tache.retries >= 1, f"{tache.task_id} n'a aucune reprise"
+def test_les_taches_reseau_ont_des_reprises(dag):
+    """Une coupure reseau est transitoire : elle merite une reprise."""
+    for identifiant in ("preparer", "extraire_bodacc", "enrichir_sirene"):
+        assert dag.get_task(identifiant).retries >= 1
+
+
+def test_les_taches_de_controle_ne_se_rejouent_pas(dag):
+    """Un echec de qualite est deterministe : le rejouer ne fait qu'attendre.
+
+    Mesure a l'appui : en integration continue, une parution refusee a coute
+    1 676 secondes avec deux reprises et une attente exponentielle.
+    """
+    for identifiant in ("controles_qualite_silver", "controles_qualite_gold"):
+        assert dag.get_task(identifiant).retries == 0

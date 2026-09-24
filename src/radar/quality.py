@@ -238,7 +238,7 @@ def controle_conservation(evenements: Sequence[dict[str, Any]], lignes_or: Seque
     """Rien ne se perd entre l'argent et l'or : les totaux doivent coincider."""
     total_or = sum(int(ligne.get("nb_evenements") or 0) for ligne in lignes_or)
     return _r(
-        "conservation_argent_vers_or",
+        "conservation_silver_vers_gold",
         total_or == len(evenements),
         f"{len(evenements)} evenements agreges",
         f"{total_or} evenements dans la couche or",
@@ -251,7 +251,7 @@ def controle_grain_or(lignes_or: Sequence[dict[str, Any]]) -> Resultat:
     cles = [(ligne.get("date_parution"), ligne.get("code_commune"), ligne.get("section_naf")) for ligne in lignes_or]
     doublons = [c for c, n in Counter(cles).items() if n > 1]
     return _r(
-        "grain_or_unique",
+        "grain_gold_unique",
         not doublons,
         "une seule ligne par (jour, commune, section NAF)",
         f"{len(doublons)} cle(s) en double",
