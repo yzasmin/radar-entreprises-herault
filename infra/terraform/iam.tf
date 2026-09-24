@@ -25,13 +25,14 @@ data "aws_iam_policy_document" "radar_donnees" {
 
   # 2. Lire et ecrire les objets, uniquement sous ce prefixe.
   statement {
-    sid    = "LireEtEcrireLesObjets"
+    sid    = "LireEcrireEtNettoyerLesObjets"
     effect = "Allow"
     actions = [
       "s3:GetObject",
       "s3:PutObject",
       "s3:DeleteObject",
       "s3:AbortMultipartUpload",
+      "s3:ListMultipartUploadParts",
     ]
     resources = ["${local.seau_arn}/${var.prefixe}/*"]
   }
@@ -93,19 +94,30 @@ resource "aws_iam_user_policy_attachment" "radar" {
   policy_arn = aws_iam_policy.radar.arn
 }
 
-# Refus explicite de tout ce qui sort du prefixe : ceinture et bretelles, au cas
-# ou une politique plus large serait attachee un jour au meme utilisateur.
+# Refus explicites : dans IAM, un Deny l'emporte toujours sur un Allow, meme si
+# une politique plus large etait attachee un jour au meme utilisateur.
 data "aws_iam_policy_document" "radar_refus" {
   statement {
-    sid       = "RefuserHorsDuPrefixe"
-    effect    = "Deny"
-    actions   = ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"]
-    resources = ["${local.seau_arn}/*"]
-    condition {
-      test     = "StringNotLike"
-      variable = "s3:prefix"
-      values   = ["${var.prefixe}/*"]
-    }
+    sid           = "RefuserToutCeQuiSortDuPrefixe"
+    effect        = "Deny"
+    actions       = ["s3:*"]
+    not_resources = [local.seau_arn, "${local.seau_arn}/${var.prefixe}/*"]
+  }
+
+  # Une cle applicative n'a aucune raison de pouvoir supprimer un compartiment
+  # ni de lever le blocage d'acces public. C'est le garde-fou le plus utile.
+  statement {
+    sid    = "RefuserToutChangementSurLeCompartiment"
+    effect = "Deny"
+    actions = [
+      "s3:DeleteBucket",
+      "s3:DeleteBucketPolicy",
+      "s3:PutBucketPolicy",
+      "s3:PutBucketAcl",
+      "s3:PutBucketPublicAccessBlock",
+      "s3:PutBucketVersioning",
+    ]
+    resources = ["*"]
   }
 }
 

@@ -55,8 +55,8 @@ def main() -> int:
     evenements = lire_evenements(cfg, jour)
     indicateurs = lire_indicateurs(cfg, jour)
     synthese = lire_json(cfg, cfg.chemin("publication", f"date_parution={jour}", "synthese.json"))
-    controles_argent = lire_json(cfg, cfg.chemin("qualite", f"date_parution={jour}", "controles_argent.json"))
-    controles_or = lire_json(cfg, cfg.chemin("qualite", f"date_parution={jour}", "controles_or.json"))
+    controles_silver = lire_json(cfg, cfg.chemin("qualite", f"date_parution={jour}", "controles_silver.json"))
+    controles_gold = lire_json(cfg, cfg.chemin("qualite", f"date_parution={jour}", "controles_gold.json"))
     meta_bronze = lire_json(cfg, cfg.chemin("bronze", "bodacc", f"date_parution={jour}", "_meta.json"))
 
     # 1. Chiffres de tete.
@@ -67,8 +67,8 @@ def main() -> int:
         "moteur_requete": synthese.get("moteur_requete"),
         "nb_annonces_bronze": meta_bronze["nb_annonces"],
         "octets_bronze_json": meta_bronze["octets_bronze"],
-        "nb_evenements_argent": len(evenements),
-        "nb_lignes_or": len(indicateurs),
+        "nb_evenements_silver": len(evenements),
+        "nb_lignes_gold": len(indicateurs),
         "nb_objets_s3": len(objets),
         "octets_s3_total": sum(o["taille"] for o in objets),
         "octets_parquet_argent": next(
@@ -87,11 +87,11 @@ def main() -> int:
     )
     _ecrire_json("volumetrie.json", volumetrie)
     _ecrire_json("synthese.json", synthese)
-    _ecrire_json("controles_qualite.json", {"argent": controles_argent, "or": controles_or})
+    _ecrire_json("controles_qualite.json", {"silver": controles_silver, "gold": controles_gold})
 
     # 2. Tableau lisible des controles, celui qui est cite dans le README.
     lignes_controles = []
-    for etape, rapport in (("argent", controles_argent), ("or", controles_or)):
+    for etape, rapport in (("silver", controles_silver), ("gold", controles_gold)):
         for controle in rapport["controles"]:
             lignes_controles.append(
                 {
@@ -124,7 +124,7 @@ def main() -> int:
         {
             o["cle"].split("date_parution=")[1].split("/")[0]
             for o in objets
-            if "or/indicateurs_commune_secteur/date_parution=" in o["cle"]
+            if "gold/indicateurs_commune_secteur/date_parution=" in o["cle"]
         }
     )
     toutes = []

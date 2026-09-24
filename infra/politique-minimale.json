@@ -14,11 +14,12 @@
       }
     },
     {
-      "Sid": "LireEtEcrireLesObjetsDuProjet",
+      "Sid": "LireEcrireEtNettoyerLesObjetsDuProjet",
       "Effect": "Allow",
       "Action": [
         "s3:GetObject",
         "s3:PutObject",
+        "s3:DeleteObject",
         "s3:AbortMultipartUpload",
         "s3:ListMultipartUploadParts"
       ],
@@ -32,6 +33,19 @@
         "arn:aws:s3:::amzn-s3-seau",
         "arn:aws:s3:::amzn-s3-seau/radar/*"
       ]
+    },
+    {
+      "Sid": "RefuserToutChangementSurLeCompartimentLuiMeme",
+      "Effect": "Deny",
+      "Action": [
+        "s3:DeleteBucket",
+        "s3:DeleteBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketAcl",
+        "s3:PutBucketPublicAccessBlock",
+        "s3:PutBucketVersioning"
+      ],
+      "Resource": "*"
     }
   ]
 }

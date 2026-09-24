@@ -54,9 +54,22 @@ def connexion_duckdb(cfg: Config):
 
     connexion = duckdb.connect()
     connexion.execute("INSTALL httpfs; LOAD httpfs;")
-    cle = os.environ.get("AWS_ACCESS_KEY_ID", "test")
-    secret = os.environ.get("AWS_SECRET_ACCESS_KEY", "test")
+    cle = os.environ.get("AWS_ACCESS_KEY_ID", "")
+    secret = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
+    if not cfg.est_emule and cle and secret:
+        # Vrai AWS, avec la cle deja presente dans l'environnement : on la passe
+        # telle quelle, sans dependre de l'extension aws ni d'un profil local.
+        connexion.execute(
+            f"""
+            CREATE OR REPLACE SECRET radar (
+                TYPE S3, KEY_ID '{cle}', SECRET '{secret}', REGION '{cfg.region}'
+            );
+            """
+        )
+        return connexion
     if cfg.est_emule:
+        cle = cle or "test"
+        secret = secret or "test"
         hote = cfg.endpoint_url.replace("http://", "").replace("https://", "").rstrip("/")
         connexion.execute(
             f"""
@@ -67,6 +80,9 @@ def connexion_duckdb(cfg: Config):
             """
         )
     else:
+        # Ni endpoint emule, ni cle dans l'environnement : on laisse DuckDB
+        # parcourir la chaine d'identifiants (profil, role, variables).
+        connexion.execute("INSTALL aws; LOAD aws;")
         connexion.execute(
             f"""
             CREATE OR REPLACE SECRET radar (
@@ -81,10 +97,10 @@ def _vues_duckdb(cfg: Config) -> str:
     """Vues nommees comme les tables du catalogue Glue, pour un SQL identique."""
     return f"""
     CREATE OR REPLACE VIEW evenements AS
-      SELECT * FROM read_parquet('{cfg.uri("argent", "evenements")}/*/*.parquet', hive_partitioning = true);
+      SELECT * FROM read_parquet('{cfg.uri("silver", "evenements")}/*/*.parquet', hive_partitioning = true);
     CREATE OR REPLACE VIEW indicateurs AS
       SELECT * FROM read_parquet(
-        '{cfg.uri("or", "indicateurs_commune_secteur")}/*/*.parquet', hive_partitioning = true
+        '{cfg.uri("gold", "indicateurs_commune_secteur")}/*/*.parquet', hive_partitioning = true
       );
     """
 
@@ -188,13 +204,32 @@ def declarer_tables_athena(cfg: Config) -> list[str]:
 
 
 def verifier_acces_s3(cfg: Config) -> dict[str, Any]:
-    """Diagnostic imprime en tete de graphe : quelle cible, emulee ou reelle."""
+    """Diagnostic : quelle cible, emulee ou reelle, et quels droits reels.
+
+    Volontairement tolerant a `AccessDenied` : une cle au droit minimal ne peut
+    ni lister les compartiments du compte, ni lire la region d'un compartiment.
+    Ce n'est pas une erreur, c'est la preuve que la politique est bien etroite.
+    Le diagnostic le dit au lieu de s'arreter.
+    """
+    from botocore.exceptions import ClientError
+
     s3 = client_s3(cfg)
-    return {
+    rapport: dict[str, Any] = {
         "endpoint": cfg.endpoint_url or f"https://s3.{cfg.region}.amazonaws.com",
         "emule": cfg.est_emule,
         "region": cfg.region,
         "bucket": cfg.bucket,
+        "prefixe": cfg.prefixe,
         "moteur_requete": cfg.moteur_requete,
-        "seaux_visibles": [b["Name"] for b in s3.list_buckets().get("Buckets", [])],
     }
+    try:
+        rapport["seaux_visibles"] = [b["Name"] for b in s3.list_buckets().get("Buckets", [])]
+    except ClientError as err:
+        rapport["seaux_visibles"] = f"refuse ({err.response.get('Error', {}).get('Code')})"
+    try:
+        reponse = s3.list_objects_v2(Bucket=cfg.bucket, Prefix=cfg.prefixe, MaxKeys=1)
+        rapport["lecture_du_prefixe"] = "ok"
+        rapport["objets_deja_presents"] = reponse.get("KeyCount", 0) > 0
+    except ClientError as err:
+        rapport["lecture_du_prefixe"] = f"refuse ({err.response.get('Error', {}).get('Code')})"
+    return rapport

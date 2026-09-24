@@ -70,22 +70,22 @@ def radar_entreprises_herault():
     def enrichir(**contexte):
         return pipeline.etape_enrichir(_jour(contexte))
 
-    @task(task_id="construire_argent")
-    def argent(**contexte):
-        return pipeline.etape_argent(_jour(contexte))
+    @task(task_id="construire_silver")
+    def silver(**contexte):
+        return pipeline.etape_silver(_jour(contexte))
 
-    @task(task_id="controles_qualite_argent")
-    def controler_argent(**contexte):
-        # Tache bloquante : une exception ici arrete le graphe avant la couche or.
-        return pipeline.etape_controler_argent(_jour(contexte))
+    @task(task_id="controles_qualite_silver")
+    def controler_silver(**contexte):
+        # Tache bloquante : une exception ici arrete le graphe avant la couche gold.
+        return pipeline.etape_controler_silver(_jour(contexte))
 
-    @task(task_id="construire_or")
-    def couche_or(**contexte):
-        return pipeline.etape_or(_jour(contexte))
+    @task(task_id="construire_gold")
+    def gold(**contexte):
+        return pipeline.etape_gold(_jour(contexte))
 
-    @task(task_id="controles_qualite_or")
-    def controler_or(**contexte):
-        return pipeline.etape_controler_or(_jour(contexte))
+    @task(task_id="controles_qualite_gold")
+    def controler_gold(**contexte):
+        return pipeline.etape_controler_gold(_jour(contexte))
 
     @task(task_id="publier_indicateurs")
     def publier(**contexte):
@@ -98,10 +98,10 @@ def radar_entreprises_herault():
         preparer()
         >> extraire()
         >> enrichir()
-        >> argent()
-        >> controler_argent()
-        >> couche_or()
-        >> controler_or()
+        >> silver()
+        >> controler_silver()
+        >> gold()
+        >> controler_gold()
         >> publier()
     )
 

@@ -32,8 +32,8 @@ x-airflow-commun: &airflow-commun
     AWS_ENDPOINT_URL: ${AWS_ENDPOINT_URL-http://localstack:4566}
     AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-test}
     AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-test}
-    AWS_REGION: ${AWS_REGION:-eu-west-3}
-    AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
+    AWS_REGION: ${AWS_REGION:-eu-north-1}
+    AWS_DEFAULT_REGION: ${AWS_REGION:-eu-north-1}
     # --- Parametres du radar ------------------------------------------------
     RADAR_BUCKET: ${RADAR_BUCKET:-amzn-s3-seau}
     RADAR_PREFIXE: ${RADAR_PREFIXE:-radar}
@@ -81,7 +81,7 @@ services:
       SERVICES: s3
       DEBUG: "0"
       PERSISTENCE: "0"
-      AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
+      AWS_DEFAULT_REGION: ${AWS_REGION:-eu-north-1}
     ports:
       - "${LOCALSTACK_PORT:-4566}:4566"
     healthcheck:

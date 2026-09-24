@@ -34,6 +34,19 @@ def construire_parseur() -> argparse.ArgumentParser:
     etape.add_argument("--jour", default=_jour_par_defaut())
 
     sous.add_parser("diagnostic", help="affiche la cible S3 et le moteur de requete")
+
+    nettoyer = sous.add_parser("nettoyer", help="supprime les objets du projet sous le prefixe")
+    nettoyer.add_argument(
+        "--couche",
+        default="",
+        help="bronze, silver, gold, qualite ou publication. Vide = tout le prefixe du projet.",
+    )
+    nettoyer.add_argument("--jour", default="", help="ne supprimer que cette partition")
+    nettoyer.add_argument(
+        "--confirmer",
+        action="store_true",
+        help="sans ce drapeau, le script liste ce qu'il supprimerait et ne supprime rien",
+    )
     sous.add_parser("catalogue", help="declare les tables Athena (compte AWS reel requis)")
 
     requete = sous.add_parser("requete", help="execute une requete nommee de sql/indicateurs.sql")
@@ -51,6 +64,19 @@ def main(argv: list[str] | None = None) -> int:
         from radar.warehouse import verifier_acces_s3
 
         print(json.dumps(verifier_acces_s3(cfg), ensure_ascii=False, indent=2))
+        return 0
+
+    if args.commande == "nettoyer":
+        from radar.storage import supprimer_prefixe
+
+        prefixe = cfg.chemin(args.couche) if args.couche else cfg.prefixe
+        if args.jour:
+            prefixe = f"{prefixe}/date_parution={args.jour}" if args.couche else prefixe
+        rapport = supprimer_prefixe(cfg, prefixe, confirmer=args.confirmer, filtre_jour=args.jour or None)
+        print(json.dumps(rapport, ensure_ascii=False, indent=2))
+        if not args.confirmer:
+            print()
+            print("Rien n'a ete supprime. Ajouter --confirmer pour supprimer reellement.")
         return 0
 
     if args.commande == "catalogue":

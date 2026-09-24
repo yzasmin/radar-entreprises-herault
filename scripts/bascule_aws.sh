@@ -29,6 +29,12 @@ fi
 set -a; . ./.env; set +a
 
 manquant=0
+# S3_BUCKET et AWS_DEFAULT_REGION sont les noms utilises par l'outil aws ; on
+# les accepte comme equivalents de RADAR_BUCKET et AWS_REGION.
+RADAR_BUCKET="${RADAR_BUCKET:-${S3_BUCKET:-}}"
+AWS_REGION="${AWS_REGION:-${AWS_DEFAULT_REGION:-}}"
+export RADAR_BUCKET AWS_REGION
+
 for variable in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY RADAR_BUCKET AWS_REGION; do
   if [ -z "${!variable:-}" ]; then
     echo "ERREUR : $variable est vide dans .env" >&2

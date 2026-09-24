@@ -17,7 +17,7 @@ from typing import Any
 import pyarrow as pa
 
 from radar import extract, quality, transform
-from radar.config import Config, charger_config
+from radar.config import COUCHE_BRONZE, COUCHE_GOLD, COUCHE_SILVER, Config, charger_config
 from radar.storage import assurer_seau, ecrire_json, ecrire_parquet, lire_json, lire_parquet
 
 LOG = logging.getLogger(__name__)
@@ -25,7 +25,7 @@ LOG = logging.getLogger(__name__)
 # `date_parution` n'est PAS dans les fichiers : c'est la cle de partition, portee par
 # le chemin `date_parution=YYYY-MM-DD/`. Athena l'exige, DuckDB la reconstruit avec
 # `hive_partitioning = true`, et la colonne n'est stockee qu'une fois au lieu de N.
-SCHEMA_ARGENT = pa.schema(
+SCHEMA_SILVER = pa.schema(
     [
         ("id_annonce", pa.string()),
         ("type_evenement", pa.string()),
@@ -52,7 +52,7 @@ SCHEMA_ARGENT = pa.schema(
     ]
 )
 
-SCHEMA_OR = pa.schema(
+SCHEMA_GOLD = pa.schema(
     [
         ("code_commune", pa.string()),
         ("nom_commune", pa.string()),
@@ -100,12 +100,12 @@ def _avec_partition(lignes: list[dict[str, Any]], jour: str) -> list[dict[str, A
 
 
 def lire_evenements(cfg: Config, jour: str) -> list[dict[str, Any]]:
-    table = lire_parquet(cfg, _partition("argent", "evenements", jour, "evenements.parquet", cfg))
+    table = lire_parquet(cfg, _partition(COUCHE_SILVER, "evenements", jour, "evenements.parquet", cfg))
     return _avec_partition(table.to_pylist(), jour)
 
 
 def lire_indicateurs(cfg: Config, jour: str) -> list[dict[str, Any]]:
-    table = lire_parquet(cfg, _partition("or", "indicateurs_commune_secteur", jour, "indicateurs.parquet", cfg))
+    table = lire_parquet(cfg, _partition(COUCHE_GOLD, "indicateurs_commune_secteur", jour, "indicateurs.parquet", cfg))
     return _avec_partition(table.to_pylist(), jour)
 
 
@@ -121,7 +121,7 @@ def etape_preparer(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     communes = extract.communes_du_departement(cfg)
     if not communes:
         raise extract.ExtractionError("referentiel geographique vide")
-    cle = cfg.chemin("bronze", "referentiel", f"communes_{cfg.departement}.json")
+    cle = cfg.chemin(COUCHE_BRONZE, "referentiel", f"communes_{cfg.departement}.json")
     ecrire_json(cfg, communes, cle)
     rapport = {
         "jour": jour,
@@ -140,7 +140,7 @@ def etape_extraire(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     """Bronze : les annonces du jour, telles que la source les rend."""
     cfg = cfg or charger_config()
     annonces = extract.extraire_bodacc(cfg, jour)
-    cle = _partition("bronze", "bodacc", jour, "annonces.json", cfg)
+    cle = _partition(COUCHE_BRONZE, "bodacc", jour, "annonces.json", cfg)
     taille = ecrire_json(cfg, annonces, cle)
     derniere = extract.derniere_parution_disponible(cfg)
     historique = extract.historique_volumetrie(cfg, jour, jours=90)
@@ -153,7 +153,7 @@ def etape_extraire(jour: str, cfg: Config | None = None) -> dict[str, Any]:
         "historique_volumetrie": historique,
         "extrait_le": datetime.now(UTC).isoformat(timespec="seconds"),
     }
-    ecrire_json(cfg, meta, cfg.chemin("bronze", "bodacc", f"date_parution={jour}", "_meta.json"))
+    ecrire_json(cfg, meta, cfg.chemin(COUCHE_BRONZE, "bodacc", f"date_parution={jour}", "_meta.json"))
     print(json.dumps({k: v for k, v in meta.items() if k != "historique_volumetrie"}, ensure_ascii=False, indent=2))
     return meta
 
@@ -161,14 +161,14 @@ def etape_extraire(jour: str, cfg: Config | None = None) -> dict[str, Any]:
 def etape_enrichir(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     """Bronze : fiche SIRENE de chaque entreprise citee, via l'API Recherche d'entreprises."""
     cfg = cfg or charger_config()
-    annonces = lire_json(cfg, _partition("bronze", "bodacc", jour, "annonces.json", cfg))
+    annonces = lire_json(cfg, _partition(COUCHE_BRONZE, "bodacc", jour, "annonces.json", cfg))
     sirens: list[str] = []
     for annonce in annonces:
         for siren in transform.extraire_sirens(annonce.get("registre")):
             if siren not in sirens:
                 sirens.append(siren)
     fiches = extract.enrichir_sirens(cfg, sirens) if cfg.enrichissement_actif else {}
-    cle = _partition("bronze", "entreprises", jour, "fiches.json", cfg)
+    cle = _partition(COUCHE_BRONZE, "entreprises", jour, "fiches.json", cfg)
     ecrire_json(cfg, fiches, cle)
     rapport = {
         "jour": jour,
@@ -182,37 +182,37 @@ def etape_enrichir(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     return rapport
 
 
-def etape_argent(jour: str, cfg: Config | None = None) -> dict[str, Any]:
-    """Argent : un evenement typé par annonce, rattache a une commune et a un secteur."""
+def etape_silver(jour: str, cfg: Config | None = None) -> dict[str, Any]:
+    """Silver : un evenement type par annonce, rattache a une commune et a un secteur."""
     cfg = cfg or charger_config()
-    annonces = lire_json(cfg, _partition("bronze", "bodacc", jour, "annonces.json", cfg))
-    communes = lire_json(cfg, cfg.chemin("bronze", "referentiel", f"communes_{cfg.departement}.json"))
+    annonces = lire_json(cfg, _partition(COUCHE_BRONZE, "bodacc", jour, "annonces.json", cfg))
+    communes = lire_json(cfg, cfg.chemin(COUCHE_BRONZE, "referentiel", f"communes_{cfg.departement}.json"))
     try:
-        fiches = lire_json(cfg, _partition("bronze", "entreprises", jour, "fiches.json", cfg))
+        fiches = lire_json(cfg, _partition(COUCHE_BRONZE, "entreprises", jour, "fiches.json", cfg))
     except Exception:
         LOG.warning("aucune fiche d'enrichissement pour %s, on continue sans NAF", jour)
         fiches = {}
     index = transform.indexer_communes(communes)
     evenements = transform.construire_argent(annonces, index, fiches)
-    cle = _partition("argent", "evenements", jour, "evenements.parquet", cfg)
-    taille = ecrire_parquet(cfg, _table(evenements, SCHEMA_ARGENT), cle)
+    cle = _partition(COUCHE_SILVER, "evenements", jour, "evenements.parquet", cfg)
+    taille = ecrire_parquet(cfg, _table(evenements, SCHEMA_SILVER), cle)
     rapport = {
         "jour": jour,
         "nb_annonces_bronze": len(annonces),
-        "nb_evenements_argent": len(evenements),
+        "nb_evenements_silver": len(evenements),
         "nb_doublons_ecartes": len(annonces) - len(evenements),
         "octets_parquet": taille,
-        "cle_argent": cle,
+        "cle_silver": cle,
     }
     print(json.dumps(rapport, ensure_ascii=False, indent=2))
     return rapport
 
 
-def etape_controler_argent(jour: str, cfg: Config | None = None) -> dict[str, Any]:
-    """Controles bloquants sur la couche argent."""
+def etape_controler_silver(jour: str, cfg: Config | None = None) -> dict[str, Any]:
+    """Controles bloquants sur la couche silver."""
     cfg = cfg or charger_config()
     evenements = lire_evenements(cfg, jour)
-    meta = lire_json(cfg, cfg.chemin("bronze", "bodacc", f"date_parution={jour}", "_meta.json"))
+    meta = lire_json(cfg, cfg.chemin(COUCHE_BRONZE, "bodacc", f"date_parution={jour}", "_meta.json"))
     resultats = quality.controler_argent(
         evenements,
         jour=jour,
@@ -220,26 +220,26 @@ def etape_controler_argent(jour: str, cfg: Config | None = None) -> dict[str, An
         historique=meta.get("historique_volumetrie", []),
         derniere_parution=meta.get("derniere_parution_source"),
     )
-    rapport = quality.exiger(resultats, "couche argent")
-    ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_argent.json"))
+    rapport = quality.exiger(resultats, "couche silver")
+    ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_silver.json"))
     return rapport
 
 
-def etape_or(jour: str, cfg: Config | None = None) -> dict[str, Any]:
-    """Or : indicateurs par commune et section NAF, plus la liste des signaux."""
+def etape_gold(jour: str, cfg: Config | None = None) -> dict[str, Any]:
+    """Gold : indicateurs par commune et section NAF, plus la liste des signaux."""
     cfg = cfg or charger_config()
     evenements = lire_evenements(cfg, jour)
-    lignes_or = transform.agreger_par_commune_secteur(evenements)
+    lignes_gold = transform.agreger_par_commune_secteur(evenements)
     taille = ecrire_parquet(
         cfg,
-        _table(lignes_or, SCHEMA_OR),
-        _partition("or", "indicateurs_commune_secteur", jour, "indicateurs.parquet", cfg),
+        _table(lignes_gold, SCHEMA_GOLD),
+        _partition(COUCHE_GOLD, "indicateurs_commune_secteur", jour, "indicateurs.parquet", cfg),
     )
     signaux = transform.signaux_prioritaires(evenements)
-    ecrire_json(cfg, signaux, cfg.chemin("or", "signaux", f"date_parution={jour}", "signaux.json"))
+    ecrire_json(cfg, signaux, cfg.chemin(COUCHE_GOLD, "signaux", f"date_parution={jour}", "signaux.json"))
     rapport = {
         "jour": jour,
-        "nb_lignes_or": len(lignes_or),
+        "nb_lignes_gold": len(lignes_gold),
         "nb_signaux": len(signaux),
         "octets_parquet": taille,
     }
@@ -247,14 +247,14 @@ def etape_or(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     return rapport
 
 
-def etape_controler_or(jour: str, cfg: Config | None = None) -> dict[str, Any]:
-    """Controles bloquants sur la couche or."""
+def etape_controler_gold(jour: str, cfg: Config | None = None) -> dict[str, Any]:
+    """Controles bloquants sur la couche gold."""
     cfg = cfg or charger_config()
     evenements = lire_evenements(cfg, jour)
-    lignes_or = lire_indicateurs(cfg, jour)
-    resultats = quality.controler_or(evenements, lignes_or)
-    rapport = quality.exiger(resultats, "couche or")
-    ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_or.json"))
+    lignes_gold = lire_indicateurs(cfg, jour)
+    resultats = quality.controler_or(evenements, lignes_gold)
+    rapport = quality.exiger(resultats, "couche gold")
+    ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_gold.json"))
     return rapport
 
 
@@ -264,8 +264,8 @@ def etape_publier(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     from radar.warehouse import charger_requetes, interroger
 
     evenements = lire_evenements(cfg, jour)
-    lignes_or = lire_indicateurs(cfg, jour)
-    synthese = transform.synthese_journaliere(evenements, lignes_or)
+    lignes_gold = lire_indicateurs(cfg, jour)
+    synthese = transform.synthese_journaliere(evenements, lignes_gold)
     synthese["jour"] = jour
     synthese["execution_emulee"] = cfg.est_emule
     synthese["moteur_requete"] = cfg.moteur_requete
@@ -289,11 +289,11 @@ ETAPES = {
     "preparer": etape_preparer,
     "extraire": etape_extraire,
     "enrichir": etape_enrichir,
-    "argent": etape_argent,
-    "controler_argent": etape_controler_argent,
-    "or": etape_or,
-    "controler_or": etape_controler_or,
+    "silver": etape_silver,
+    "controler_silver": etape_controler_silver,
+    "gold": etape_gold,
+    "controler_gold": etape_controler_gold,
     "publier": etape_publier,
 }
 
-ORDRE = ("preparer", "extraire", "enrichir", "argent", "controler_argent", "or", "controler_or", "publier")
+ORDRE = ("preparer", "extraire", "enrichir", "silver", "controler_silver", "gold", "controler_gold", "publier")

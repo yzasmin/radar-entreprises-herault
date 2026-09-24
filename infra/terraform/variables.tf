@@ -1,7 +1,7 @@
 variable "region" {
-  description = "Region AWS. Paris par defaut : les donnees sont francaises et publiques, mais la latence et le cout y sont bons."
+  description = "Region AWS. eu-north-1 (Stockholm) : c'est la region reelle du compartiment amzn-s3-seau, verifiee par get_bucket_location."
   type        = string
-  default     = "eu-west-3"
+  default     = "eu-north-1"
 }
 
 variable "nom_seau" {

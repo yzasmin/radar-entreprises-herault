@@ -35,7 +35,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS {base}.evenements (
 )
 PARTITIONED BY (date_parution string)
 STORED AS PARQUET
-LOCATION 's3://{bucket}/{prefixe}/argent/evenements/'
+LOCATION 's3://{bucket}/{prefixe}/silver/evenements/'
 TBLPROPERTIES (
     'parquet.compression' = 'SNAPPY',
     'projection.enabled' = 'true',
@@ -44,7 +44,7 @@ TBLPROPERTIES (
     'projection.date_parution.range' = '2024-01-01,NOW',
     'projection.date_parution.interval' = '1',
     'projection.date_parution.interval.unit' = 'DAYS',
-    'storage.location.template' = 's3://{bucket}/{prefixe}/argent/evenements/date_parution=${date_parution}/'
+    'storage.location.template' = 's3://{bucket}/{prefixe}/silver/evenements/date_parution=${date_parution}/'
 );
 
 CREATE EXTERNAL TABLE IF NOT EXISTS {base}.indicateurs (
@@ -73,7 +73,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS {base}.indicateurs (
 )
 PARTITIONED BY (date_parution string)
 STORED AS PARQUET
-LOCATION 's3://{bucket}/{prefixe}/or/indicateurs_commune_secteur/'
+LOCATION 's3://{bucket}/{prefixe}/gold/indicateurs_commune_secteur/'
 TBLPROPERTIES (
     'parquet.compression' = 'SNAPPY',
     'projection.enabled' = 'true',
@@ -82,5 +82,5 @@ TBLPROPERTIES (
     'projection.date_parution.range' = '2024-01-01,NOW',
     'projection.date_parution.interval' = '1',
     'projection.date_parution.interval.unit' = 'DAYS',
-    'storage.location.template' = 's3://{bucket}/{prefixe}/or/indicateurs_commune_secteur/date_parution=${date_parution}/'
+    'storage.location.template' = 's3://{bucket}/{prefixe}/gold/indicateurs_commune_secteur/date_parution=${date_parution}/'
 );

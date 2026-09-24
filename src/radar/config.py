@@ -12,6 +12,13 @@ from dataclasses import dataclass, field
 
 DEPARTEMENT_DEFAUT = "34"
 
+# Noms des trois couches, tels qu'ils apparaissent dans les chemins S3.
+# Bronze, silver et gold sont les noms d'usage de l'architecture en medaillon ;
+# les garder en anglais evite d'avoir a les traduire dans le catalogue Glue.
+COUCHE_BRONZE = "bronze"
+COUCHE_SILVER = "silver"
+COUCHE_GOLD = "gold"
+
 # Familles d'avis publiees par le BODACC (champ familleavis de l'API Explore).
 FAMILLES_BODACC = {
     "creation": "Creations",
@@ -37,9 +44,15 @@ class Config:
 
     # Nom du compartiment cible. Volontairement identique en emulation et sur le vrai
     # compte : la bascule ne doit changer que l'adresse du service, jamais un chemin.
-    bucket: str = field(default_factory=lambda: os.environ.get("RADAR_BUCKET", "amzn-s3-seau"))
+    bucket: str = field(
+        default_factory=lambda: os.environ.get("RADAR_BUCKET") or os.environ.get("S3_BUCKET") or "amzn-s3-seau"
+    )
     prefixe: str = field(default_factory=lambda: os.environ.get("RADAR_PREFIXE", "radar"))
-    region: str = field(default_factory=lambda: os.environ.get("AWS_REGION", "eu-west-3"))
+    # La region du compartiment `amzn-s3-seau` est eu-north-1 (Stockholm).
+    # AWS_DEFAULT_REGION est lu en second : c'est le nom que connait l'outil aws.
+    region: str = field(
+        default_factory=lambda: os.environ.get("AWS_REGION") or os.environ.get("AWS_DEFAULT_REGION") or "eu-north-1"
+    )
     endpoint_url: str | None = field(
         default_factory=lambda: os.environ.get("AWS_ENDPOINT_URL") or None
     )

@@ -64,10 +64,13 @@ jobs:
           path: results/terraform_*.txt
 
   graphe:
-    name: execution reelle du graphe Airflow
-    # Le poste de developpement n'a pas de moteur Docker utilisable (Docker
-    # Desktop plante sur un socket perime). L'execution de reference a donc lieu
-    # ici, sur un runner qui fournit Docker et Docker Compose.
+    name: execution du graphe Airflow sur LocalStack
+    # Ce workflow est public : aucun identifiant AWS reel n'y circule, et aucun
+    # secret de depot n'est configure. Il tourne donc contre LocalStack, ce qui
+    # suffit a prouver ce qu'il doit prouver : que le graphe Airflow se charge,
+    # s'execute de bout en bout, bloque quand un controle echoue et se rejoue
+    # sans doubler. Les chiffres publies, eux, viennent d'une execution sur le
+    # vrai compartiment S3, lancee depuis le poste (voir le README).
     runs-on: ubuntu-latest
     timeout-minutes: 70
     env:
@@ -80,15 +83,19 @@ jobs:
       # Cible S3 : LocalStack. Ces identifiants ne valent que pour l'emulateur.
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
-      AWS_REGION: eu-west-3
-      AWS_DEFAULT_REGION: eu-west-3
+      AWS_REGION: eu-north-1
+      AWS_DEFAULT_REGION: eu-north-1
       RADAR_BUCKET: amzn-s3-seau
       RADAR_PREFIXE: radar
       RADAR_DEPARTEMENT: "34"
       RADAR_MOTEUR: duckdb
       # Jours de parution rejoues pour remplir la fenetre glissante. Le BODACC
       # parait du mardi au samedi : les dimanches et lundis sont absents.
-      JOURS_HISTORIQUE: "2026-09-08 2026-09-09 2026-09-10 2026-09-11 2026-09-13 2026-09-15 2026-09-16 2026-09-17 2026-09-18 2026-09-20 2026-09-23"
+      # Trois parutions suffisent ici : le 16 septembre est celle que les
+      # controles de qualite doivent refuser, les deux autres doivent passer.
+      # La fenetre glissante complete est produite par l'execution sur le vrai
+      # compte AWS, decrite dans le README.
+      JOURS_HISTORIQUE: "2026-09-16 2026-09-17 2026-09-18"
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -137,7 +144,7 @@ jobs:
           docker compose run --rm airflow-cli \
             python -m pytest /opt/airflow/tests/test_sql_et_dag.py -q 2>&1 | tee results/pytest_airflow.txt
 
-      - name: Execution reelle du graphe sur une date donnee
+      - name: Execution du graphe de bout en bout sur une date donnee
         run: |
           set -o pipefail
           debut=$(date +%s)
@@ -231,7 +238,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: resultats-radar
+          name: resultats-localstack
           path: results/
 
       - name: Arret propre

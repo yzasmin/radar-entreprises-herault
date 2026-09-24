@@ -54,9 +54,13 @@ def assurer_seau(cfg: Config) -> bool:
         return False
     except ClientError as err:
         code = err.response.get("Error", {}).get("Code")
-        if code not in {"404", "NoSuchBucket", "403"}:
-            raise
-        if code == "403":
+        if code in {"403", "AccessDenied"}:
+            # Cas normal avec une cle au droit minimal : elle peut ecrire sous son
+            # prefixe mais pas interroger le compartiment entier. Le compartiment
+            # existe, il vient de Terraform ou de la console. On continue.
+            LOG.info("head_bucket refuse sur %s : la cle n'a pas ce droit, le compartiment existe deja", cfg.bucket)
+            return False
+        if code not in {"404", "NoSuchBucket"}:
             raise
     parametres: dict[str, Any] = {"Bucket": cfg.bucket}
     if cfg.region != "us-east-1":
@@ -107,6 +111,39 @@ def lister(cfg: Config, prefixe: str) -> list[dict[str, Any]]:
         if not reponse.get("IsTruncated"):
             return resultats
         jeton = reponse.get("NextContinuationToken")
+
+
+def supprimer_prefixe(
+    cfg: Config, prefixe: str, confirmer: bool = False, filtre_jour: str | None = None
+) -> dict[str, Any]:
+    """Supprime les objets d'un prefixe. Sans `confirmer`, ne fait que lister.
+
+    Garde-fou volontaire : la fonction refuse tout prefixe qui ne commence pas
+    par celui du projet. Une cle applicative ne doit jamais pouvoir vider un
+    compartiment partage, et un appel maladroit ne doit pas pouvoir non plus.
+    """
+    if not prefixe.startswith(cfg.prefixe):
+        raise ValueError(f"prefixe refuse : {prefixe!r} ne commence pas par {cfg.prefixe!r}")
+    objets = lister(cfg, prefixe)
+    if filtre_jour:
+        objets = [o for o in objets if f"date_parution={filtre_jour}" in o["cle"]]
+    rapport = {
+        "prefixe": prefixe,
+        "jour": filtre_jour,
+        "nb_objets": len(objets),
+        "octets": sum(o["taille"] for o in objets),
+        "supprime": False,
+        "exemples": [o["cle"] for o in objets[:5]],
+    }
+    if not confirmer or not objets:
+        return rapport
+    s3 = client_s3(cfg)
+    for debut in range(0, len(objets), 1000):  # l'API en accepte 1000 par appel
+        lot = [{"Key": o["cle"]} for o in objets[debut : debut + 1000]]
+        s3.delete_objects(Bucket=cfg.bucket, Delete={"Objects": lot, "Quiet": True})
+    rapport["supprime"] = True
+    LOG.info("supprime %d objets sous %s", len(objets), prefixe)
+    return rapport
 
 
 def existe(cfg: Config, cle: str) -> bool:
