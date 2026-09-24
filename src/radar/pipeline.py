@@ -139,6 +139,7 @@ def etape_preparer(jour: str, cfg: Config | None = None) -> dict[str, Any]:
 def etape_extraire(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     """Bronze : les annonces du jour, telles que la source les rend."""
     cfg = cfg or charger_config()
+    total_source = extract.compter_bodacc(cfg, jour)
     annonces = extract.extraire_bodacc(cfg, jour)
     cle = _partition(COUCHE_BRONZE, "bodacc", jour, "annonces.json", cfg)
     taille = ecrire_json(cfg, annonces, cle)
@@ -147,6 +148,7 @@ def etape_extraire(jour: str, cfg: Config | None = None) -> dict[str, Any]:
     meta = {
         "jour": jour,
         "nb_annonces": len(annonces),
+        "total_annonce_par_la_source": total_source,
         "octets_bronze": taille,
         "cle_bronze": cle,
         "derniere_parution_source": derniere,
@@ -213,12 +215,14 @@ def etape_controler_silver(jour: str, cfg: Config | None = None) -> dict[str, An
     cfg = cfg or charger_config()
     evenements = lire_evenements(cfg, jour)
     meta = lire_json(cfg, cfg.chemin(COUCHE_BRONZE, "bodacc", f"date_parution={jour}", "_meta.json"))
-    resultats = quality.controler_argent(
+    resultats = quality.controler_silver(
         evenements,
         jour=jour,
         departement=cfg.departement,
         historique=meta.get("historique_volumetrie", []),
         derniere_parution=meta.get("derniere_parution_source"),
+        nb_bronze=meta.get("nb_annonces"),
+        total_source=meta.get("total_annonce_par_la_source"),
     )
     rapport = quality.exiger(resultats, "couche silver")
     ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_silver.json"))
@@ -252,7 +256,7 @@ def etape_controler_gold(jour: str, cfg: Config | None = None) -> dict[str, Any]
     cfg = cfg or charger_config()
     evenements = lire_evenements(cfg, jour)
     lignes_gold = lire_indicateurs(cfg, jour)
-    resultats = quality.controler_or(evenements, lignes_gold)
+    resultats = quality.controler_gold(evenements, lignes_gold)
     rapport = quality.exiger(resultats, "couche gold")
     ecrire_json(cfg, rapport, cfg.chemin("qualite", f"date_parution={jour}", "controles_gold.json"))
     return rapport

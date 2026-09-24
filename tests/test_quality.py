@@ -64,12 +64,39 @@ def test_cles_non_nulles(evenements):
 # ---------------------------------------------------------------------------
 
 
-def test_volumetrie_calibree_sur_la_mediane():
-    historique = [50, 55, 60, 58, 62, 57, 61, 59]
-    assert q.controle_volumetrie(58, historique).reussi
-    assert q.controle_volumetrie(20, historique).reussi  # 20 > 59/4
-    assert not q.controle_volumetrie(3, historique).reussi  # effondrement
-    assert not q.controle_volumetrie(500, historique).reussi  # explosion
+# Distribution reelle des 60 jours de parution du BODACC pour l'Herault,
+# du 24/06/2026 au 21/09/2026. Elle sert de reference aux tests parce qu'un
+# controle calibre sur des nombres inventes ne prouve rien.
+HISTORIQUE_REEL = [
+    1, 4, 9, 11, 11, 60, 77, 93, 101, 164, 181, 184, 218, 219, 222, 243, 278, 303, 304, 324,
+    324, 342, 354, 356, 357, 361, 365, 389, 401, 423, 427, 428, 438, 439, 440, 444, 464, 468,
+    471, 478, 495, 495, 512, 514, 525, 545, 565, 574, 580, 598, 634, 710, 723, 808, 820, 899,
+    950, 1003, 1012, 1046,
+]
+
+
+def test_volumetrie_accepte_les_journees_creuses_reelles():
+    """Une journee a 79 ou 101 annonces est normale : le BODACC ne publie pas
+    les memes familles d'avis tous les jours. Un seuil a la mediane sur quatre
+    les refusait toutes les deux, a tort."""
+    assert q.controle_volumetrie(101, HISTORIQUE_REEL).reussi
+    assert q.controle_volumetrie(79, HISTORIQUE_REEL).reussi
+    assert q.controle_volumetrie(425, HISTORIQUE_REEL).reussi
+    assert q.controle_volumetrie(1046, HISTORIQUE_REEL).reussi
+
+
+def test_volumetrie_refuse_une_journee_hors_de_tout_l_historique():
+    assert not q.controle_volumetrie(0, HISTORIQUE_REEL).reussi
+    assert not q.controle_volumetrie(3, HISTORIQUE_REEL).reussi
+    assert not q.controle_volumetrie(5000, HISTORIQUE_REEL).reussi
+
+
+def test_volumetrie_publie_les_bornes_et_leur_origine():
+    resultat = q.controle_volumetrie(425, HISTORIQUE_REEL)
+    assert resultat.detail["jours_historique"] == 60
+    assert resultat.detail["borne_basse"] < resultat.detail["centile_5"]
+    assert resultat.detail["borne_haute"] > resultat.detail["centile_95"]
+    assert "centiles 5 et 95" in resultat.attendu
 
 
 def test_volumetrie_exige_au_moins_une_annonce_sans_historique():
@@ -78,10 +105,28 @@ def test_volumetrie_exige_au_moins_une_annonce_sans_historique():
 
 
 def test_volumetrie_ignore_les_jours_sans_parution():
-    """Le BODACC ne parait pas le dimanche : les zeros ne doivent pas tirer la mediane."""
-    resultat = q.controle_volumetrie(55, [0, 0, 50, 55, 60, 58, 62, 57])
+    """Le BODACC ne parait ni le dimanche ni le lundi : les zeros ne sont pas
+    des jours de parution et ne doivent pas entrer dans la distribution."""
+    resultat = q.controle_volumetrie(425, [0, 0, *HISTORIQUE_REEL])
     assert resultat.reussi
-    assert resultat.detail["jours_historique"] == 6
+    assert resultat.detail["jours_historique"] == 60
+
+
+# ---------------------------------------------------------------------------
+# Completude de l'extraction
+# ---------------------------------------------------------------------------
+
+
+def test_completude_extraction():
+    assert q.controle_completude_extraction(475, 475).reussi
+    resultat = q.controle_completude_extraction(400, 475)
+    assert not resultat.reussi
+    assert resultat.detail["ecart"] == -75
+
+
+def test_completude_sans_total_connu_est_un_echec():
+    """Ne pas savoir combien la source annonce n'est pas une raison de publier."""
+    assert not q.controle_completude_extraction(475, None).reussi
 
 
 # ---------------------------------------------------------------------------
@@ -185,14 +230,14 @@ def test_exiger_laisse_passer_une_alerte(evenements):
 
 
 def test_tableau_est_lisible(evenements, jour):
-    resultats = q.controler_argent(evenements, jour, "34", [50, 55, 60, 58, 62, 57], "2026-09-23")
+    resultats = q.controler_silver(evenements, jour, "34", HISTORIQUE_REEL, "2026-09-23", 9, 9)
     tableau = q.rendre_tableau(resultats)
     assert "unicite_id_annonce" in tableau
     assert tableau.count("\n") >= len(resultats)
     assert "controles" in tableau
 
 
-def test_enchainement_or_complet(evenements, lignes_or):
-    resultats = q.controler_or(evenements, lignes_or)
+def test_enchainement_gold_complet(evenements, lignes_or):
+    resultats = q.controler_gold(evenements, lignes_or)
     assert len(resultats) == 5
     assert all(r.reussi for r in resultats if r.bloquant)

@@ -10,6 +10,11 @@ from __future__ import annotations
 import pytest
 
 moto = pytest.importorskip("moto")
+
+# Historiques d'essai : une dizaine de jours suffisent pour que le controle de
+# volumetrie se calibre sur des centiles plutot que sur son repli.
+HISTORIQUE_CREUX = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20]
+HISTORIQUE_FOURNI = [200, 300, 400, 420, 440, 460, 480, 500, 520, 600, 700, 800]
 from moto import mock_aws
 
 from radar import extract, pipeline, quality
@@ -37,10 +42,11 @@ def cfg(monkeypatch):
 @pytest.fixture
 def sources(monkeypatch, annonces, communes, fiches):
     monkeypatch.setattr(extract, "extraire_bodacc", lambda cfg, jour, departement=None: annonces)
+    monkeypatch.setattr(extract, "compter_bodacc", lambda cfg, jour, departement=None: len(annonces))
     monkeypatch.setattr(extract, "communes_du_departement", lambda cfg, departement=None: communes)
     monkeypatch.setattr(extract, "derniere_parution_disponible", lambda cfg, departement=None: "2026-09-23")
     monkeypatch.setattr(
-        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: [8, 9, 11, 10, 12, 9, 10]
+        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: HISTORIQUE_CREUX
     )
     monkeypatch.setattr(extract, "enrichir_sirens", lambda cfg, sirens: fiches)
 
@@ -98,9 +104,10 @@ def test_les_controles_silver_sont_enregistres(cfg, sources, jour):
 def test_un_effondrement_de_volumetrie_arrete_le_graphe(cfg, monkeypatch, annonces, communes, fiches, jour):
     monkeypatch.setattr(extract, "communes_du_departement", lambda cfg, departement=None: communes)
     monkeypatch.setattr(extract, "extraire_bodacc", lambda cfg, jour, departement=None: annonces[:1])
+    monkeypatch.setattr(extract, "compter_bodacc", lambda cfg, jour, departement=None: len(annonces[:1]))
     monkeypatch.setattr(extract, "derniere_parution_disponible", lambda cfg, departement=None: "2026-09-23")
     monkeypatch.setattr(
-        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: [80, 90, 85, 88, 92, 87]
+        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: HISTORIQUE_FOURNI
     )
     monkeypatch.setattr(extract, "enrichir_sirens", lambda cfg, sirens: fiches)
     pipeline.etape_preparer(jour, cfg)
@@ -115,9 +122,10 @@ def test_un_effondrement_de_volumetrie_arrete_le_graphe(cfg, monkeypatch, annonc
 def test_une_source_gelee_arrete_le_graphe(cfg, monkeypatch, annonces, communes, fiches, jour):
     monkeypatch.setattr(extract, "communes_du_departement", lambda cfg, departement=None: communes)
     monkeypatch.setattr(extract, "extraire_bodacc", lambda cfg, jour, departement=None: annonces)
+    monkeypatch.setattr(extract, "compter_bodacc", lambda cfg, jour, departement=None: len(annonces))
     monkeypatch.setattr(extract, "derniere_parution_disponible", lambda cfg, departement=None: "2026-06-01")
     monkeypatch.setattr(
-        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: [8, 9, 11, 10, 12, 9]
+        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: HISTORIQUE_CREUX
     )
     monkeypatch.setattr(extract, "enrichir_sirens", lambda cfg, sirens: fiches)
     for nom in ("preparer", "extraire", "enrichir", "silver"):
@@ -131,9 +139,10 @@ def test_la_couche_silver_survit_a_une_panne_d_enrichissement(cfg, monkeypatch, 
     """L'API Recherche d'entreprises est un tiers : sa panne degrade, elle n'arrete pas."""
     monkeypatch.setattr(extract, "communes_du_departement", lambda cfg, departement=None: communes)
     monkeypatch.setattr(extract, "extraire_bodacc", lambda cfg, jour, departement=None: annonces)
+    monkeypatch.setattr(extract, "compter_bodacc", lambda cfg, jour, departement=None: len(annonces))
     monkeypatch.setattr(extract, "derniere_parution_disponible", lambda cfg, departement=None: "2026-09-23")
     monkeypatch.setattr(
-        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: [8, 9, 11, 10, 12, 9]
+        extract, "historique_volumetrie", lambda cfg, jour, jours=60, departement=None: HISTORIQUE_CREUX
     )
 
     def panne(cfg, sirens):

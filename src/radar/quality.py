@@ -138,36 +138,74 @@ def controle_siren(evenements: Sequence[dict[str, Any]], seuil: float = 0.90) ->
 
 
 def controle_volumetrie(
-    nb_observe: int, historique: Iterable[int], facteur: float = 4.0, plancher: int = 1
+    nb_observe: int, historique: Iterable[int], marge_basse: float = 2.0, marge_haute: float = 1.5, plancher: int = 1
 ) -> Resultat:
-    """Volumetrie anormale, calibree sur l'historique plutot que sur un seuil en dur.
+    """Volumetrie anormale, calibree sur la distribution reelle de l'historique.
 
-    On compare au median des jours de parution precedents. Le BODACC ne parait
-    pas le week-end : les jours sans parution sont absents de l'historique et
-    ne tirent donc pas la mediane vers zero.
+    Premiere version de ce controle : bornes a la mediane divisee ou multipliee
+    par quatre. Mesure faite ensuite sur 60 jours de parution reels du BODACC
+    pour l'Herault : **de 1 a 1 046 annonces par jour**, mediane 425, cinquieme
+    centile 9. La dispersion n'est pas du bruit, elle est structurelle : le
+    bulletin ne publie pas les memes familles d'avis tous les jours, et une
+    journee a 80 annonces est aussi normale qu'une journee a 800. Le seuil a la
+    mediane refusait dix de ces soixante journees, toutes legitimes.
+
+    Version retenue : bornes issues des **centiles empiriques** de la meme
+    fenetre, elargies d'une marge. Le controle ne refuse plus une journee creuse
+    normale, il refuse une journee hors de tout ce que la source a produit en
+    trois mois, ce qui est le signal recherche.
     """
-    valeurs = [v for v in historique if v > 0]
-    if len(valeurs) < 5:
+    valeurs = sorted(v for v in historique if v > 0)
+    if len(valeurs) < 10:
         return _r(
             "volumetrie_dans_la_norme",
             nb_observe >= plancher,
             f"au moins {plancher} annonce",
             f"{nb_observe} annonce(s), historique trop court pour calibrer",
             bloquant=True,
-            historique=len(valeurs),
+            jours_historique=len(valeurs),
         )
-    mediane = statistics.median(valeurs)
-    bas = max(plancher, mediane / facteur)
-    haut = mediane * facteur
+    centile_bas = statistics.quantiles(valeurs, n=20)[0]  # 5e centile
+    centile_haut = statistics.quantiles(valeurs, n=20)[18]  # 95e centile
+    bas = max(plancher, centile_bas / marge_basse)
+    haut = centile_haut * marge_haute
     return _r(
         "volumetrie_dans_la_norme",
         bas <= nb_observe <= haut,
-        f"entre {bas:.0f} et {haut:.0f} annonces (mediane {mediane:.0f} sur {len(valeurs)} jours, facteur {facteur:g})",
+        f"entre {bas:.0f} et {haut:.0f} annonces "
+        f"(centiles 5 et 95 de {len(valeurs)} jours : {centile_bas:.0f} et {centile_haut:.0f}, "
+        f"marges {marge_basse:g} et {marge_haute:g})",
         f"{nb_observe} annonces",
-        mediane=mediane,
+        mediane=statistics.median(valeurs),
+        centile_5=round(centile_bas, 1),
+        centile_95=round(centile_haut, 1),
         borne_basse=round(bas, 1),
         borne_haute=round(haut, 1),
         jours_historique=len(valeurs),
+    )
+
+
+def controle_completude_extraction(nb_ecrit: int, total_source: int | None) -> Resultat:
+    """La couche bronze contient-elle tout ce que la source annonce ce jour-la ?
+
+    C'est le controle exact que la volumetrie ne sait pas faire : il ne suppose
+    rien sur le rythme de publication, il compare ce qui a ete ecrit au
+    `total_count` renvoye par l'API pour la meme requete. Une pagination
+    interrompue ou une reponse tronquee se voit ici, et nulle part ailleurs.
+    """
+    if total_source is None:
+        return _r(
+            "completude_extraction",
+            False,
+            "le total annonce par la source est connu",
+            "total absent des metadonnees de la couche bronze",
+        )
+    return _r(
+        "completude_extraction",
+        nb_ecrit == total_source,
+        f"{total_source} annonces, soit le total annonce par l'API pour ce jour",
+        f"{nb_ecrit} annonces ecrites en bronze",
+        ecart=nb_ecrit - total_source,
     )
 
 
@@ -285,14 +323,17 @@ def controle_couverture_naf(lignes_or: Sequence[dict[str, Any]], seuil: float = 
 # ---------------------------------------------------------------------------
 
 
-def controler_argent(
+def controler_silver(
     evenements: Sequence[dict[str, Any]],
     jour: str,
     departement: str,
     historique: Iterable[int],
     derniere_parution: str | None,
+    nb_bronze: int | None = None,
+    total_source: int | None = None,
 ) -> list[Resultat]:
     return [
+        controle_completude_extraction(nb_bronze if nb_bronze is not None else len(evenements), total_source),
         controle_unicite(evenements),
         controle_identifiants_non_nuls(evenements),
         controle_valeurs_attendues(evenements),
@@ -305,7 +346,7 @@ def controler_argent(
     ]
 
 
-def controler_or(evenements: Sequence[dict[str, Any]], lignes_or: Sequence[dict[str, Any]]) -> list[Resultat]:
+def controler_gold(evenements: Sequence[dict[str, Any]], lignes_or: Sequence[dict[str, Any]]) -> list[Resultat]:
     return [
         controle_grain_or(lignes_or),
         controle_conservation(evenements, lignes_or),
